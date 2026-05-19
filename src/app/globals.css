@@ -1,6 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #4b223d;
+  --color-green: #224b30;
+  --color-teal: #618b8c;
+  --color-gold: #c7803b;
+  --color-pink: #e283b5;
+  --color-blue: #26aae1;
+  --color-dark: #1e1e1e;
+  --color-gray-light: #eeeeee;
+  --color-gray-mid: #d1d3d4;
+  --color-gray-dark: #414141;
+
+  --font-switzer: "Switzer", "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
 
 @layer base {
   html {
