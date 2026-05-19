@@ -1,184 +1,30 @@
-import type { Metadata } from "next";
-import ProgramCard from "@/components/ProgramCard";
-import WorkflowSteps from "@/components/WorkflowSteps";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-import SectionHeading from "@/components/SectionHeading";
-
-export const metadata: Metadata = {
-  title: "Passport & Visas — Migronis | BORDERLESS",
-  description:
-    "Second citizenship and residence permits through investment and legal programs. Global mobility made simple.",
-};
-
-const programs = [
-  {
-    country: "St Kitts & Nevis",
-    description:
-      "The world's first citizenship-by-investment program. Obtain citizenship in several months, gain visa-free access to 150+ countries, and enjoy a secure, low-tax jurisdiction.",
-    color: "bg-burgundy",
-  },
-  {
-    country: "Dominica",
-    description:
-      "One of the most affordable citizenship programs globally. Transparent due diligence, no residency requirement — a trusted route for entrepreneurs and families.",
-    color: "bg-green",
-  },
-  {
-    country: "Antigua & Barbuda",
-    description:
-      "Perfect for families looking for value and comfort. Visa-free travel to over 150 countries. Include dependent children and parents.",
-    color: "bg-teal",
-  },
-  {
-    country: "Grenada",
-    description:
-      "A Caribbean passport that opens doors to the world, including the U.S. via the E-2 investor visa. Fast processing and a growing real estate market.",
-    color: "bg-gold",
-  },
-  {
-    country: "St Lucia",
-    description:
-      "A transparent program offering several routes — from government bonds to sustainable real estate. No income tax on worldwide earnings.",
-    color: "bg-pink",
-  },
-  {
-    country: "São Tomé e Príncipe",
-    description:
-      "The newest and most accessible program with the lowest entry point worldwide through the National Transformation Fund.",
-    color: "bg-blue",
-  },
-  {
-    country: "Vanuatu",
-    description:
-      "One of the quickest routes to a second passport. Straightforward, confidential option with zero income tax and full dual citizenship rights.",
-    color: "bg-burgundy",
-  },
-  {
-    country: "Portugal Golden Visa",
-    description:
-      "One of Europe's most prestigious residence programs. EU residency through qualified investments in funds or innovation.",
-    color: "bg-green",
-  },
-  {
-    country: "Portugal HQA Visa",
-    description:
-      "A fast-track residence program for highly qualified professionals, entrepreneurs, and innovators with a clear path to permanent residence.",
-    color: "bg-teal",
-  },
-  {
-    country: "Spain",
-    description:
-      "Flexible residence options including the Digital Nomad Visa. Faster processing than Portugal, ideal for remote workers.",
-    color: "bg-gold",
-  },
-  {
-    country: "Cyprus",
-    description:
-      "Multiple pathways to residency — from permanent residence through investment to options for remote workers. Fast processing, low taxes.",
-    color: "bg-pink",
-  },
-  {
-    country: "Greece",
-    description:
-      "The most affordable Golden Visa in the EU. Simple path to European residence through real estate investment with no minimum stay requirement.",
-    color: "bg-blue",
-  },
-  {
-    country: "U.S. EB-5 Visa",
-    description:
-      "Permanent U.S. residency through qualifying investment. A direct path to citizenship for investors and their families.",
-    color: "bg-burgundy",
-  },
-  {
-    country: "Brazil",
-    description:
-      "Investor visas through local business, real estate, or innovation. Children born in Brazil automatically receive citizenship.",
-    color: "bg-green",
-  },
-  {
-    country: "Hungary",
-    description:
-      "Guest Investor Residence Permit — the new Golden Visa. Long-term EU residency through investment in approved national funds.",
-    color: "bg-teal",
-  },
-];
-
-const workflowSteps = [
-  {
-    number: 1,
-    title: "Consultation",
-    description: "Define your goals and choose the right path.",
-  },
-  {
-    number: 2,
-    title: "Selection",
-    description: "We suggest a tailored program that fits your needs.",
-  },
-  {
-    number: 3,
-    title: "Support",
-    description: "Full assistance with document preparation and submission.",
-  },
-  {
-    number: 4,
-    title: "Freedom",
-    description: "Obtain your residence or passport and start living without borders.",
-  },
-];
 
 export default function PassportVisasPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-burgundy text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            Passport & Visas
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            What do you need to get more freedom? Migronis helps people obtain
-            second citizenship and residence permits through investment and legal
-            programs.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Passport/visas</h1></div></section>
 
-      {/* Programs Grid */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Our Programs"
-            subtitle="Choose from 15+ citizenship and residence programs worldwide."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.map((program) => (
-              <ProgramCard
-                key={program.country}
-                country={program.country}
-                description={program.description}
-                color={program.color}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-black mb-4">What do you need to get more freedom?</h2><p className="f-desc-bold text-black mb-6">Migronis helps people obtain second citizenship and residence permits through investment and legal programs. We make global mobility simple for your life, business, and family.</p></div></section>
 
-      {/* Workflow */}
-      <section className="bg-gray-light py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="How It Works"
-            subtitle="Four simple steps to your new passport or residence permit."
-          />
-          <WorkflowSteps steps={workflowSteps} />
-        </div>
-      </section>
+      <section className="pb-8 lg:pb-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row"><div className="p-6 lg:p-8 lg:w-[539px] flex-shrink-0"><div className="flex gap-4 lg:gap-6 mb-8 overflow-x-auto no-scrollbar"><span className="f-step text-black font-semibold whitespace-nowrap">Step 1</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 2</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 3</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 4</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 5</span></div><p className="f-desc-bold text-black" style={{maxWidth: '336px'}}>Choose your destination and the type of program.</p></div><div className="w-full lg:w-[2px] h-[2px] lg:h-auto bg-[#d9d9d9]"></div><div className="flex-1 bg-[#eeeeee] p-6 flex items-center gap-4 overflow-x-auto no-scrollbar min-h-[150px] lg:min-h-[232px]"><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Vanuatu Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Costa Rica Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Grenada Relocation</span></div></div></div></div></section>
 
-      {/* CTA */}
-      <CTASection
-        title="Ready to Get Started?"
-        description="Book a free consultation and discover which program is right for you and your family."
-      />
+      <section className="bg-white pb-8 lg:pb-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8 mb-12"><div className="lg:w-1/2"><p className="f-nav text-black/40 mb-2">Borderless</p><div className="mb-4"><span className="f-desc-bold text-black">MIGRONIS ✓</span></div><h3 className="f-heading-md text-black mb-4">General offer</h3><p className="f-body text-black">Migronis helps people obtain second citizenship and residence permits through investment and legal programs. We make global mobility simple for your life, business, and family. Over 1,000 families have already trusted us with their journey to freedom.</p></div><div className="lg:w-1/2 bg-black rounded flex items-center justify-center min-h-[250px] lg:min-h-[331px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer"><span className="text-white ml-1 text-lg">▶</span></div></div></div><div className="border-t border-black mb-8 pt-8"><h3 className="f-heading-md text-black mb-8">Main Products</h3><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2"><h4 className="f-desc-bold text-black mb-4">Citizenship</h4><div className="space-y-0"><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between font-semibold">St Kitts & Nevis<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The world's first citizenship-by-investment program, and still one of the fastest. Obtain citizenship in several months, gain visa-free access to 150+ countries, and enjoy a secure, low-tax jurisdiction with a Caribbean lifestyle rooted in privacy and freedom.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Dominica<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Known for its integrity and efficiency, Dominica offers one of the most affordable citizenship programs globally. With transparent due diligence and no residency requirement, it's a trusted route for entrepreneurs and families seeking global mobility.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Antigua & Barbuda<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Perfect for families looking for value and comfort. Citizenship can be obtained through a contribution, real estate, or business investment, with visa-free travel to over 150 countries.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Grenada<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A Caribbean passport that opens doors to the world, including the U.S. via the E-2 investor visa. Grenada's program combines a solid reputation, fast processing, and a growing real estate market.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">St Lucia<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A transparent citizenship-by-investment program offering several routes — from government bonds to sustainable real estate projects. St Lucia is a well-governed, business-friendly country.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">São Tomé e Príncipe<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The newest and most accessible program, offering the lowest entry point worldwide through the National Transformation Fund — a sustainable, government-backed investment.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Vanuatu<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A fast-track citizenship program offering one of the quickest routes to a second passport. A straightforward, confidential option with zero income tax and full dual citizenship rights.</p></details></div></div><div className="lg:w-1/2 lg:border-l lg:border-black/10 lg:pl-8"><h4 className="f-desc-bold text-black mb-4">Residency</h4><div className="space-y-0"><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between font-semibold">Portugal Golden Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">One of Europe's most prestigious residence programs. Obtain EU residency through qualified investments in funds or innovation and gain the right to live, study, and travel across the Schengen Area.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Portugal HQA Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A fast-track residence program for highly qualified professionals, entrepreneurs, and innovators. It offers EU residency through working with Portuguese companies.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Spain<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Spain offers flexible residence options for remote workers, entrepreneurs, and financially independent individuals, including the Digital Nomad Visa.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Cyprus<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Cyprus offers multiple pathways to residency — from permanent residence through investment to more flexible options for self-sufficient individuals and remote workers.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Greece<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The most affordable Golden Visa in the EU, which offers a simple and efficient path to European residence through real estate investment.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">U.S. EB-5 Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">An investor visa that grants permanent U.S. residency to those who invest in a qualifying American business and create full-time jobs.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Brazil<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Brazil offers investor visas for those who contribute to local business, real estate, or innovation projects. Children born in Brazil automatically receive Brazilian citizenship.</p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Hungary<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Hungary's Guest Investor Residence Permit grants long-term EU residency through investment in approved national funds. Fast processing, no minimum stay requirement.</p></details></div></div></div></div><div className="border-t border-black pt-8"><div className="flex flex-col lg:flex-row items-start justify-between gap-8"><div><span className="f-cta-big block text-black">Get</span><span className="f-heading-md block text-black">a free<br />consultation</span></div><div className="flex flex-col gap-3 w-full lg:w-auto"><div><input type="text" placeholder="First and Last Name" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><div><input type="email" placeholder="Email" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-black/60"><input type="checkbox" className="mt-0.5 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn bg-black text-white w-full lg:w-[224px] h-[36px] flex items-center justify-center gap-2 disabled:opacity-60">send</button></div></div></div></div></section>
+
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-black mb-4">Passport/visas Workflow</h2><p className="f-desc-bold text-black mb-8 lg:mb-12">From consultation to your new passport — we guide you through every step.</p><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative"><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Consultation</h3><p className="f-body text-black/60 mt-2">Define your goals and choose the right path.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Selection</h3><p className="f-body text-black/60 mt-2">We suggest a tailored program that fits your needs.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Support</h3><p className="f-body text-black/60 mt-2">Get full assistance with document preparation and submission.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Freedom</h3><p className="f-body text-black/60 mt-2">Obtain your residence or passport and start living without borders.</p></div><div className="hidden lg:block absolute top-[71px] left-[261px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[561px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[861px] w-[111px] h-[1px] bg-black"></div></div></div></section>
+
+      <section className="bg-black min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><div className="flex gap-4 lg:gap-6 mb-4 overflow-x-auto no-scrollbar"><button className="f-nav whitespace-nowrap f-nav-active text-white">Passport/visas</button><button className="f-nav whitespace-nowrap text-white/30">Travel</button><button className="f-nav whitespace-nowrap text-white/30">Investment</button><button className="f-nav whitespace-nowrap text-white/30">Education</button><button className="f-nav whitespace-nowrap text-white/30">Collaboration</button></div><div className="flex items-center justify-between mb-8"><h2 className="f-section-title text-white">Cases</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Why Costa Rica? Nature, Safety & Comfort</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Vanuatu: Fast Track to Global Mobility</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Grenada: Gateway to the Caribbean & the U.S.</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="flex items-start justify-between mb-4 lg:mb-6"><h3 className="f-heading-md text-black">Video<br />reviews</h3><div className="flex gap-2 flex-shrink-0 ml-4"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+
+      <section className="bg-[#eeeeee] py-8 lg:py-10"><div className="max-w-[1196px] mx-auto content-px"><h3 className="f-heading-md text-black mb-6 lg:mb-8">Awards</h3><div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pb-2"><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-8 gap-6"><div className="flex items-start gap-6"><h3 className="f-heading-md text-black">Media<br />about us</h3><div className="flex gap-2 mt-2"><button className="w-[36px] h-[36px] rounded-full bg-[#d9d9d9] flex items-center justify-center"><span className="text-[#414141] text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full bg-[#d9d9d9] flex items-center justify-center"><span className="text-[#414141] text-sm">→</span></button></div></div><div className="flex gap-4 lg:gap-[25px] overflow-x-auto no-scrollbar w-full lg:w-auto"><div className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d9] rounded flex flex-col items-center justify-center p-6"><span className="f-quote-mark text-black/20 block text-center">“</span><p className="f-body text-black text-center mt-2">Migronis helps people obtain second citizenship and residence permits.</p><p className="f-body text-black/40 mt-4">Forbes</p></div><div className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d9] rounded flex flex-col items-center justify-center p-6"><span className="f-quote-mark text-black/20 block text-center">“</span><p className="f-body text-black text-center mt-2">Migronis helps people obtain second citizenship and residence permits.</p><p className="f-body text-black/40 mt-4">Forbes</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+
+      <section style={{backgroundColor: '#4b223d'}}><div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px"><div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10"><div className="mb-2 lg:mb-0"><span className="f-cta-big block text-white">Let's</span><span className="f-cta-sub block mt-1 text-white">Discuss your case</span></div><div className="flex flex-col gap-3 w-full lg:w-[343px]"><div><input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-white/60"><input type="checkbox" className="mt-1 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn-lg bg-white text-black hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">Send</button></div></div></div></section>
     </>
   );
 }

@@ -1,119 +1,22 @@
-import type { Metadata } from "next";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-
-export const metadata: Metadata = {
-  title: "Travel — BORDERLESS",
-  description:
-    "Curated journeys and educational trips for families who explore the world through geography and history.",
-};
-
-const trips = [
-  {
-    destination: "Portugal & Azores",
-    type: "Family Educational",
-    duration: "10 days",
-    description:
-      "Explore the history of maritime discoveries, volcanic landscapes, and modern European culture with your family.",
-  },
-  {
-    destination: "Japan",
-    type: "Cultural Immersion",
-    duration: "14 days",
-    description:
-      "From ancient temples to cutting-edge technology — a journey through centuries of tradition and innovation.",
-  },
-  {
-    destination: "Costa Rica",
-    type: "Eco-Adventure",
-    duration: "12 days",
-    description:
-      "Rainforests, volcanoes, and sustainable communities — experience the country that runs on renewable energy.",
-  },
-  {
-    destination: "Greece & Islands",
-    type: "History & Leisure",
-    duration: "10 days",
-    description:
-      "Walk where democracy was born. Ancient ruins, island-hopping, and Mediterranean lifestyle at its finest.",
-  },
-  {
-    destination: "Iceland",
-    type: "Nature & Science",
-    duration: "8 days",
-    description:
-      "Northern lights, geothermal wonders, and geological marvels — a living classroom of Earth science.",
-  },
-  {
-    destination: "UAE & Oman",
-    type: "Modern & Traditional",
-    duration: "9 days",
-    description:
-      "Futuristic cities meet ancient desert culture. Business, architecture, and the crossroads of civilizations.",
-  },
-];
 
 export default function TravelPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-teal text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            Travel
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            Curated journeys and educational trips for families who explore the
-            world through geography and history — inspiring destinations and
-            immersive experiences with meaning.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Travel</h1></div></section>
 
-      {/* Trips */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Upcoming Journeys"
-            subtitle="Each trip is designed to inspire, educate, and create lasting memories."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {trips.map((trip) => (
-              <div
-                key={trip.destination}
-                className="group bg-white border border-gray-light rounded-2xl overflow-hidden hover:shadow-lg transition-all"
-              >
-                <div className="bg-teal/10 h-48 flex items-center justify-center">
-                  <span className="text-6xl">🌍</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-teal bg-teal/10 px-2 py-1 rounded">
-                      {trip.type}
-                    </span>
-                    <span className="text-xs text-gray-dark">
-                      {trip.duration}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-dark mb-2">
-                    {trip.destination}
-                  </h3>
-                  <p className="text-gray-dark text-sm leading-relaxed">
-                    {trip.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-black mb-4">Explore the world — and learn from it</h2><p className="f-desc-bold text-black">Educational expeditions for families who travel with purpose: through geography, history, and real connection with the world.</p></div></section>
 
-      <CTASection
-        variant="teal"
-        title="Plan Your Next Adventure"
-        description="Tell us about your family's interests and we'll create a tailor-made journey."
-        buttonText="Start Planning"
-      />
+      <section><div className="max-w-[1196px] mx-auto content-px"><div className="bg-[#eeeeee] flex items-center justify-center min-h-[250px] lg:min-h-[424px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-black/30 flex items-center justify-center cursor-pointer"><span className="text-black ml-1 text-lg">▶</span></div></div></div></section>
+
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px flex flex-col lg:flex-row gap-8 lg:gap-12"><div className="lg:w-1/2 bg-[#eeeeee] rounded flex items-center justify-center min-h-[250px] lg:min-h-[400px]"><span className="text-8xl text-black/5">▲</span></div><div className="lg:w-1/2"><span className="f-quote-mark text-black block">“</span><blockquote className="f-desc-bold text-black -mt-4">I travel a lot with my children — not just to see places, but to understand the world together.</blockquote><p className="f-body text-black mt-6">Our journeys are about connection — between parents and children, people and nature, comfort and adventure. Sometimes it's a luxury hotel, sometimes a night in a cave, but always an experience that teaches more than any classroom.</p><p className="f-body text-black mt-4">We learn through contact with nature, with different cultures, and with extraordinary teachers. Every trip is both exploration and education — a way to grow together and to live without borders.</p><span className="f-quote-mark text-black block text-right">”</span><p className="f-body text-black">Anatoliy Lyetayev</p></div></div></section>
+
+      <section className="bg-[#eeeeee]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><h2 className="f-heading-md text-black mb-4">Planned expeditions:</h2><p className="f-body text-black mb-8 lg:mb-12" style={{maxWidth: '800px'}}>We combine exploration and education, creating tailor-made expeditions for small, like-minded groups. Each journey is designed to inspire curiosity, bring families closer, and open new perspectives on the planet and themselves.</p><div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"><div className="bg-white p-6"><h3 className="f-desc-bold text-black mb-3">Iceland</h3><p className="f-body text-black/60">Discovering the power of the elements. Volcanoes, geysers, and the raw beauty of a land shaped by fire and ice.</p><button className="f-learn-more text-black mt-4 inline-block">learn more</button></div><div className="bg-white p-6"><h3 className="f-desc-bold text-black mb-3">Antarctica</h3><p className="f-body text-black/60">Learning from the last wild frontier. A journey to the most remote continent — where silence teaches more than words.</p><button className="f-learn-more text-black mt-4 inline-block">learn more</button></div><div className="bg-white p-6"><h3 className="f-desc-bold text-black mb-3">Africa</h3><p className="f-body text-black/60">Exploring the origins of life. From savannahs to ancient cultures, a trip that reconnects you with the roots of humanity.</p><button className="f-learn-more text-black mt-4 inline-block">learn more</button></div></div></div></section>
+
+      <section className="bg-black min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><div className="flex gap-4 lg:gap-6 mb-4 overflow-x-auto no-scrollbar"><button className="f-nav whitespace-nowrap text-white/30">Passport/visas</button><button className="f-nav whitespace-nowrap f-nav-active text-white">Travel</button><button className="f-nav whitespace-nowrap text-white/30">Investment</button><button className="f-nav whitespace-nowrap text-white/30">Education</button><button className="f-nav whitespace-nowrap text-white/30">Collaboration</button></div><div className="flex items-center justify-between mb-8"><h2 className="f-section-title text-white">Where We've Been</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"><div className="bg-white/5 rounded p-6" style={{minHeight: '200px'}}><p className="f-case-title text-white" style={{fontSize: '28px', lineHeight: '34px'}}>Chile</p><p className="f-body text-white/50 mt-4">Stargazing with a telescope in the Atacama Desert and sleeping in a cave on Easter Island.</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-4 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6" style={{minHeight: '200px'}}><p className="f-case-title text-white" style={{fontSize: '28px', lineHeight: '34px'}}>The Azores</p><p className="f-body text-white/50 mt-4">Hiking volcanoes across three islands and sailing with whales.</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-4 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6" style={{minHeight: '200px'}}><p className="f-case-title text-white" style={{fontSize: '28px', lineHeight: '34px'}}>Costa Rica</p><p className="f-body text-white/50 mt-4">Exploring rainforests and learning from local eco-innovators.</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-4 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6" style={{minHeight: '200px'}}><p className="f-case-title text-white" style={{fontSize: '28px', lineHeight: '34px'}}>Patagonia</p><p className="f-body text-white/50 mt-4">Joining paleontologists on dinosaur excavations and trekking across glaciers.</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-4 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-black mb-6">Partnership Invitation</h2><p className="f-desc-bold text-black mb-4">If you're involved in organizing educational or adventure travel, let's talk.</p><p className="f-body text-black/60 mb-8">We're open to collaborations that share our philosophy of meaningful exploration.</p><div className="flex flex-col gap-3 w-full lg:w-auto"><div><input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[343px] h-[50px] " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[343px] h-[50px] " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[343px] h-[50px] " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-black/60"><input type="checkbox" className="mt-0.5 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn bg-black text-white w-full lg:w-[343px] h-[50px] flex items-center justify-center gap-2 disabled:opacity-60">send</button></div></div></section>
     </>
   );
 }

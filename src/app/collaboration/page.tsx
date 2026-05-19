@@ -1,100 +1,28 @@
-import type { Metadata } from "next";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-
-export const metadata: Metadata = {
-  title: "Collaboration & Marketing — BORDERLESS",
-  description:
-    "We create stories that sell. Partnerships, video production, and meaningful content for brands.",
-};
-
-const services = [
-  {
-    title: "Brand Partnerships",
-    description:
-      "We connect brands with our audience of globally-minded individuals. Authentic collaborations that resonate with high-value consumers.",
-    icon: "🤝",
-  },
-  {
-    title: "Video Production",
-    description:
-      "From concept to final cut — professional video content that tells your brand story in a compelling, cinematic way.",
-    icon: "🎬",
-  },
-  {
-    title: "Content Strategy",
-    description:
-      "Data-driven content planning that builds audience, drives engagement, and converts viewers into loyal customers.",
-    icon: "📊",
-  },
-  {
-    title: "Social Media Management",
-    description:
-      "Full-service social presence across platforms. We grow communities, not just follower counts.",
-    icon: "📱",
-  },
-  {
-    title: "Podcast & Audio",
-    description:
-      "Podcast production, audio content, and voice strategy for brands that want to be heard.",
-    icon: "🎙️",
-  },
-  {
-    title: "Event Marketing",
-    description:
-      "From intimate dinners to international summits — we create events that build relationships and drive business.",
-    icon: "🎪",
-  },
-];
 
 export default function CollaborationPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-pink text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            Collaboration
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            We create stories that sell. From partnerships to video production,
-            we help brands grow through meaningful, sustainable content.
-          </p>
-        </div>
-      </section>
+      <section className="min-h-[200px] lg:min-h-[324px] flex flex-col justify-end"><div className="max-w-[1196px] mx-auto content-px pb-8"><p className="f-nav text-white/50 mb-3">Borderless</p><h1 className="f-page-title text-white">Collaboration</h1></div></section>
 
-      {/* Services */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="What We Do"
-            subtitle="Full-service marketing and content solutions for ambitious brands."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <div
-                key={s.title}
-                className="bg-white border border-gray-light rounded-2xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <span className="text-4xl mb-4 block">{s.icon}</span>
-                <h3 className="text-xl font-semibold text-dark mb-3">
-                  {s.title}
-                </h3>
-                <p className="text-gray-dark text-sm leading-relaxed">
-                  {s.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="pb-8"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-white mb-4">Tell stories that travel beyond borders</h2><p className="f-desc-bold text-white/80">We create meaningful video content for brands and projects that share the Borderless philosophy. Our approach combines strategy, storytelling, and aesthetics — to make your message seen, heard, and felt.</p></div></section>
 
-      <CTASection
-        title="Want to Collaborate?"
-        description="Tell us about your brand and goals — we'll craft a strategy that drives results."
-        buttonText="Start a Conversation"
-        variant="burgundy"
-      />
+      <section className="pb-12 lg:pb-16"><div className="max-w-[1196px] mx-auto content-px"><div className="bg-white/5 rounded flex items-center justify-center min-h-[300px] lg:min-h-[734px]"><div className="w-[60px] h-[60px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer"><span className="text-white text-xl ml-1">▶</span></div></div></div></section>
+
+      <section className="py-12 lg:py-16 border-t border-white/10"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-white mb-8">products</h2><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2 bg-white/5 rounded flex items-center justify-center min-h-[250px] lg:min-h-[500px]"><span className="text-8xl text-white/5">▲</span></div><div className="lg:w-1/2 flex flex-col justify-center"><h3 className="f-heading-md text-white">Branding</h3><p className="f-body-lg text-white/60 mt-4">We build visual identities that resonate with purpose-driven audiences. From logo to full brand ecosystem.</p><button className="f-btn bg-black text-white border border-white/20 mt-6 w-fit px-6 py-3 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section className="py-12 lg:py-16 border-t border-white/10"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-white mb-8">products</h2><div className="flex flex-col lg:flex-row-reverse gap-8"><div className="lg:w-1/2 bg-white/5 rounded flex items-center justify-center min-h-[250px] lg:min-h-[500px]"><span className="text-8xl text-white/5">▲</span></div><div className="lg:w-1/2 flex flex-col justify-center"><h3 className="f-heading-md text-white">Video Production</h3><p className="f-body-lg text-white/60 mt-4">Professional video content that tells your brand story in a compelling, cinematic way. Documentary style meets commercial polish.</p><button className="f-btn bg-black text-white border border-white/20 mt-6 w-fit px-6 py-3 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section className="py-12 lg:py-16 border-t border-white/10"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-white mb-8">products</h2><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2 bg-white/5 rounded flex items-center justify-center min-h-[250px] lg:min-h-[500px]"><span className="text-8xl text-white/5">▲</span></div><div className="lg:w-1/2 flex flex-col justify-center"><h3 className="f-heading-md text-white">Content Strategy</h3><p className="f-body-lg text-white/60 mt-4">Data-driven content planning that builds audience and converts viewers into customers. We create stories that sell themselves.</p><button className="f-btn bg-black text-white border border-white/20 mt-6 w-fit px-6 py-3 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section className="py-12 lg:py-16 border-t border-white/10"><div className="max-w-[1196px] mx-auto content-px"><div className="flex items-center justify-between mb-8"><h2 className="f-section-title text-white">Cases</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"><div className="bg-white/5 rounded p-6 lg:p-8 min-h-[250px] lg:min-h-[373px]"><p className="f-case-title text-white">Brand Video Campaign</p></div><div className="bg-white/5 rounded p-6 lg:p-8 min-h-[250px] lg:min-h-[373px]"><p className="f-case-title text-white">Brand Video Campaign</p></div><div className="bg-white/5 rounded p-6 lg:p-8 min-h-[250px] lg:min-h-[373px]"><p className="f-case-title text-white">Brand Video Campaign</p></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-white/20"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-white flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center f-small text-white">←</button><button className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center f-small text-white">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-white/20"><span className="text-sm text-white">J</span></div><div><p className="f-review-name text-white">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-white/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-white/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-white/20"><span className="text-sm text-white">J</span></div><div><p className="f-review-name text-white">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-white/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-white/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-white/20"></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="flex items-start justify-between mb-4 lg:mb-6"><h3 className="f-heading-md text-white">Video<br />reviews</h3><div className="flex gap-2 flex-shrink-0 ml-4"><button className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center f-small text-white">←</button><button className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center f-small text-white">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-white/10 flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-white">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-white/10 flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-white">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-white/10 flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-white">Nature, Safety & Comfort</p></div></div></div></section>
+
+      <section className="py-10 lg:py-12 border-t border-white/10"><div className="max-w-[1196px] mx-auto content-px"><div className="flex items-center justify-between mb-6 lg:mb-8"><h2 className="f-desc-bold text-white">Featured Experiences / Vlog</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="flex gap-4 overflow-x-auto no-scrollbar pb-4"><div className="flex-shrink-0 w-[200px] lg:w-[220px]"><div className="bg-white/10 rounded flex items-center justify-center" style={{height: '140px'}}><div className="w-[48px] h-[48px] rounded-full border border-white/40 flex items-center justify-center"><span className="text-white text-sm ml-0.5">▶</span></div></div><p className="f-video-title text-white mt-2">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[200px] lg:w-[220px]"><div className="bg-white/10 rounded flex items-center justify-center" style={{height: '140px'}}><div className="w-[48px] h-[48px] rounded-full border border-white/40 flex items-center justify-center"><span className="text-white text-sm ml-0.5">▶</span></div></div><p className="f-video-title text-white mt-2">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[200px] lg:w-[220px]"><div className="bg-white/10 rounded flex items-center justify-center" style={{height: '140px'}}><div className="w-[48px] h-[48px] rounded-full border border-white/40 flex items-center justify-center"><span className="text-white text-sm ml-0.5">▶</span></div></div><p className="f-video-title text-white mt-2">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[200px] lg:w-[220px]"><div className="bg-white/10 rounded flex items-center justify-center" style={{height: '140px'}}><div className="w-[48px] h-[48px] rounded-full border border-white/40 flex items-center justify-center"><span className="text-white text-sm ml-0.5">▶</span></div></div><p className="f-video-title text-white mt-2">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[200px] lg:w-[220px]"><div className="bg-white/10 rounded flex items-center justify-center" style={{height: '140px'}}><div className="w-[48px] h-[48px] rounded-full border border-white/40 flex items-center justify-center"><span className="text-white text-sm ml-0.5">▶</span></div></div><p className="f-video-title text-white mt-2">Nature, Safety & Comfort</p></div></div></div></section>
     </>
   );
 }

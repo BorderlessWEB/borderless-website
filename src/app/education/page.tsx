@@ -1,108 +1,24 @@
-import type { Metadata } from "next";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-
-export const metadata: Metadata = {
-  title: "Education — BORDERLESS",
-  description:
-    "Courses and guides for those who want to live borderless — from relocation to childbirth abroad.",
-};
-
-const courses = [
-  {
-    title: "Relocation Guide",
-    description:
-      "Step-by-step guide to moving abroad — from choosing a country to settling in. Legal, financial, and practical aspects covered.",
-    tag: "Popular",
-    color: "border-burgundy",
-  },
-  {
-    title: "Childbirth Abroad",
-    description:
-      "Everything you need to know about giving birth in another country — from healthcare systems to citizenship rights for your child.",
-    tag: "New",
-    color: "border-pink",
-  },
-  {
-    title: "Tax Optimization",
-    description:
-      "Understanding international tax structures, residency-based taxation, and legal strategies for global entrepreneurs.",
-    tag: "Advanced",
-    color: "border-green",
-  },
-  {
-    title: "Digital Nomad Essentials",
-    description:
-      "From visa requirements to co-living spaces — the practical guide to working remotely from anywhere in the world.",
-    tag: "Starter",
-    color: "border-blue",
-  },
-  {
-    title: "Investment for Beginners",
-    description:
-      "Learn the fundamentals of sustainable investing, portfolio diversification, and responsible wealth-building.",
-    tag: "Starter",
-    color: "border-gold",
-  },
-  {
-    title: "Second Citizenship Masterclass",
-    description:
-      "Deep dive into citizenship-by-investment programs — comparing countries, costs, timelines, and benefits.",
-    tag: "Masterclass",
-    color: "border-teal",
-  },
-];
 
 export default function EducationPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gold text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            Education
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            Courses and guides for those who want to live borderless — practical,
-            structured, empowering.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">education</h1></div></section>
 
-      {/* Courses */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Our Courses"
-            subtitle="Practical knowledge to help you make informed decisions about your global life."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course) => (
-              <div
-                key={course.title}
-                className={`bg-white border-l-4 ${course.color} rounded-xl p-8 hover:shadow-lg transition-shadow`}
-              >
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-dark bg-gray-light px-2 py-1 rounded">
-                  {course.tag}
-                </span>
-                <h3 className="text-xl font-semibold text-dark mt-4 mb-3">
-                  {course.title}
-                </h3>
-                <p className="text-gray-dark text-sm leading-relaxed">
-                  {course.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8 mb-12"><div className="lg:w-1/2"><p className="f-desc-bold text-black mb-6">Education at BORDERLESS is practical and transformative. Our courses help you understand global mobility and take real steps toward freedom.</p><p className="f-body text-black">We don't just share information — we share a system built on real experience. From choosing a country to securing residency, from childbirth abroad to building a life without borders.</p></div><div className="lg:w-1/2 bg-[#eeeeee] rounded flex items-center justify-center min-h-[250px] lg:min-h-[400px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-black/30 flex items-center justify-center cursor-pointer"><span className="text-black ml-1 text-lg">▶</span></div></div></div></div></section>
 
-      <CTASection
-        title="Want to Learn More?"
-        description="Join our community of global citizens and get access to exclusive educational content."
-        buttonText="Explore Courses"
-        variant="burgundy"
-      />
+      <section className="bg-[#eeeeee] py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2 bg-white/50 rounded flex items-center justify-center min-h-[250px] lg:min-h-[400px]"><span className="text-8xl text-black/5">▲</span></div><div className="lg:w-1/2"><span className="f-quote-mark text-black block">“</span><blockquote className="f-desc-bold text-black -mt-4">For 15 years, I have been living by the Flag Theory, building freedom step by step across countries. I hold two passports and have held residency in six different countries over the years. Each of my two children holds a different citizenship.</blockquote><p className="f-body text-black mt-6">Our family has learned how strategy — not luck — creates options. At BORDERLESS, together with world-class experts, I'm ready to show you HOW: how to choose a country, secure residency or citizenship, and design an education and life without borders.</p><span className="f-quote-mark text-black block text-right">”</span><p className="f-body text-black">Anatoliy Lyetayev</p></div></div></div></section>
+
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-black mb-8">choose the course that is right for you</h2><div className="grid grid-cols-1 md:grid-cols-2 gap-6"><div className="bg-[#eeeeee] p-6 lg:p-8"><h3 className="f-desc-bold text-black mb-4">Course 1 — Choosing a Place to Live</h3><p className="f-body text-black/60 mb-6">A universal video guide to the most in-demand countries and programs for relocation, remote work, second citizenship, and childbirth abroad. It covers visas, taxes, adaptation, and practical checklists for every stage.</p><h4 className="f-btn text-black mb-3">Advantages:</h4><ul className="space-y-2"><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Practical step-by-step guidance from choosing a country to adapting after the move</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Comprehensive overview of global programs and family options</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Real-world insights based on the experience of hundreds of people</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Actionable checklists and tools for visas, budgeting, housing, and kids' education</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Designed for every stage, whether you're just exploring or already preparing to relocate</li></ul><button className="f-btn bg-black text-white px-6 py-3 mt-6 w-full hover:bg-black/80 transition-colors">Enroll Now</button></div><div className="bg-[#eeeeee] p-6 lg:p-8"><h3 className="f-desc-bold text-black mb-4">Course 2 — Giving Birth Abroad</h3><p className="f-body text-black/60 mb-6">A complete system for families who choose to welcome their child in freedom. We combine expert guidance, emotional support, and practical steps — from choosing a country and clinic to legal documentation and the adaptation process.</p><h4 className="f-btn text-black mb-3">Advantages:</h4><ul className="space-y-2"><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Developed with input from medical experts and child psychologists</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Based on 100+ interviews with doctors, birth organizers, and parents around the world</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Comprehensive system covering medical, legal, and logistical aspects</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Emotional and community support to help parents overcome fears</li><li className="f-body text-black/60 flex items-start gap-2"><span className="text-black mt-0.5">•</span>Future-oriented approach focused on giving your child and family more freedom</li></ul><button className="f-btn bg-black text-white px-6 py-3 mt-6 w-full hover:bg-black/80 transition-colors">Enroll Now</button></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="flex items-start justify-between mb-4 lg:mb-6"><h3 className="f-heading-md text-black">Video<br />reviews</h3><div className="flex gap-2 flex-shrink-0 ml-4"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9] pt-6"></div><h3 className="f-heading-md text-black mb-6">We in Media</h3><div className="flex gap-4 lg:gap-8 overflow-x-auto no-scrollbar pb-4"><div className="flex-shrink-0 bg-[#eeeeee] px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black/30">Forbes</span></div><div className="flex-shrink-0 bg-[#eeeeee] px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black/30">Bloomberg</span></div><div className="flex-shrink-0 bg-[#eeeeee] px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black/30">CNN</span></div><div className="flex-shrink-0 bg-[#eeeeee] px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black/30">TechCrunch</span></div></div></div></section>
+
+      <section style={{backgroundColor: '#26aae1'}}><div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px"><div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10"><div className="mb-2 lg:mb-0"><span className="f-cta-big block text-black">Join</span><span className="f-cta-sub block mt-1 text-black">Borderless Community</span></div><div className="flex flex-col gap-3 w-full lg:w-[343px]"><div><input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-black/60"><input type="checkbox" className="mt-1 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn-lg bg-black text-white hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">Send</button></div></div></div></section>
     </>
   );
 }

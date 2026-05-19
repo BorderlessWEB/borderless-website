@@ -1,153 +1,24 @@
-import type { Metadata } from "next";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-
-export const metadata: Metadata = {
-  title: "About Us — BORDERLESS",
-  description:
-    "BORDERLESS is an ecosystem for conscious global living. Founded by Anatoly Letaev.",
-};
-
-const values = [
-  {
-    title: "Freedom",
-    description:
-      "We believe everyone deserves the freedom to choose where to live, work, and grow. Borders should be doors, not walls.",
-  },
-  {
-    title: "Sustainability",
-    description:
-      "Every decision we make considers its long-term impact on people and the planet. Responsible growth is the only growth worth pursuing.",
-  },
-  {
-    title: "Transparency",
-    description:
-      "We communicate openly, price honestly, and share knowledge freely. Trust is built through clarity.",
-  },
-  {
-    title: "Excellence",
-    description:
-      "We hold ourselves to the highest standards in everything — from legal compliance to client communication to content quality.",
-  },
-];
-
-const team = [
-  {
-    name: "Anatoly Letaev",
-    role: "Founder & CEO",
-    description:
-      "Entrepreneur, investor, and global citizen. Anatoly founded Borderless to help people live, invest, and grow without borders.",
-  },
-  {
-    name: "Legal Team",
-    role: "Immigration Experts",
-    description:
-      "Certified immigration lawyers and consultants with deep expertise in citizenship and residency programs worldwide.",
-  },
-  {
-    name: "Investment Team",
-    role: "Financial Advisors",
-    description:
-      "Experienced investment professionals focused on sustainable, ESG-aligned opportunities across global markets.",
-  },
-  {
-    name: "Content Team",
-    role: "Storytellers",
-    description:
-      "Writers, filmmakers, and strategists who create meaningful content that educates and inspires.",
-  },
-];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-burgundy text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            About Us
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            BORDERLESS is an ecosystem that unites projects about conscious
-            global living. We create content and solutions for people who choose
-            freedom.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title-light text-black">About us</h1></div></section>
 
-      {/* Mission */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-5xl font-semibold text-dark mb-8">
-              Our Mission
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-dark leading-relaxed">
-              We help people make informed decisions about where and how they
-              live. Through citizenship programs, sustainable investments,
-              education, and meaningful travel, we empower individuals and
-              families to build lives without boundaries.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2"><h2 className="f-heading-md text-black mb-6">Our Ideology</h2><p className="f-desc-bold text-black mb-4">We believe in a world where people choose their place, not inherit it.</p><p className="f-body text-black">A world without borders — geographical, economic, or mental. A world where freedom is a strategy, not a dream.</p></div><div className="lg:w-1/2 bg-black rounded flex items-center justify-center min-h-[250px] lg:min-h-[350px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer"><span className="text-white ml-1 text-lg">▶</span></div></div></div></div></section>
 
-      {/* Values */}
-      <section className="bg-gray-light py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="Our Values" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {values.map((v) => (
-              <div
-                key={v.title}
-                className="bg-white rounded-2xl p-8 lg:p-10"
-              >
-                <h3 className="text-xl font-semibold text-burgundy mb-3">
-                  {v.title}
-                </h3>
-                <p className="text-gray-dark leading-relaxed">
-                  {v.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px flex flex-col lg:flex-row gap-8 lg:gap-12"><div className="lg:w-1/2 bg-[#eeeeee] rounded flex items-center justify-center min-h-[250px] lg:min-h-[375px]"><span className="text-8xl text-black/5">▲</span></div><div className="lg:w-1/2"><span className="f-quote-mark text-black block">“</span><blockquote className="f-desc-bold text-black -mt-4">Freedom is something you build yourself. For years, I've been choosing countries, learning systems, and designing a life where geography expands opportunities instead of limiting them.</blockquote><p className="f-body text-black mt-6">A borderless world is not an idealistic concept. It's a practical way of living: choosing the best place for birth, education, work, investment, and growth.</p><p className="f-body text-black mt-4">I created BORDERLESS to help others build this kind of life consciously, strategically, and with the courage to choose what's right for them.</p><span className="f-quote-mark text-black block text-right">”</span><p className="f-body text-black mt-2">Anatoliy Lyetayev</p></div></div></section>
 
-      {/* Team */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Our Team"
-            subtitle="Experts across disciplines, united by a shared vision of a borderless world."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((t) => (
-              <div
-                key={t.name}
-                className="text-center"
-              >
-                <div className="w-24 h-24 bg-burgundy/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl text-burgundy font-semibold">
-                    {t.name.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-dark">{t.name}</h3>
-                <p className="text-sm text-burgundy mb-2">{t.role}</p>
-                <p className="text-gray-dark text-sm leading-relaxed">
-                  {t.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="py-12 lg:py-16 bg-[#eeeeee]"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-black mb-8 lg:mb-12">My Story</h2><p className="f-desc-bold text-black mb-8">A Timeline of a Borderless Life</p><div className="space-y-0"><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2012</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Founded Migronis</h3><p className="f-body text-black/60 mt-2">A company that helped thousands of people gain freedom of movement through citizenship and residency programs.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2018</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">First child born in the United States</h3><p className="f-body text-black/60 mt-2">Choosing a birthplace as an investment in a child's future.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2019</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Relocated to Portugal</h3><p className="f-body text-black/60 mt-2">A country at that moment aligned with the values of freedom, safety, and quality of life.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2020</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Received Vanuatu citizenship</h3><p className="f-body text-black/60 mt-2">Expanding personal freedom through additional global mobility.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2022</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Second child born in Brazil</h3><p className="f-body text-black/60 mt-2">Another strategic birthplace — another set of future opportunities.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2023</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Launched BORDERLESS</h3><p className="f-body text-black/60 mt-2">A platform built on years of global experience, created to empower others to live without borders.</p></div></div><div className="flex flex-col sm:flex-row gap-4 lg:gap-8 py-6 border-t border-black/10"><div className="sm:w-[120px] flex-shrink-0"><span className="f-section-title text-black/20" style={{fontSize: '48px'}}>2025</span></div><div className="flex-1"><h3 className="f-desc-bold text-black">Relocated to Brazil</h3><p className="f-body text-black/60 mt-2">Continuing the journey of choosing countries by values, lifestyle, and long-term vision.</p></div></div></div></div></section>
 
-      <CTASection
-        title="Join the Borderless Community"
-        description="Whether you're looking for a second passport, an investment opportunity, or just inspiration — we're here for you."
-        buttonText="Get in Touch"
-      />
+      <section className="bg-black min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-2/3 bg-white/5 rounded overflow-hidden flex items-center justify-center min-h-[300px] lg:min-h-[600px]"><img src="/images/screenshot-map.png" alt="Our offices" className="w-full h-full object-cover opacity-80" /></div><div className="lg:w-1/3 flex flex-col justify-center"><h3 className="f-heading-md text-white mb-8">Our Offices</h3><div className="space-y-6"><div><p className="f-desc-bold text-white">Lisbon</p><p className="f-body text-white/40">Portugal</p><p className="f-body text-white/40">Av. da República, N° 6, 1° Esq., 1050-191</p></div><div><p className="f-desc-bold text-white">Budapest</p><p className="f-body text-white/40">Hungary</p><p className="f-body text-white/40">Andrássy út 66, 1062</p></div><div><p className="f-desc-bold text-white">Dubai</p><p className="f-body text-white/40">UAE</p><p className="f-body text-white/40">DIFC, Gate Village 4</p></div></div></div></div></div></section>
+
+      <section className="bg-[#eeeeee]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><h2 className="f-section-title text-black mb-8 lg:mb-12">Contacts</h2><div className="flex flex-col lg:flex-row gap-8 lg:gap-12"><div className="lg:w-1/2"><div className="flex flex-col gap-4"><div><input type="text" placeholder="First and Last Name" className="f-input bg-white text-black placeholder:text-black/40 outline-none px-4 h-[50px] w-full " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-white text-black placeholder:text-black/40 outline-none px-4 h-[50px] w-full " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-white text-black placeholder:text-black/40 outline-none px-4 h-[50px] w-full " value="" /></div><div><textarea placeholder="Message" className="f-input bg-white text-black placeholder:text-black/40 outline-none p-4 resize-none w-full" style={{height: '120px'}}></textarea></div><label className="flex items-start gap-2 cursor-pointer text-black/60"><input type="checkbox" className="mt-1 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn bg-black text-white w-full lg:w-[224px] h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">Send</button></div></div><div className="lg:w-1/2 bg-[#d9d9d9] p-6 lg:p-8" style={{minHeight: '400px'}}><h3 className="f-footer-talk text-black mb-8">let's<br />Talk</h3><div className="space-y-2 mb-8"><p className="f-footer-phone text-black">+1 888 463 5101</p><p className="f-footer-phone text-black">+1 888 463 5101</p><p className="f-footer-phone text-black">+1 888 463 5101</p></div><h3 className="f-footer-talk text-black mb-8">let's<br />Meet</h3><div className="space-y-4"><div><p className="f-footer-addr text-black">Lisbon, Portugal</p><p className="f-footer-addr text-black/60">Av. da República, N° 6, 1° Esq., 1050-191</p></div><div><p className="f-footer-addr text-black">Budapest, Hungary</p><p className="f-footer-addr text-black/60">Andrássy út 66, 1062</p></div></div><div className="mt-8"><p className="f-footer-addr text-black">@borderless</p></div></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
     </>
   );
 }

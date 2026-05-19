@@ -1,119 +1,24 @@
-import type { Metadata } from "next";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-
-export const metadata: Metadata = {
-  title: "Investment — BORDERLESS",
-  description:
-    "Sustainable, responsible investments for people who think long-term and care about the planet.",
-};
-
-const principles = [
-  {
-    icon: "🌱",
-    title: "Sustainability First",
-    description:
-      "Every project we support meets strict environmental and social criteria. We invest in the future, not just returns.",
-  },
-  {
-    icon: "🔍",
-    title: "Full Transparency",
-    description:
-      "Clear reporting, open communication, and honest risk assessment. You always know where your money is.",
-  },
-  {
-    icon: "🌍",
-    title: "Global Diversification",
-    description:
-      "Spread your portfolio across geographies and sectors to reduce risk and capture global opportunities.",
-  },
-  {
-    icon: "🤝",
-    title: "Impact That Matters",
-    description:
-      "Your investments create real change — from renewable energy to sustainable agriculture and community development.",
-  },
-];
-
-const sectors = [
-  { name: "Real Estate", color: "bg-burgundy" },
-  { name: "Renewable Energy", color: "bg-green" },
-  { name: "Agriculture", color: "bg-teal" },
-  { name: "Technology", color: "bg-gold" },
-  { name: "Healthcare", color: "bg-pink" },
-  { name: "Infrastructure", color: "bg-blue" },
-];
 
 export default function InvestmentPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-green text-white pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
-            Investment
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
-            Invest responsibly. Grow consciously. Sustainable investments for
-            people who think long-term and care about the planet.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Investment</h1></div></section>
 
-      {/* Principles */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Our Principles"
-            subtitle="We believe smart investing and positive impact go hand in hand."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {principles.map((p) => (
-              <div
-                key={p.title}
-                className="bg-white border border-gray-light rounded-2xl p-8 lg:p-10"
-              >
-                <span className="text-4xl mb-4 block">{p.icon}</span>
-                <h3 className="text-xl font-semibold text-dark mb-3">
-                  {p.title}
-                </h3>
-                <p className="text-gray-dark leading-relaxed">
-                  {p.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8 mb-12"><div className="lg:w-1/2"><h2 className="f-heading-md text-black mb-4">Invest responsibly. Grow consciously</h2><p className="f-desc-bold text-black mb-6">We believe in investments that create value for both people and the planet. Designed for global citizens and expat investors, Borderless Investment is where sustainability, profitability, and freedom meet.</p><div className="flex flex-wrap gap-3 mt-6"><span className="f-hero-adv text-black bg-[#eeeeee] px-4 py-2">Sustainability</span><span className="f-hero-adv text-black bg-[#eeeeee] px-4 py-2">Return</span><span className="f-hero-adv text-black bg-[#eeeeee] px-4 py-2">For expats</span></div><p className="f-nav text-[#224b30] mt-3">= Borderless Investment</p></div><div className="lg:w-1/2 bg-black rounded flex items-center justify-center min-h-[250px] lg:min-h-[350px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer"><span className="text-white ml-1 text-lg">▶</span></div></div></div><div className="bg-[#d9d9d9] flex items-center justify-center h-[100px] lg:h-[154px]"><span className="f-nav-active text-black tracking-[3px]">BORDERLESS INVEST</span></div></div></section>
 
-      {/* Sectors */}
-      <section className="bg-gray-light py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Investment Sectors"
-            subtitle="Diversified opportunities across high-impact industries."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {sectors.map((s) => (
-              <div
-                key={s.name}
-                className="bg-white rounded-xl p-6 text-center hover:shadow-md transition-shadow"
-              >
-                <div
-                  className={`w-3 h-3 ${s.color} rounded-full mx-auto mb-3`}
-                />
-                <span className="font-semibold text-dark">{s.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#eeeeee] min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><h2 className="f-heading-md text-black mb-8">Our projects for investment</h2><div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mb-8"><div className="bg-white p-6 lg:p-8"><p className="f-nav text-black/30 mb-2">Residential</p><h3 className="f-desc-bold text-black mb-3">Costa Rica Eco Village</h3><p className="f-body text-black/60 mb-4">Sustainable living community surrounded by rainforest. Eco-architecture meets modern comfort in one of the world's most biodiverse regions.</p><button className="f-learn-more text-black mt-2 inline-block">learn more</button></div><div className="bg-white p-6 lg:p-8"><p className="f-nav text-black/30 mb-2">Agricultural</p><h3 className="f-desc-bold text-black mb-3">Portugal Vineyard Estate</h3><p className="f-body text-black/60 mb-4">Investment in premium wine production with EU residency pathway. Sustainable viticulture in the Alentejo region.</p><button className="f-learn-more text-black mt-2 inline-block">learn more</button></div><div className="bg-white p-6 lg:p-8"><p className="f-nav text-black/30 mb-2">Hospitality</p><h3 className="f-desc-bold text-black mb-3">Bali Wellness Resort</h3><p className="f-body text-black/60 mb-4">Luxury wellness retreat combining traditional Balinese healing with modern sustainability practices.</p><button className="f-learn-more text-black mt-2 inline-block">learn more</button></div><div className="bg-white p-6 lg:p-8"><p className="f-nav text-black/30 mb-2">Mixed-use</p><h3 className="f-desc-bold text-black mb-3">Montenegro Marina Complex</h3><p className="f-body text-black/60 mb-4">Waterfront development on the Adriatic coast. EU candidate country with growing tourism and real estate markets.</p><button className="f-learn-more text-black mt-2 inline-block">learn more</button></div></div><div className="flex justify-center"><button className="f-btn bg-black text-white flex items-center justify-center w-full sm:w-[224px] h-[54px]">Show more</button></div></div></section>
 
-      <CTASection
-        variant="green"
-        title="Start Investing Consciously"
-        description="Let us help you build a portfolio that grows your wealth and makes a positive impact."
-      />
+      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-black mb-4">Investment Workflow</h2><p className="f-desc-bold text-black mb-8 lg:mb-12">From understanding your values to seeing real returns — we guide sustainable investments step by step.</p><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative"><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Consultation</h3><p className="f-body text-black/60 mt-2">Understand your goals and values.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Selection</h3><p className="f-body text-black/60 mt-2">We suggest sustainable projects anywhere in the world, tailored to you.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Investment</h3><p className="f-body text-black/60 mt-2">We help you invest safely and meaningfully.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Return</h3><p className="f-body text-black/60 mt-2">Gain both profit and the satisfaction of making a positive impact.</p></div><div className="hidden lg:block absolute top-[71px] left-[261px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[561px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[861px] w-[111px] h-[1px] bg-black"></div></div></div></section>
+
+      <section className="bg-black min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><div className="flex gap-4 lg:gap-6 mb-4 overflow-x-auto no-scrollbar"><button className="f-nav whitespace-nowrap text-white/30">Passport/visas</button><button className="f-nav whitespace-nowrap text-white/30">Travel</button><button className="f-nav whitespace-nowrap f-nav-active text-white">Investment</button><button className="f-nav whitespace-nowrap text-white/30">Education</button><button className="f-nav whitespace-nowrap text-white/30">Collaboration</button></div><div className="flex items-center justify-between mb-8"><h2 className="f-section-title text-white">Cases</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Costa Rica Eco Investment</p><p className="f-body text-white/50 mt-4">Investment case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Portugal Golden Visa ROI</p><p className="f-body text-white/50 mt-4">Investment case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Montenegro Marina Returns</p><p className="f-body text-white/50 mt-4">Investment case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="flex items-start justify-between mb-4 lg:mb-6"><h3 className="f-heading-md text-black">Video<br />reviews</h3><div className="flex gap-2 flex-shrink-0 ml-4"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div></div></div></section>
+
+      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+
+      <section style={{backgroundColor: '#224b30'}}><div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px"><div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10"><div className="mb-2 lg:mb-0"><span className="f-cta-big block text-white">Ready</span><span className="f-cta-sub block mt-1 text-white">to invest while caring for the planet?</span></div><div className="flex flex-col gap-3 w-full lg:w-[343px]"><div><input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-white/60"><input type="checkbox" className="mt-1 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn-lg bg-white text-black hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">Send</button></div></div></div></section>
     </>
   );
 }

@@ -1,140 +1,515 @@
 import Link from "next/link";
-import SectionHeading from "@/components/SectionHeading";
-import CTASection from "@/components/CTASection";
-
-const ecosystem = [
-  {
-    title: "Migronis",
-    description:
-      "Second citizenship and residence programs that give you freedom of movement, financial security, and a global safety net.",
-    color: "text-burgundy",
-    bg: "bg-burgundy/5",
-    href: "/passport-visas",
-  },
-  {
-    title: "Investment",
-    description:
-      "Sustainable, responsible investments for people who think long-term and care about the planet as much as profit.",
-    color: "text-green",
-    bg: "bg-green/5",
-    href: "/investment",
-  },
-  {
-    title: "Travel",
-    description:
-      "Curated journeys and educational trips for families who explore the world through geography and history.",
-    color: "text-teal",
-    bg: "bg-teal/5",
-    href: "/travel",
-  },
-  {
-    title: "Education",
-    description:
-      "Courses and guides for those who want to live borderless — from relocation to childbirth abroad.",
-    color: "text-gold",
-    bg: "bg-gold/5",
-    href: "/education",
-  },
-  {
-    title: "Marketing",
-    description:
-      "We create stories that sell. From partnerships to video production, we help brands grow through meaningful content.",
-    color: "text-pink",
-    bg: "bg-pink/5",
-    href: "/collaboration",
-  },
-];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="min-h-screen flex items-center bg-gradient-to-br from-burgundy via-burgundy/95 to-green pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="text-white/60 text-sm uppercase tracking-widest mb-6">
-              freedom · sustainability · smart investments · new luxury
-            </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-8 leading-[1.05]">
-              BORDERLESS
-            </h1>
-            <p className="text-xl lg:text-2xl text-white/80 max-w-2xl leading-relaxed mb-10">
-              A platform for living, investing, and growing without borders. We
-              create content and solutions for people who choose freedom.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="#ecosystem"
-                className="bg-white text-dark px-8 py-4 rounded-lg text-base font-semibold hover:bg-white/90 transition-colors text-center"
-              >
-                Explore Ecosystem
+      {/* Section 0: Hero */}
+      <section className="relative bg-black">
+        <div className="min-h-[100svh] lg:h-[810px] relative flex flex-col">
+          {/* BG image */}
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: "url('/images/hero-bg-new.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/60 to-transparent" />
+
+          {/* Top nav */}
+          <div className="relative z-10 w-full">
+            <div className="max-w-[1196px] mx-auto flex items-center justify-between py-4 lg:py-5 px-4 lg:px-0">
+              <span className="f-nav-active text-white tracking-[3px]">
+                BORDERLESS
+              </span>
+              <nav className="hidden lg:flex items-center gap-[25px]">
+                <Link
+                  href="/passport-visas"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Passport/visas
+                </Link>
+                <Link
+                  href="/investment"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Investment
+                </Link>
+                <Link
+                  href="/education"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Education
+                </Link>
+                <Link
+                  href="/collaboration"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Collaboration
+                </Link>
+                <Link
+                  href="/travel"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Travel
+                </Link>
+                <Link
+                  href="/insights"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  Insights
+                </Link>
+                <Link
+                  href="/about"
+                  className="f-nav text-white/70 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </nav>
+              <Link className="lg:hidden f-nav text-white/70" href="/passport-visas">
+                <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               </Link>
-              <Link
-                href="#consultation"
-                className="border border-white/30 text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-white/10 transition-colors text-center"
-              >
-                Get Consultation
+            </div>
+          </div>
+
+          {/* Hero content */}
+          <div className="relative flex-1 flex items-center">
+            <div className="max-w-[1196px] mx-auto w-full px-4 lg:px-0">
+              <div className="max-w-full lg:max-w-[500px]">
+                <h1 className="f-hero-text text-white">
+                  A platform for living, investing, and growing without borders
+                </h1>
+                <div className="mt-6 lg:mt-8 space-y-1">
+                  <p className="f-hero-adv text-white/80">freedom</p>
+                  <p className="f-hero-adv text-white/80">sustainability</p>
+                  <p className="f-hero-adv text-white/80">smart investments</p>
+                  <p className="f-hero-adv text-white/80">new luxury</p>
+                </div>
+              </div>
+            </div>
+            {/* Arrow icon */}
+            <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block">
+              <svg width="109" height="109" viewBox="0 0 109 109" fill="white">
+                <polygon points="30,15 95,54.5 30,94" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Desktop bottom nav bar */}
+          <div className="hidden lg:block relative bg-white" style={{ height: 70 }}>
+            <div className="max-w-[1196px] mx-auto flex items-center justify-between h-full relative">
+              <Link style={{ width: 151 }} href="/">
+                <span className="f-nav-active text-black tracking-[3px]">
+                  BORDERLESS
+                </span>
               </Link>
+              <nav className="flex items-center gap-[25px]">
+                <span className="f-nav text-black">Passport/visas</span>
+                <span className="f-nav text-black">Investment</span>
+                <span className="f-nav text-black">Education</span>
+                <span className="f-nav text-black">Collaboration</span>
+                <span className="f-nav text-black">Travel</span>
+                <span className="f-nav text-black">Insights</span>
+                <span className="f-nav text-black">About Us</span>
+              </nav>
+              <div
+                className="absolute bottom-0 left-0 bg-black"
+                style={{ width: 118, height: 6 }}
+              />
+            </div>
+          </div>
+
+          {/* Mobile scroll indicator */}
+          <div className="lg:hidden relative py-6 flex justify-center">
+            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2">
+              <div className="w-1 h-2 bg-white/60 rounded-full animate-bounce" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ecosystem */}
-      <section id="ecosystem" className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Our Ecosystem"
-            subtitle="Five directions united by one mission — conscious global living."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ecosystem.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className={`group ${item.bg} rounded-2xl p-8 lg:p-10 hover:shadow-lg transition-all duration-300`}
-              >
-                <h3
-                  className={`text-2xl font-semibold ${item.color} mb-4 group-hover:translate-x-1 transition-transform`}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-gray-dark leading-relaxed">
-                  {item.description}
-                </p>
-              </Link>
-            ))}
+      {/* Section 1: Vision */}
+      <section className="bg-[#eeeeee]">
+        <div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px">
+          <h2 className="f-section-title text-black text-center mb-8 lg:mb-16">
+            Borderless Vision
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="bg-white/30 rounded flex items-center justify-center min-h-[200px] lg:min-h-[400px] order-2 lg:order-1">
+              <span className="text-7xl lg:text-8xl text-black/5">▲</span>
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="f-quote-mark text-black block">"</span>
+              <blockquote className="f-desc-bold text-black -mt-2 lg:-mt-4">
+                I travel a lot with my children — not just to see places, but to
+                understand the world together.
+              </blockquote>
+              <p className="f-body text-black mt-4 lg:mt-6">
+                Our journeys are about connection — between parents and children,
+                people and nature, comfort and adventure. Sometimes it&apos;s a
+                luxury hotel, sometimes a night in a cave, but always an experience
+                that teaches more than any classroom.
+              </p>
+              <p className="f-body text-black mt-3 lg:mt-4">
+                We learn through contact with nature, with different cultures, and
+                with extraordinary teachers. Every trip is both exploration and
+                education — a way to grow together and to live without borders.
+              </p>
+              <span className="f-quote-mark text-black block text-right">"</span>
+              <p className="f-body text-black">Anatoliy Lyetayev</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-gray-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "15+", label: "Years of Experience" },
-              { value: "10,000+", label: "Clients Worldwide" },
-              { value: "25+", label: "Programs Available" },
-              { value: "150+", label: "Countries Access" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-4xl lg:text-5xl font-semibold text-burgundy mb-2">
-                  {stat.value}
+      {/* Section 2: Products intro */}
+      <section className="py-10 lg:py-16">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <h2 className="f-section-title text-black mb-4 lg:mb-6">
+            Borderless products
+          </h2>
+          <p className="f-desc-bold text-black">
+            BORDERLESS is an ecosystem that unites projects about conscious global
+            living. We create content and solutions for people who choose freedom —
+            where to live, invest, learn, give birth, and grow.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 3: Map with tabs */}
+      <section className="bg-[#eeeeee]">
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+          <div className="flex gap-3 lg:gap-6 mb-4 lg:mb-8 overflow-x-auto no-scrollbar pb-2">
+            <button className="f-nav whitespace-nowrap pb-2 f-nav-active border-b-[3px] border-black">
+              Passport/visas
+            </button>
+            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
+              Travel
+            </button>
+            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
+              Investment
+            </button>
+            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
+              Education
+            </button>
+            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
+              Collaboration
+            </button>
+          </div>
+          <div className="rounded overflow-hidden">
+            <img
+              src="/images/screenshot-map.png"
+              alt="World Map"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Product cards grid */}
+      <section className="pb-6 lg:pb-12">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            <Link href="/passport-visas" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:border-r lg:pr-12">
+              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+              <h3
+                className="f-section-title text-black group-hover:text-black/60 transition-colors"
+                style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+              >
+                Passport/visas
+              </h3>
+              <p className="f-body text-black/60 mt-3 lg:mt-4">
+                Second citizenship and residence programs that give you freedom of
+                movement, financial security, and a global safety net.
+              </p>
+              <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+                learn more →
+              </span>
+            </Link>
+            <Link href="/investment" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:pl-12">
+              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+              <h3
+                className="f-section-title text-black group-hover:text-black/60 transition-colors"
+                style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+              >
+                Investment
+              </h3>
+              <p className="f-body text-black/60 mt-3 lg:mt-4">
+                Sustainable, responsible investments for people who think
+                long-term and care about the planet as much as profit.
+              </p>
+              <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+                learn more →
+              </span>
+            </Link>
+            <Link href="/education" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:border-r lg:pr-12">
+              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+              <h3
+                className="f-section-title text-black group-hover:text-black/60 transition-colors"
+                style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+              >
+                Education
+              </h3>
+              <p className="f-body text-black/60 mt-3 lg:mt-4">
+                Courses and guides for those who want to live borderless — from
+                relocation to childbirth abroad. Practical, structured, empowering.
+              </p>
+              <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+                learn more →
+              </span>
+            </Link>
+            <Link href="/collaboration" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:pl-12">
+              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+              <h3
+                className="f-section-title text-black group-hover:text-black/60 transition-colors"
+                style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+              >
+                Collaboration
+              </h3>
+              <p className="f-body text-black/60 mt-3 lg:mt-4">
+                We create stories that sell. From partnerships to video production,
+                we help brands grow through meaningful, sustainable content.
+              </p>
+              <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+                learn more →
+              </span>
+            </Link>
+          </div>
+          <Link href="/travel" className="group block py-6 lg:py-12 border-b border-[#d9d9d9]">
+            <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+            <h3
+              className="f-section-title text-black group-hover:text-black/60 transition-colors"
+              style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+            >
+              Travel
+            </h3>
+            <p className="f-body text-black/60 mt-3 lg:mt-4 max-w-lg">
+              Curated journeys and educational trips for families who explore the
+              world through geography and history — inspiring destinations and
+              immersive experiences with meaning.
+            </p>
+            <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+              learn more →
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* Section 5: Insights */}
+      <section className="bg-[#26aae1]">
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+          <div className="flex items-center justify-between mb-6 lg:mb-8">
+            <div className="flex gap-3 lg:gap-6 overflow-x-auto no-scrollbar">
+              <button className="f-nav whitespace-nowrap f-nav-active text-white">
+                Insights
+              </button>
+              <button className="f-nav whitespace-nowrap text-white/40">
+                Vlog
+              </button>
+              <button className="f-nav whitespace-nowrap text-white/40">
+                Podcast
+              </button>
+            </div>
+            <Link
+              href="/insights"
+              className="f-btn bg-black text-white hidden sm:flex items-center justify-center flex-shrink-0 px-6 h-[36px]"
+            >
+              read all
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 mb-6 lg:mb-8">
+            <div className="lg:col-span-3 bg-black/20 rounded flex items-center justify-center min-h-[200px] lg:min-h-[424px]">
+              <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer">
+                <span className="text-white text-lg lg:text-xl ml-1">▶</span>
+              </div>
+            </div>
+            <div className="lg:col-span-2 flex flex-col justify-end">
+              <p className="f-body text-white/40 mb-1 lg:mb-2">12.03.2026</p>
+              <h3 className="f-article-title text-white">
+                A warmer world will hurt this group more than any other
+              </h3>
+              <p className="f-body text-white/70 mt-2 lg:mt-3">
+                We need to help the world&apos;s poorest people adapt to climate
+                change.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+            <Link href="/insights" className="group">
+              <div className="bg-black/20 rounded flex items-center justify-center min-h-[140px] lg:min-h-[200px]">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/40 flex items-center justify-center">
+                  <span className="text-white ml-0.5 text-sm">▶</span>
                 </div>
-                <div className="text-gray-dark text-sm">{stat.label}</div>
+              </div>
+              <p className="f-body text-white/40 mt-2 lg:mt-3">28.02.2026</p>
+              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+                The future of citizenship by investment in 2026
+              </h4>
+            </Link>
+            <Link href="/insights" className="group">
+              <div className="bg-black/20 rounded flex items-center justify-center min-h-[140px] lg:min-h-[200px]">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/40 flex items-center justify-center">
+                  <span className="text-white ml-0.5 text-sm">▶</span>
+                </div>
+              </div>
+              <p className="f-body text-white/40 mt-2 lg:mt-3">15.02.2026</p>
+              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+                Why sustainable investing is no longer optional
+              </h4>
+            </Link>
+            <Link href="/insights" className="group">
+              <div className="bg-black/20 rounded flex items-center justify-center min-h-[140px] lg:min-h-[200px]">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/40 flex items-center justify-center">
+                  <span className="text-white ml-0.5 text-sm">▶</span>
+                </div>
+              </div>
+              <p className="f-body text-white/40 mt-2 lg:mt-3">01.02.2026</p>
+              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+                Top 5 countries for digital nomad visas
+              </h4>
+            </Link>
+          </div>
+          <Link
+            href="/insights"
+            className="f-btn bg-black text-white flex sm:hidden items-center justify-center mt-6 w-full h-[48px]"
+          >
+            read all
+          </Link>
+        </div>
+      </section>
+
+      {/* Section 6: Vlog */}
+      <section className="py-8 lg:py-12">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <div className="flex items-center justify-between mb-4 lg:mb-8">
+            <h2 className="f-desc-bold text-black">
+              Featured Experiences / Vlog
+            </h2>
+            <div className="flex gap-2 flex-shrink-0 ml-4">
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
+                ←
+              </button>
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
+                →
+              </button>
+            </div>
+          </div>
+          <div className="flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar pb-4 -mx-4 px-4 lg:mx-0 lg:px-0">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="flex-shrink-0 w-[160px] lg:w-[220px]">
+                <div className="bg-black rounded flex items-center justify-center cursor-pointer h-[110px] lg:h-[140px]">
+                  <div className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center">
+                    <span className="text-white text-sm ml-0.5">▶</span>
+                  </div>
+                </div>
+                <p className="f-body text-black/60 mt-2 line-clamp-2">
+                  Мексика 2025: жизнь, цены, ВНЖ
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <CTASection
-        title="Start Your Journey"
-        description="Take the first step towards a life without borders. Our team will help you find the perfect solution."
-        buttonText="Get a Free Consultation"
-      />
+      {/* Section 7: Reviews */}
+      <section>
+        <div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px">
+          <div className="border-t-[2px] border-[#d9d9d9]" />
+          <div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6">
+            <div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto">
+              <h3 className="f-heading-md text-black flex-shrink-0">
+                Text<br />reviews
+              </h3>
+              <div className="flex gap-2 mt-1 lg:mt-2">
+                <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
+                  ←
+                </button>
+                <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
+                  →
+                </button>
+              </div>
+            </div>
+            <div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto">
+              {[1, 2].map((i) => (
+                <div key={i} className="flex-shrink-0 w-[260px] lg:w-[345px]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]">
+                      <span className="text-sm text-black">J</span>
+                    </div>
+                    <div>
+                      <p className="f-review-name text-black">JOhn Doe</p>
+                      <div className="flex gap-0.5">
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <span key={s} className="text-[#f5c518]" style={{ fontSize: 14 }}>
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="f-body text-black/60">
+                    I was choosing between several companies, but settled on
+                    Migronis. For me, the competence and speed of answers played a
+                    key role.
+                  </p>
+                  <p className="f-body mt-2 text-black/40">2 month ago</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border-b-[2px] border-[#d9d9d9]" />
+        </div>
+      </section>
+
+      {/* Section 8: CTA */}
+      <CTASection />
     </>
+  );
+}
+
+function CTASection() {
+  return (
+    <section style={{ backgroundColor: "#26aae1" }}>
+      <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
+          <div className="mb-2 lg:mb-0">
+            <span className="f-cta-big block text-black">Join</span>
+            <span className="f-cta-sub block mt-1 text-black">
+              Borderless Community
+            </span>
+          </div>
+          <div className="flex flex-col gap-3 w-full lg:w-[343px]">
+            <input
+              type="text"
+              placeholder="First and Last Name"
+              className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4"
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4"
+            />
+            <label className="flex items-start gap-2 cursor-pointer text-black/60">
+              <input type="checkbox" className="mt-1 accent-black" />
+              <span className="text-xs leading-tight">
+                I agree to the processing of personal data
+              </span>
+            </label>
+            <button className="f-btn-lg bg-black text-white hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

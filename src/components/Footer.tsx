@@ -1,91 +1,150 @@
 import Link from "next/link";
 
-const footerLinks = {
-  Ecosystem: [
-    { label: "Passport & Visas", href: "/passport-visas" },
-    { label: "Investment", href: "/investment" },
-    { label: "Education", href: "/education" },
-    { label: "Travel", href: "/travel" },
-    { label: "Collaboration", href: "/collaboration" },
-  ],
-  Company: [
-    { label: "About Us", href: "/about" },
-    { label: "Insights", href: "/insights" },
-    { label: "Contact", href: "#contact" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-  ],
-};
-
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-semibold tracking-tight mb-4">
-              BORDERLESS
-            </h3>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
-              An ecosystem that unites projects about conscious global living.
-              Freedom · Sustainability · Smart Investments · New Luxury.
-            </p>
-            <div className="flex gap-4">
-              {["LinkedIn", "Instagram", "YouTube", "Telegram"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="text-white/40 hover:text-white text-sm transition-colors"
-                >
-                  {social}
-                </a>
-              ))}
+    <footer className="bg-[#d1d3d4]">
+      <div className="max-w-[1196px] mx-auto pt-10 lg:pt-16 pb-6 lg:pb-8 content-px">
+        <div className="border-t-[2px] border-[#d9d9d9] pt-6 lg:pt-8" />
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <h3 className="f-heading-md">Get our newsletters</h3>
+          <div className="flex flex-col gap-2 w-full lg:w-auto">
+            <div className="flex flex-col sm:flex-row gap-0 w-full lg:w-auto">
+              <input
+                type="email"
+                placeholder="Email"
+                className="f-small border border-[#d9d9d9] bg-white px-4 h-[50px] w-full sm:w-[300px] outline-none"
+              />
+              <button className="f-btn bg-black text-white px-6 h-[50px] hover:bg-black/80 transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
+                Subscribe
+              </button>
             </div>
+            <label className="flex items-start gap-2 cursor-pointer text-black/50">
+              <input type="checkbox" className="mt-0.5 accent-black" />
+              <span className="text-xs leading-tight">
+                I agree to the processing of personal data
+              </span>
+            </label>
           </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="font-semibold text-sm uppercase tracking-wider text-white/40 mb-4">
-                {title}
-              </h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-white/70 hover:text-white text-sm transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Borderless. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <select
-              className="text-sm bg-transparent border border-white/20 rounded px-2 py-1 text-white/60"
-              defaultValue="EN"
-            >
-              <option className="text-dark">EN</option>
-              <option className="text-dark">RU</option>
-              <option className="text-dark">UA</option>
-              <option className="text-dark">DE</option>
-              <option className="text-dark">PT</option>
-              <option className="text-dark">ES</option>
-            </select>
+      <div className="max-w-[1196px] mx-auto py-8 lg:py-12 content-px">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div>
+            <span className="f-nav-active text-black tracking-[3px] block mb-4 lg:mb-6">
+              BORDERLESS
+            </span>
+            <p className="f-small text-black/50">All rights reserved</p>
           </div>
+          <div>
+            <Link
+              href="/passport-visas"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Passport/visas
+            </Link>
+            <Link
+              href="/investment"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Investment
+            </Link>
+            <Link
+              href="/education"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Education
+            </Link>
+            <Link
+              href="/collaboration"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Collaboration
+            </Link>
+            <Link
+              href="/travel"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Travel
+            </Link>
+            <Link
+              href="/insights"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              Insights
+            </Link>
+            <Link
+              href="/about"
+              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
+            >
+              About Us
+            </Link>
+          </div>
+          <div>
+            <p className="f-footer-talk">let&apos;s Talk</p>
+            <div className="mt-2 lg:mt-4 space-y-1">
+              <p className="f-footer-phone">+1 888 463 5101</p>
+              <p className="f-footer-phone">+1 888 463 5101</p>
+              <p className="f-footer-phone">+1 888 463 5101</p>
+            </div>
+          </div>
+          <div>
+            <p className="f-footer-talk">let&apos;s Meet</p>
+            <div className="mt-2 lg:mt-4 space-y-3">
+              <div>
+                <p className="f-footer-addr">Lisbon, Portugal</p>
+                <p className="f-footer-addr text-black/50">
+                  Av. da República, N° 6, 1° Esq.
+                </p>
+              </div>
+              <div>
+                <p className="f-footer-addr">Budapest, Hungary</p>
+                <p className="f-footer-addr text-black/50">
+                  Andrássy út 66, 1062
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-black/10">
+        <div className="max-w-[1196px] mx-auto py-5 lg:py-8 content-px flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-3 lg:gap-6">
+            <a
+              href="#"
+              className="f-small text-black/40 hover:text-black transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="#"
+              className="f-small text-black/40 hover:text-black transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href="#"
+              className="f-small text-black/40 hover:text-black transition-colors"
+            >
+              YouTube
+            </a>
+            <a
+              href="#"
+              className="f-small text-black/40 hover:text-black transition-colors"
+            >
+              Telegram
+            </a>
+            <a
+              href="#"
+              className="f-small text-black/40 hover:text-black transition-colors"
+            >
+              Facebook
+            </a>
+          </div>
+          <p className="f-small text-black/30">
+            Privacy Policy · Terms of Service
+          </p>
         </div>
       </div>
     </footer>

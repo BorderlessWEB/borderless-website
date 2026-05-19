@@ -1,28 +1,273 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-burgundy: #4b223d;
-  --color-green: #224b30;
-  --color-teal: #618b8c;
-  --color-gold: #c7803b;
-  --color-pink: #e283b5;
-  --color-blue: #26aae1;
-  --color-dark: #1e1e1e;
-  --color-gray-light: #eeeeee;
-  --color-gray-mid: #d1d3d4;
-  --color-gray-dark: #414141;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-  --font-switzer: "Switzer", "Inter", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --font-montserrat: "Montserrat", sans-serif;
+  body {
+    font-family: var(--font-switzer), system-ui, sans-serif;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .content-px {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .content-px {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
-body {
+/* Typography classes */
+.f-page-title {
   font-family: var(--font-switzer);
-  color: var(--color-dark);
-  background: #ffffff;
+  text-transform: uppercase;
+  font-size: clamp(36px, 8vw, 122px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.f-page-title-light {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(36px, 8vw, 122px);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.f-section-title {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(28px, 5vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.f-heading-md {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+.f-heading-md-regular {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.f-cta-big {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(40px, 8vw, 110px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.f-cta-sub {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(20px, 3.5vw, 40px);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+.f-quote-mark {
+  font-family: var(--font-switzer);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.f-desc-bold {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.f-body-lg {
+  font-family: var(--font-switzer);
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.f-hero-text {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+.f-hero-adv {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.f-nav-active {
+  font-family: var(--font-switzer);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.5px;
+}
+
+.f-nav {
+  font-family: var(--font-switzer);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.5px;
+}
+
+.f-body {
+  font-family: var(--font-switzer);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.5px;
+}
+
+.f-small {
+  font-family: var(--font-switzer);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.f-btn {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.f-btn-lg {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.f-footer-nav {
+  font-family: var(--font-inter);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.f-footer-phone {
+  font-family: var(--font-inter);
+  text-transform: uppercase;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.f-footer-talk {
+  font-family: var(--font-switzer);
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 2;
+}
+
+.f-footer-addr {
+  font-family: var(--font-inter);
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.f-step {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.f-article-title {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.f-review-name {
+  font-family: var(--font-switzer);
+  text-transform: uppercase;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.f-video-title {
+  font-family: var(--font-switzer);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26.4px;
+}
+
+.f-team-role {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.5px;
+}
+
+.f-input {
+  font-family: var(--font-switzer);
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.f-learn-more {
+  font-family: var(--font-switzer);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.f-case-title {
+  font-family: var(--font-inter);
+  text-transform: uppercase;
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
 }
