@@ -139,8 +139,8 @@ export default function HomePage() {
             Borderless Vision
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div className="bg-white/30 rounded flex items-center justify-center min-h-[200px] lg:min-h-[400px] order-2 lg:order-1">
-              <span className="text-7xl lg:text-8xl text-black/5">▲</span>
+            <div className="order-2 lg:order-1">
+              <img src="/images/home-video.jpg" alt="Anatoliy Lyetayev" className="w-full h-full object-cover rounded min-h-[200px] lg:min-h-[400px]" />
             </div>
             <div className="order-1 lg:order-2">
               <span className="f-quote-mark text-black block">"</span>
