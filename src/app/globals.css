@@ -1,3 +1,7 @@
+/* Fonts — Switzer (Fontshare), Inter & Montserrat (Google Fonts) */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
