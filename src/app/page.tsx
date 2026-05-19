@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WorldMap from "@/components/WorldMap";
 
 export default function HomePage() {
   return (
@@ -200,12 +201,8 @@ export default function HomePage() {
               Collaboration
             </button>
           </div>
-          <div className="rounded overflow-hidden">
-            <img
-              src="/images/screenshot-map.png"
-              alt="World Map"
-              className="w-full h-auto object-cover"
-            />
+          <div className="rounded overflow-hidden bg-[#1a1a2e] p-4 lg:p-6">
+            <WorldMap />
           </div>
         </div>
       </section>
