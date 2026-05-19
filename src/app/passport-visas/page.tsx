@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
-import WorldMap from "@/components/WorldMap";
+import MapSection from "@/components/MapSection";
 
 export default function PassportVisasPage() {
   return (
@@ -10,7 +10,7 @@ export default function PassportVisasPage() {
       <section className="py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-black mb-4">What do you need to get more freedom?</h2><p className="f-desc-bold text-black mb-6">Migronis helps people obtain second citizenship and residence permits through investment and legal programs. We make global mobility simple for your life, business, and family.</p></div></section>
 
       {/* Interactive Map */}
-      <section className="bg-[#111] py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-white mb-2">Our Programs Worldwide</h2><p className="f-body text-white/50 mb-6">Click on a highlighted country to explore the program</p><WorldMap /></div></section>
+      <MapSection />
 
       <section className="pb-8 lg:pb-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row"><div className="p-6 lg:p-8 lg:w-[539px] flex-shrink-0"><div className="flex gap-4 lg:gap-6 mb-8 overflow-x-auto no-scrollbar"><span className="f-step text-black font-semibold whitespace-nowrap">Step 1</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 2</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 3</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 4</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 5</span></div><p className="f-desc-bold text-black" style={{maxWidth: '336px'}}>Choose your destination and the type of program.</p></div><div className="w-full lg:w-[2px] h-[2px] lg:h-auto bg-[#d9d9d9]"></div><div className="flex-1 bg-[#eeeeee] p-6 flex items-center gap-4 overflow-x-auto no-scrollbar min-h-[150px] lg:min-h-[232px]"><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Vanuatu Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Costa Rica Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Grenada Relocation</span></div></div></div></div></section>
 

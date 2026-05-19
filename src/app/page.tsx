@@ -1,5 +1,5 @@
 import Link from "next/link";
-import WorldMap from "@/components/WorldMap";
+import MapSection from "@/components/MapSection";
 
 export default function HomePage() {
   return (
@@ -182,30 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Map with tabs */}
-      <section className="bg-[#eeeeee]">
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
-          <div className="flex gap-3 lg:gap-6 mb-4 lg:mb-8 overflow-x-auto no-scrollbar pb-2">
-            <button className="f-nav whitespace-nowrap pb-2 f-nav-active border-b-[3px] border-black">
-              Passport/visas
-            </button>
-            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
-              Travel
-            </button>
-            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
-              Investment
-            </button>
-            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
-              Education
-            </button>
-            <button className="f-nav whitespace-nowrap pb-2 text-black/40">
-              Collaboration
-            </button>
-          </div>
-          <div className="rounded overflow-hidden bg-[#1a1a2e] p-4 lg:p-6">
-            <WorldMap />
-          </div>
-        </div>
-      </section>
+      <MapSection />
 
       {/* Section 4: Product cards grid */}
       <section className="pb-6 lg:pb-12">
