@@ -16,9 +16,15 @@
   "dependencies": {
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
+    "d3-geo": "^3.1.1",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "next": "^16.1.6",
+    "prop-types": "^15.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-simple-maps": "^3.0.0",
+    "topojson-client": "^3.1.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
