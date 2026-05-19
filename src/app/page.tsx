@@ -10,7 +10,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 opacity-60"
             style={{
-              backgroundImage: "url('/images/hero-bg-new.png')",
+              backgroundImage: "url('/images/hero-bg-new.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
