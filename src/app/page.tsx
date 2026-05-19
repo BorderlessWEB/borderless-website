@@ -19,63 +19,7 @@ export default function HomePage() {
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/60 to-transparent" />
 
-          {/* Top nav */}
-          <div className="relative z-10 w-full">
-            <div className="max-w-[1196px] mx-auto flex items-center justify-between py-4 lg:py-5 px-4 lg:px-0">
-              <span className="f-nav-active text-white tracking-[3px]">
-                BORDERLESS
-              </span>
-              <nav className="hidden lg:flex items-center gap-[25px]">
-                <Link
-                  href="/passport-visas"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Passport/visas
-                </Link>
-                <Link
-                  href="/investment"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Investment
-                </Link>
-                <Link
-                  href="/education"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Education
-                </Link>
-                <Link
-                  href="/collaboration"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Collaboration
-                </Link>
-                <Link
-                  href="/travel"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Travel
-                </Link>
-                <Link
-                  href="/insights"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  Insights
-                </Link>
-                <Link
-                  href="/about"
-                  className="f-nav text-white/70 hover:text-white transition-colors"
-                >
-                  About Us
-                </Link>
-              </nav>
-              <Link className="lg:hidden f-nav text-white/70" href="/passport-visas">
-                <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </Link>
-            </div>
-          </div>
+
 
           {/* Hero content */}
           <div className="relative flex-1 flex items-center">
@@ -100,29 +44,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Desktop bottom nav bar */}
-          <div className="hidden lg:block relative bg-white" style={{ height: 70 }}>
-            <div className="max-w-[1196px] mx-auto flex items-center justify-between h-full relative">
-              <Link style={{ width: 151 }} href="/">
-                <span className="f-nav-active text-black tracking-[3px]">
-                  BORDERLESS
-                </span>
-              </Link>
-              <nav className="flex items-center gap-[25px]">
-                <span className="f-nav text-black">Passport/visas</span>
-                <span className="f-nav text-black">Investment</span>
-                <span className="f-nav text-black">Education</span>
-                <span className="f-nav text-black">Collaboration</span>
-                <span className="f-nav text-black">Travel</span>
-                <span className="f-nav text-black">Insights</span>
-                <span className="f-nav text-black">About Us</span>
-              </nav>
-              <div
-                className="absolute bottom-0 left-0 bg-black"
-                style={{ width: 118, height: 6 }}
-              />
-            </div>
-          </div>
+
 
           {/* Mobile scroll indicator */}
           <div className="lg:hidden relative py-6 flex justify-center">
