@@ -147,25 +147,24 @@ export default function HomePage() {
                 learn more →
               </span>
             </Link>
-
+            <Link href="/travel" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:pl-12">
+              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
+              <h3
+                className="f-section-title text-black group-hover:text-black/60 transition-colors"
+                style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+              >
+                Travel
+              </h3>
+              <p className="f-body text-black/60 mt-3 lg:mt-4">
+                Curated journeys and educational trips for families who explore the
+                world through geography and history — inspiring destinations and
+                immersive experiences with meaning.
+              </p>
+              <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
+                learn more →
+              </span>
+            </Link>
           </div>
-          <Link href="/travel" className="group block py-6 lg:py-12 border-b border-[#d9d9d9]">
-            <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
-            <h3
-              className="f-section-title text-black group-hover:text-black/60 transition-colors"
-              style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
-            >
-              Travel
-            </h3>
-            <p className="f-body text-black/60 mt-3 lg:mt-4 max-w-lg">
-              Curated journeys and educational trips for families who explore the
-              world through geography and history — inspiring destinations and
-              immersive experiences with meaning.
-            </p>
-            <span className="f-learn-more text-black mt-4 lg:mt-6 inline-block group-hover:translate-x-1 transition-transform">
-              learn more →
-            </span>
-          </Link>
         </div>
       </section>
 
