@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ReviewsSection from "@/components/ReviewsSection";
 import VlogSection from "@/components/VlogSection";
+import { featuredInsight, insightArticles } from "@/data/insights";
 
 /* ── Data ── */
 
@@ -25,11 +26,30 @@ const residencyPrograms = [
   { name: "Hungary", slug: "hungary", desc: "Guest Investor Residence Permit grants long-term EU residency through approved national funds." },
 ];
 
+/* Videos from @Migroniscitizenship — last 5 years */
 const videoReviews = [
-  { id: "dvCQeUu1rsQ", title: "A Caribbean passport and the philosophy of freedom" },
-  { id: "WIv59BX3Bxs", title: "Cascais: Life on the Portuguese Riviera" },
-  { id: "DcnY2h1vIos", title: "Costa Rica: one of the best countries for life" },
-  { id: "xUoq7mGeUJA", title: "Flag Theory: how to live without borders" },
+  { id: "h2jgNXY9dL0", title: "Antigua and Barbuda — Interview with a citizen" },
+  { id: "m5sN-32HK4c", title: "Antigua and Barbuda CBI: Client Review" },
+  { id: "2UPGZjq5MsU", title: "What is it like to be a citizen of Portugal?" },
+  { id: "9Is5z84yToM", title: "Saint Kitts and Nevis — Life in the Caribbean" },
+  { id: "q3r98pbm7p4", title: "Roger Ver — Caribbean Passport & Libertarianism" },
+  { id: "e9jjP0rs-lk", title: "Interview: Head of St. Lucia CBI Program" },
+  { id: "m1NThT2GAjA", title: "Interview: Head of Grenada CBI Program" },
+];
+
+const topVideos = [
+  { id: "3DdCBuhPjkA", title: "Island life: How Americans live in the Azores", views: "974K" },
+  { id: "WcrITfyvEQA", title: "Moving to Portugal: Best destinations for retirement", views: "246K" },
+  { id: "yZJKpAp_jTQ", title: "Investing in real estate in Greece: residence permit + income", views: "23K" },
+  { id: "6GE_ljHAmNY", title: "Pros and Cons: Portugal vs Spain Golden Visa", views: "7.8K" },
+  { id: "57TMY6iQ_9w", title: "How to move to Portugal — step by step", views: "8.1K" },
+  { id: "F8zB6ZJX6_s", title: "Cascais: Life in Portugal — pros & cons", views: "40K" },
+  { id: "4JKimjQL0UI", title: "Portugal vs Greece Golden Visa: which to choose?", views: "4.1K" },
+  { id: "KNhhCKd1Dh4", title: "Portugal: ESG funds and agriculture investment", views: "2.9K" },
+  { id: "i7Gqt6Pa0B0", title: "Why Portugal NHR is a top choice for investors", views: "4.5K" },
+  { id: "dppy_zkCpdw", title: "Luxury villas in Portugal", views: "15K" },
+  { id: "tzP4R6wCXEk", title: "Digital Nomads in Madeira — D7 Visa Portugal", views: "11K" },
+  { id: "beKI827exIM", title: "What's it like living in the Azores?", views: "25K" },
 ];
 
 const awards = [
@@ -140,13 +160,13 @@ export default function PassportVisasPage() {
             <div className="lg:w-1/2">
               <div className="relative rounded overflow-hidden min-h-[250px] lg:min-h-[350px]">
                 <img
-                  src="https://i.ytimg.com/vi/dvCQeUu1rsQ/maxresdefault.jpg"
+                  src={`https://i.ytimg.com/vi/${topVideos[0].id}/maxresdefault.jpg`}
                   alt="Migronis"
                   className="w-full h-full object-cover absolute inset-0"
                 />
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                   <a
-                    href="https://www.youtube.com/watch?v=dvCQeUu1rsQ"
+                    href={`https://www.youtube.com/watch?v=${topVideos[0].id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-[60px] h-[60px] rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -155,6 +175,7 @@ export default function PassportVisasPage() {
                   </a>
                 </div>
               </div>
+              <p className="f-body text-white/50 mt-3">{topVideos[0].title} · {topVideos[0].views} views</p>
             </div>
           </div>
         </div>
@@ -272,27 +293,24 @@ export default function PassportVisasPage() {
         </div>
       </section>
 
-      {/* ── Cases ── */}
+      {/* ── Cases — real videos from @Migroniscitizenship ── */}
       <section className="bg-[#191c1f]">
         <div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-8">
             <h2 className="f-section-title text-white">Cases</h2>
-            <div className="flex gap-2">
-              <button className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">←</button>
-              <button className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">→</button>
-            </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Video */}
+
+          {/* Featured case */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 lg:mb-10">
             <a
-              href="https://www.youtube.com/watch?v=DcnY2h1vIos"
+              href={`https://www.youtube.com/watch?v=${topVideos[1].id}`}
               target="_blank"
               rel="noopener noreferrer"
               className="relative rounded overflow-hidden min-h-[250px] lg:min-h-[350px] group"
             >
               <img
-                src="https://i.ytimg.com/vi/DcnY2h1vIos/maxresdefault.jpg"
-                alt="Costa Rica case"
+                src={`https://i.ytimg.com/vi/${topVideos[1].id}/maxresdefault.jpg`}
+                alt={topVideos[1].title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
@@ -301,27 +319,42 @@ export default function PassportVisasPage() {
                 </div>
               </div>
             </a>
-            {/* Case text */}
             <div className="flex flex-col justify-center">
-              <h3 className="f-case-title text-white mb-4">
-                Why Costa Rica? Nature, Safety & Comfort
-              </h3>
+              <h3 className="f-case-title text-white mb-4">{topVideos[1].title}</h3>
               <p className="f-body text-white/50 mb-6">
-                Learn to transform chaos into new opportunities. Build a structure around
-                working projects to fruition. This passport visa case study shows the real
-                process of relocation to Costa Rica.
+                A comprehensive guide on retirement and permanent residency in Portugal — one of Europe&apos;s safest and most beautiful destinations for a new chapter in life.
               </p>
-              <div className="flex gap-2 flex-wrap">
-                {["Why Costa Rica?", "Why Costa Rica?", "Why Costa Rica?"].map((t, i) => (
-                  <button
-                    key={i}
-                    className="f-nav text-white/60 border border-white/20 px-4 py-2 hover:bg-white/10 transition-colors rounded"
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
+              <p className="f-body text-white/30">{topVideos[1].views} views</p>
             </div>
+          </div>
+
+          {/* More case videos — grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {topVideos.slice(2, 10).map((v) => (
+              <a
+                key={v.id}
+                href={`https://www.youtube.com/watch?v=${v.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="relative rounded overflow-hidden h-[100px] lg:h-[130px]">
+                  <img
+                    src={`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`}
+                    alt={v.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                      <span className="text-white text-xs ml-0.5">▶</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="f-small text-white/60 mt-2 line-clamp-2 group-hover:text-white/80 transition-colors">{v.title}</p>
+                <p className="f-small text-white/30 mt-0.5">{v.views} views</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -426,6 +459,55 @@ export default function PassportVisasPage() {
             </div>
           </div>
           <div className="border-b-2 border-[#d9d9d8]" />
+        </div>
+      </section>
+
+      {/* ── Insights (same as homepage) ── */}
+      <section style={{ background: 'linear-gradient(135deg, #c87d33 0%, #e6cc53 25%, #02abe3 70%, #608b8c 100%)' }}>
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+          <div className="flex items-center justify-between mb-6 lg:mb-8">
+            <h2 className="f-section-title text-black">Insights</h2>
+            <Link href="/insights" className="f-btn bg-black text-white hidden sm:flex items-center justify-center flex-shrink-0 px-6 h-[36px]">
+              read all
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 mb-6 lg:mb-8">
+            <a href={featuredInsight.link} target="_blank" rel="noopener noreferrer" className="lg:col-span-3 rounded overflow-hidden min-h-[200px] lg:min-h-[424px] relative block group">
+              <img src={`https://i.ytimg.com/vi/${featuredInsight.videoId}/maxresdefault.jpg`} alt={featuredInsight.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                  <span className="text-white text-lg ml-0.5">▶</span>
+                </div>
+              </div>
+            </a>
+            <div className="lg:col-span-2 flex flex-col justify-end">
+              <p className="f-nav text-black/40" style={{ fontSize: 12 }}>{featuredInsight.category}</p>
+              <p className="f-body text-black/40 mt-1">{featuredInsight.date}</p>
+              <h3 className="f-article-title text-black mt-2">{featuredInsight.title}</h3>
+              <p className="f-body text-black/60 mt-2 lg:mt-3">{featuredInsight.description}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+            {insightArticles.slice(0, 3).map((article) => (
+              <a key={article.title} href={article.link} target="_blank" rel="noopener noreferrer" className="group">
+                <div className="rounded overflow-hidden min-h-[140px] lg:min-h-[200px] relative">
+                  <img src={article.videoId ? `https://i.ytimg.com/vi/${article.videoId}/mqdefault.jpg` : (article.image || '')} alt={article.title} className="w-full h-full object-cover min-h-[140px] lg:min-h-[200px] group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  {article.type === 'video' && (
+                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                        <span className="text-white text-sm ml-0.5">▶</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <p className="f-body text-black/40 mt-2 lg:mt-3">{article.date}</p>
+                <h4 className="f-btn text-black mt-1 group-hover:text-black/60 transition-colors">{article.title}</h4>
+              </a>
+            ))}
+          </div>
+          <Link href="/insights" className="f-btn bg-black text-white flex sm:hidden items-center justify-center mt-6 w-full h-[48px]">
+            read all
+          </Link>
         </div>
       </section>
 
