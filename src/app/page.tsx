@@ -187,10 +187,14 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 mb-6 lg:mb-8">
-            <div className="lg:col-span-3 bg-black/20 rounded flex items-center justify-center min-h-[200px] lg:min-h-[424px]">
-              <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer">
-                <span className="text-white text-lg lg:text-xl ml-1">▶</span>
-              </div>
+            <div className="lg:col-span-3 rounded overflow-hidden min-h-[200px] lg:min-h-[424px] relative" style={{ paddingBottom: '0' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full rounded"
+                src="https://www.youtube.com/embed/WIv59BX3Bxs?start=3447"
+                title="Borderless Insights"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
             <div className="lg:col-span-2 flex flex-col justify-end">
               <p className="f-body text-black/40 mb-1 lg:mb-2">12.03.2026</p>
