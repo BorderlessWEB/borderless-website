@@ -18,7 +18,7 @@ export const featuredInsight: InsightArticle = {
   category: "Opinion · IMI Daily",
   link: "https://www.imidaily.com/opinion/policy-risk-has-overtaken-asset-risk-in-golden-visa-real-estate/",
   type: "article",
-  image: "https://www.imidaily.com/wp-content/uploads/2026/05/Background-2026-05-16T112122.658.webp",
+  image: "/images/insights/policy-risk.webp",
   source: "IMI Daily",
 };
 
@@ -52,7 +52,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/how-portugal-can-use-foreign-investors-to-solve-the-housing-crisis-instead-of-scrapping-the-golden-visa/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2023/04/Christian_Nesheim_A_beautiful_view_of_Lisbons_Alfama_district.__52b9dc42-d335-4a3a-8124-2d388d9f5985.png",
+    image: "/images/insights/portugal-housing.png",
     source: "IMI Daily",
   },
   {
@@ -73,7 +73,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Interview · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/an-interview-with-roger-bitcoin-jesus-ver-on-rcbi-crypto-and-flag-theory/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2021/03/1-3-copy.jpg",
+    image: "/images/insights/roger-ver.jpg",
     source: "IMI Daily",
   },
   {
@@ -94,7 +94,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/tax-migration-the-megatrend-of-2021/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/12/pressure-businessman_24381-392.png",
+    image: "/images/insights/tax-migration.png",
     source: "IMI Daily",
   },
   {
@@ -115,7 +115,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/the-golden-visa-of-your-dreams-synthesizing-an-optimal-rbi-program-from-existing-practices/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/12/ali-abdul-rahman-JOgQUlO6JXU-unsplash.jpg",
+    image: "/images/insights/golden-visa-dreams.jpg",
     source: "IMI Daily",
   },
   {
@@ -136,7 +136,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/from-flag-theory-to-flag-practice-time-to-execute-that-plan-b/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/11/andrey-kremkov-UtWG73BiwE8-unsplash.jpg",
+    image: "/images/insights/flag-theory.jpg",
     source: "IMI Daily",
   },
   {
@@ -157,7 +157,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/us-embassy-in-moscow-suspends-visa-services-cbi-lifting-the-iron-curtain/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/11/andrey-kremkov-UtWG73BiwE8-unsplash.jpg",
+    image: "/images/insights/flag-theory.jpg",
     source: "IMI Daily",
   },
   {
@@ -168,7 +168,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Analysis · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/what-the-ideal-citizenship-by-investment-program-might-look-like/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/11/rrtJy-cbi-applicant-contribution-type-preferences-2019.png",
+    image: "/images/insights/ideal-cbi.png",
     source: "IMI Daily",
   },
   {
@@ -189,7 +189,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Opinion · IMI Daily",
     link: "https://www.imidaily.com/editors-picks/3-reasons-you-should-make-the-nigerian-investment-migration-market-a-priority/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/10/5744774.png",
+    image: "/images/insights/rcbi-marketing.png",
     source: "IMI Daily",
   },
   {
@@ -200,7 +200,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Marketing · IMI Daily",
     link: "https://www.imidaily.com/anatoliys-analysis/7-ways-to-super-charge-your-rcbi-content-marketing-after-covid/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/10/5744774.png",
+    image: "/images/insights/rcbi-marketing.png",
     source: "IMI Daily",
   },
   {
@@ -211,7 +211,7 @@ export const insightArticles: InsightArticle[] = [
     category: "Opinion · IMI Daily",
     link: "https://www.imidaily.com/opinion/the-4-things-rcbi-firms-must-do-to-keep-their-agents-happy/",
     type: "article",
-    image: "https://www.imidaily.com/wp-content/uploads/2020/12/ali-abdul-rahman-JOgQUlO6JXU-unsplash.jpg",
+    image: "/images/insights/golden-visa-dreams.jpg",
     source: "IMI Daily",
   },
   {
