@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MapSection from "@/components/MapSection";
+import VlogSection from "@/components/VlogSection";
 
 export default function HomePage() {
   return (
@@ -252,37 +253,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 6: Vlog */}
-      <section className="py-8 lg:py-12">
-        <div className="max-w-[1196px] mx-auto content-px">
-          <div className="flex items-center justify-between mb-4 lg:mb-8">
-            <h2 className="f-desc-bold text-black">
-              Featured Experiences / Vlog
-            </h2>
-            <div className="flex gap-2 flex-shrink-0 ml-4">
-              <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
-                ←
-              </button>
-              <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
-                →
-              </button>
-            </div>
-          </div>
-          <div className="flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar pb-4 -mx-4 px-4 lg:mx-0 lg:px-0">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="flex-shrink-0 w-[160px] lg:w-[220px]">
-                <div className="bg-black rounded flex items-center justify-center cursor-pointer h-[110px] lg:h-[140px]">
-                  <div className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center">
-                    <span className="text-white text-sm ml-0.5">▶</span>
-                  </div>
-                </div>
-                <p className="f-body text-black/60 mt-2 line-clamp-2">
-                  Мексика 2025: жизнь, цены, ВНЖ
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <VlogSection />
 
       {/* Section 7: Reviews */}
       <section>
