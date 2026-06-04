@@ -73,7 +73,7 @@ export default function InvestmentPage() {
               <div
                 className="relative w-[280px] h-[280px] lg:w-[440px] lg:h-[400px] group"
               >
-                {/* Circle 1 — light blue (top) */}
+                {/* Circle 1 — Sustainability (light blue, top) */}
                 <div
                   className="absolute rounded-full transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:-translate-x-1"
                   style={{
@@ -81,8 +81,10 @@ export default function InvestmentPage() {
                     top: "0", left: "18%",
                     background: "rgba(126, 200, 227, 0.55)",
                   }}
-                />
-                {/* Circle 2 — peach/salmon (bottom-left) */}
+                >
+                  <span className="absolute top-[20%] left-1/2 -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider text-center">Sustainability</span>
+                </div>
+                {/* Circle 2 — Return (peach/salmon, bottom-left) */}
                 <div
                   className="absolute rounded-full transition-transform duration-700 ease-out group-hover:translate-y-3 group-hover:-translate-x-3"
                   style={{
@@ -90,8 +92,10 @@ export default function InvestmentPage() {
                     bottom: "0", left: "0",
                     background: "rgba(240, 180, 140, 0.55)",
                   }}
-                />
-                {/* Circle 3 — pink/rose (bottom-right) */}
+                >
+                  <span className="absolute bottom-[20%] left-[30%] -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider">Return</span>
+                </div>
+                {/* Circle 3 — For expats (pink/rose, bottom-right) */}
                 <div
                   className="absolute rounded-full transition-transform duration-700 ease-out group-hover:translate-y-2 group-hover:translate-x-3"
                   style={{
@@ -99,34 +103,22 @@ export default function InvestmentPage() {
                     bottom: "0", right: "0",
                     background: "rgba(229, 150, 180, 0.55)",
                   }}
-                />
-                {/* Center label */}
+                >
+                  <span className="absolute bottom-[20%] right-[20%] f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider">For expats</span>
+                </div>
+                {/* Center intersection label */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span className="f-nav-active text-black/40 text-center text-[11px] lg:text-[13px] tracking-wider">BORDERLESS<br/>INVEST</span>
+                  <span className="f-nav-active text-black/60 text-center text-[11px] lg:text-[13px] tracking-wider">BORDERLESS<br/>INVESTMENT</span>
                 </div>
               </div>
             </div>
 
             {/* Right side — text */}
             <div className="lg:w-[55%] flex flex-col justify-center">
-              <h2 className="f-heading-md text-black mb-6">Love. Land. Legacy.</h2>
-              <p className="f-body text-black/60 mb-4">
-                Мы инвестируем в недвижимость будущего Ikigai:
+              <h2 className="f-heading-md text-black mb-4">Invest responsibly. Grow consciously</h2>
+              <p className="f-body-lg text-black/60">
+                We believe in investments that create value for both people and the planet. Designed for global citizens and expat investors, Borderless Investment is where sustainability, profitability, and freedom meet.
               </p>
-              <ul className="space-y-2">
-                <li className="f-body text-black/60 flex items-start gap-2">
-                  <span className="text-black mt-0.5">•</span>
-                  <span>Для инвесторов со всего мира</span>
-                </li>
-                <li className="f-body text-black/60 flex items-start gap-2">
-                  <span className="text-black mt-0.5">•</span>
-                  <span>Эко-архитектура</span>
-                </li>
-                <li className="f-body text-black/60 flex items-start gap-2">
-                  <span className="text-black mt-0.5">•</span>
-                  <span>В уникальных экспатских местах</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -225,17 +217,16 @@ export default function InvestmentPage() {
       <section className="py-12 lg:py-20">
         <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black mb-4">Investment Workflow</h2>
-          <p className="f-body text-black/60 mb-10 lg:mb-14 max-w-[700px]">
-            Learn to transform chaos into new opportunities. Build strong teams and achieve results
-            to fulfill, find support in chaos and achieve your goals.
+          <p className="f-body-lg text-black/60 mb-10 lg:mb-14 max-w-[700px]">
+            From understanding your values to seeing real returns — we guide sustainable investments step by step.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
             {[
-              { title: "Investment\nbusinesses step 1", desc: "Understand your goals and values." },
-              { title: "Investment\nbusinesses step 2", desc: "We suggest sustainable projects anywhere in the world, tailored to you." },
-              { title: "Investment\nbusinesses step 3", desc: "We help you invest safely and meaningfully." },
-              { title: "Investment\nbusinesses step 4", desc: "Gain both profit and the satisfaction of making a positive impact." },
+              { title: "Consultation", desc: "Understand your goals and values." },
+              { title: "Selection", desc: "We suggest sustainable projects anywhere in the world, tailored to you." },
+              { title: "Investment", desc: "We help you invest safely and meaningfully." },
+              { title: "Return", desc: "Gain both profit and the satisfaction of making a positive impact." },
             ].map((step, i) => (
               <div key={i} className="lg:max-w-[280px]">
                 <div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px] mb-4">
@@ -375,8 +366,8 @@ export default function InvestmentPage() {
         <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
             <div>
-              <span className="f-cta-big block text-white">Get</span>
-              <span className="f-cta-sub block mt-1 text-white">a free consultation</span>
+              <span className="f-cta-big block text-white">Ready</span>
+              <span className="f-cta-sub block mt-1 text-white">to invest while caring for the planet?</span>
             </div>
             <InlineForm
               formKey="InvestmentConsultation"
