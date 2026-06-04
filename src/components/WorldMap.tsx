@@ -168,25 +168,27 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
                 strokeWidth: isHov ? 1 : 0.5,
               }}
             >
-              <text
-                textAnchor={cfg.textAnchor || "start"}
-                alignmentBaseline="middle"
-                style={{
-                  fill: isHov ? LABEL_ACTIVE : LABEL_COLOR,
-                  fontSize: isHov ? "8.5px" : "7.5px",
-                  fontFamily: "Switzer, sans-serif",
-                  fontWeight: isHov ? 700 : 400,
-                  textTransform: "uppercase" as const,
-                  letterSpacing: "0.5px",
-                  textShadow: "0 1px 3px rgba(0,0,0,0.8)",
-                  cursor: "pointer",
-                  transition: "all 0.2s",
-                }}
-                onMouseEnter={() => setHovered(c.slug)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {c.name}
-              </text>
+              <Link href={`${linkPrefix}/${c.slug}`}>
+                <text
+                  textAnchor={cfg.textAnchor || "start"}
+                  alignmentBaseline="middle"
+                  style={{
+                    fill: isHov ? LABEL_ACTIVE : LABEL_COLOR,
+                    fontSize: isHov ? "8.5px" : "7.5px",
+                    fontFamily: "Switzer, sans-serif",
+                    fontWeight: isHov ? 700 : 400,
+                    textTransform: "uppercase" as const,
+                    letterSpacing: "0.5px",
+                    textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+                    cursor: "pointer",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={() => setHovered(c.slug)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {c.name}
+                </text>
+              </Link>
             </Annotation>
           );
         })}
