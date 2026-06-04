@@ -1,34 +1,428 @@
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import ReviewsSection from "@/components/ReviewsSection";
+import VlogSection from "@/components/VlogSection";
+
+/* ── Data ── */
+
+const citizenshipPrograms = [
+  { name: "São Tomé e Príncipe", slug: "sao-tome-e-principe", desc: "The newest and most accessible program, offering the lowest entry point worldwide through the National Transformation Fund — a sustainable, government-backed investment." },
+  { name: "Vanuatu", slug: "vanuatu", desc: "A fast-track citizenship program offering one of the quickest routes to a second passport. A straightforward, confidential option with zero income tax." },
+  { name: "Grenada", slug: "grenada", desc: "A Caribbean passport that opens doors to the world, including the U.S. via the E-2 investor visa. Fast processing and a growing real estate market." },
+  { name: "Antigua & Barbuda", slug: "antigua-and-barbuda", desc: "Perfect for families. Citizenship through contribution, real estate, or business investment, with visa-free travel to over 150 countries." },
+  { name: "St Kitts & Nevis", slug: "st-kitts-and-nevis", desc: "The world's first citizenship-by-investment program. Obtain citizenship in months, gain visa-free access to 150+ countries." },
+  { name: "St Lucia", slug: "st-lucia", desc: "A transparent program offering several routes — from government bonds to sustainable real estate projects." },
+  { name: "Dominica", slug: "dominica", desc: "One of the most affordable programs globally. Transparent due diligence and no residency requirement." },
+];
+
+const residencyPrograms = [
+  { name: "Portugal — Golden Visa", slug: "portugal-golden-visa", desc: "One of Europe's most prestigious residence programs. Obtain EU residency through qualified investments in funds or innovation." },
+  { name: "Portugal — HQA Visa", slug: "portugal-hqa-visa", desc: "A fast-track residence for highly qualified professionals, entrepreneurs, and innovators." },
+  { name: "Spain", slug: "spain", desc: "Flexible residence options for remote workers, entrepreneurs, and financially independent individuals." },
+  { name: "Cyprus", slug: "cyprus", desc: "Multiple pathways to residency — from permanent residence through investment to flexible self-sufficient options." },
+  { name: "Greece", slug: "greece", desc: "The most affordable Golden Visa in the EU through real estate investment." },
+  { name: "USA — EB-5", slug: "us-eb5-visa", desc: "An investor visa granting permanent U.S. residency through qualifying business investment and job creation." },
+  { name: "Brazil", slug: "brazil", desc: "Investor visas for local business, real estate, or innovation. Children born in Brazil get automatic citizenship." },
+  { name: "Hungary", slug: "hungary", desc: "Guest Investor Residence Permit grants long-term EU residency through approved national funds." },
+];
+
+const videoReviews = [
+  { id: "dvCQeUu1rsQ", title: "A Caribbean passport and the philosophy of freedom" },
+  { id: "WIv59BX3Bxs", title: "Cascais: Life on the Portuguese Riviera" },
+  { id: "DcnY2h1vIos", title: "Costa Rica: one of the best countries for life" },
+  { id: "xUoq7mGeUJA", title: "Flag Theory: how to live without borders" },
+];
+
+const mediaMentions = [
+  { source: "Forbes", quote: "Migronis is one of the leading companies helping HNWI obtain second citizenship." },
+  { source: "Bloomberg", quote: "Investment migration is booming, and Migronis is at the forefront of this global trend." },
+];
 
 export default function PassportVisasPage() {
   return (
     <>
-      <section className="bg-white"><div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Passport/visas</h1></div></section>
+      {/* ── Hero ── */}
+      <section className="bg-white">
+        <div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
+          <p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p>
+          <h1 className="f-page-title text-black">Passport/visas</h1>
+        </div>
+      </section>
 
-      <section className="py-8 lg:py-12"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-heading-md text-black mb-4">What do you need to get more freedom?</h2><p className="f-desc-bold text-black mb-6">Migronis helps people obtain second citizenship and residence permits through investment and legal programs. We make global mobility simple for your life, business, and family.</p></div></section>
+      {/* ── Steps: What is required? ── */}
+      <section className="py-6 lg:py-10">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <div className="flex items-center justify-between mb-6 lg:mb-8">
+            <h2 className="f-heading-md text-black">
+              What is required to obtain a passport?
+            </h2>
+            <div className="flex gap-2 flex-shrink-0 ml-4">
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d8] flex items-center justify-center text-black hover:bg-black/5 transition-colors">←</button>
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d8] flex items-center justify-center text-black hover:bg-black/5 transition-colors">→</button>
+            </div>
+          </div>
 
-      {/* Interactive Map */}
-      <MapSection />
+          {/* Horizontal step tabs */}
+          <div className="flex gap-0 border-t border-black mb-8">
+            {["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"].map((step, i) => (
+              <div
+                key={step}
+                className={`flex-1 pt-3 pr-4 ${i === 0 ? "border-t-2 border-black -mt-[1px]" : ""}`}
+              >
+                <p className={`f-nav ${i === 0 ? "text-black font-bold" : "text-black/30"}`}>
+                  {step}
+                </p>
+              </div>
+            ))}
+          </div>
 
-      <section className="pb-8 lg:pb-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row"><div className="p-6 lg:p-8 lg:w-[539px] flex-shrink-0"><div className="flex gap-4 lg:gap-6 mb-8 overflow-x-auto no-scrollbar"><span className="f-step text-black font-semibold whitespace-nowrap">Step 1</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 2</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 3</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 4</span><span className="f-step text-[#618b8c] whitespace-nowrap">Step 5</span></div><p className="f-desc-bold text-black" style={{maxWidth: '336px'}}>Choose your destination and the type of program.</p></div><div className="w-full lg:w-[2px] h-[2px] lg:h-auto bg-[#d9d9d9]"></div><div className="flex-1 bg-[#eeeeee] p-6 flex items-center gap-4 overflow-x-auto no-scrollbar min-h-[150px] lg:min-h-[232px]"><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Vanuatu Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Costa Rica Relocation</span></div><div className="flex-shrink-0 bg-[#d9d9d9] flex items-center justify-center w-[200px] lg:w-[227px] h-[100px] lg:h-[109px]"><span className="f-body text-black text-center px-4">Grenada Relocation</span></div></div></div></div></section>
+          {/* Step content row */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="lg:w-[380px] flex-shrink-0">
+              <h3 className="f-desc-bold text-black text-lg lg:text-xl">
+                Learn to transform chaos into new opportunities.
+              </h3>
+            </div>
+            <div className="flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar flex-1">
+              {[
+                { name: "Vanuatu Relocation", slug: "vanuatu" },
+                { name: "Costa Rica Relocation", slug: "costa-rica" },
+                { name: "Grenada Relocation", slug: "grenada" },
+              ].map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/passport-visas/${item.slug}`}
+                  className="flex-shrink-0 border border-[#d9d9d8] px-6 py-8 flex items-center justify-center min-w-[180px] lg:min-w-[200px] hover:bg-black/5 transition-colors"
+                >
+                  <span className="f-nav text-black text-center uppercase">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="bg-white pb-8 lg:pb-12"><div className="max-w-[1196px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8 mb-12"><div className="lg:w-1/2"><p className="f-nav text-black/40 mb-2">Borderless</p><div className="mb-4"><span className="f-desc-bold text-black">MIGRONIS ✓</span></div><h3 className="f-heading-md text-black mb-4">General offer</h3><p className="f-body text-black">Migronis helps people obtain second citizenship and residence permits through investment and legal programs. We make global mobility simple for your life, business, and family. Over 1,000 families have already trusted us with their journey to freedom.</p></div><div className="lg:w-1/2 bg-black rounded flex items-center justify-center min-h-[250px] lg:min-h-[331px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-white/50 flex items-center justify-center cursor-pointer"><span className="text-white ml-1 text-lg">▶</span></div></div></div><div className="border-t border-black mb-8 pt-8"><h3 className="f-heading-md text-black mb-8">Main Products</h3><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2"><h4 className="f-desc-bold text-black mb-4">Citizenship</h4><div className="space-y-0"><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between font-semibold">St Kitts & Nevis<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The world's first citizenship-by-investment program, and still one of the fastest. Obtain citizenship in several months, gain visa-free access to 150+ countries, and enjoy a secure, low-tax jurisdiction with a Caribbean lifestyle rooted in privacy and freedom. <Link href="/passport-visas/st-kitts-and-nevis" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Dominica<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Known for its integrity and efficiency, Dominica offers one of the most affordable citizenship programs globally. With transparent due diligence and no residency requirement, it's a trusted route for entrepreneurs and families seeking global mobility. <Link href="/passport-visas/dominica" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Antigua & Barbuda<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Perfect for families looking for value and comfort. Citizenship can be obtained through a contribution, real estate, or business investment, with visa-free travel to over 150 countries. <Link href="/passport-visas/antigua-and-barbuda" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Grenada<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A Caribbean passport that opens doors to the world, including the U.S. via the E-2 investor visa. Grenada's program combines a solid reputation, fast processing, and a growing real estate market. <Link href="/passport-visas/grenada" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">St Lucia<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A transparent citizenship-by-investment program offering several routes — from government bonds to sustainable real estate projects. St Lucia is a well-governed, business-friendly country. <Link href="/passport-visas/st-lucia" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">São Tomé e Príncipe<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The newest and most accessible program, offering the lowest entry point worldwide through the National Transformation Fund — a sustainable, government-backed investment. <Link href="/passport-visas/sao-tome-e-principe" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Vanuatu<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A fast-track citizenship program offering one of the quickest routes to a second passport. A straightforward, confidential option with zero income tax and full dual citizenship rights. <Link href="/passport-visas/vanuatu" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details></div></div><div className="lg:w-1/2 lg:border-l lg:border-black/10 lg:pl-8"><h4 className="f-desc-bold text-black mb-4">Residency</h4><div className="space-y-0"><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between font-semibold">Portugal Golden Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">One of Europe's most prestigious residence programs. Obtain EU residency through qualified investments in funds or innovation and gain the right to live, study, and travel across the Schengen Area. <Link href="/passport-visas/portugal-golden-visa" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Portugal HQA Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">A fast-track residence program for highly qualified professionals, entrepreneurs, and innovators. It offers EU residency through working with Portuguese companies. <Link href="/passport-visas/portugal-hqa-visa" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Spain<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Spain offers flexible residence options for remote workers, entrepreneurs, and financially independent individuals, including the Digital Nomad Visa. <Link href="/passport-visas/spain" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Cyprus<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Cyprus offers multiple pathways to residency — from permanent residence through investment to more flexible options for self-sufficient individuals and remote workers. <Link href="/passport-visas/cyprus" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Greece<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">The most affordable Golden Visa in the EU, which offers a simple and efficient path to European residence through real estate investment. <Link href="/passport-visas/greece" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">U.S. EB-5 Visa<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">An investor visa that grants permanent U.S. residency to those who invest in a qualifying American business and create full-time jobs. <Link href="/passport-visas/us-eb5-visa" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Brazil<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Brazil offers investor visas for those who contribute to local business, real estate, or innovation projects. Children born in Brazil automatically receive Brazilian citizenship. <Link href="/passport-visas/brazil" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details><details className="border-b border-[#d9d9d9] group"><summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between ">Hungary<span className="text-black/30 group-open:rotate-180 transition-transform">▼</span></summary><p className="f-body text-black/60 pb-4 pr-4">Hungary's Guest Investor Residence Permit grants long-term EU residency through investment in approved national funds. Fast processing, no minimum stay requirement. <Link href="/passport-visas/hungary" className="text-black underline hover:no-underline ml-1">learn more →</Link></p></details></div></div></div></div><div className="border-t border-black pt-8"><div className="flex flex-col lg:flex-row items-start justify-between gap-8"><div><span className="f-cta-big block text-black">Get</span><span className="f-heading-md block text-black">a free<br />consultation</span></div><div className="flex flex-col gap-3 w-full lg:w-auto"><div><input type="text" placeholder="First and Last Name" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><div><input type="email" placeholder="Email" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-small bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4 w-full lg:w-[224px] h-[36px] " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-black/60"><input type="checkbox" className="mt-0.5 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn bg-black text-white w-full lg:w-[224px] h-[36px] flex items-center justify-center gap-2 disabled:opacity-60">send</button></div></div></div></div></section>
+      {/* ── Migronis Section (dark) ── */}
+      <section className="bg-[#191c1f]">
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div className="lg:w-1/2">
+              <p className="f-nav text-white/40 mb-2">Borderless</p>
+              <h2 className="f-heading-md text-white mb-6">Migronis</h2>
+              <h3 className="f-desc-bold text-white mb-4">General Offer</h3>
+              <p className="f-body text-white/60">
+                Migronis helps people obtain second citizenship and residence permits through
+                investment and legal programs. We make global mobility simple for your life,
+                business, and family. Over 1,000 families have already trusted us with their
+                journey to freedom.
+              </p>
+              <p className="f-body text-white/60 mt-4">
+                For me, the competence and speed of answers to my questions played a key role,
+                and not only during working hours. It feels like the company is working for the result.
+              </p>
+            </div>
+            <div className="lg:w-1/2">
+              <div className="relative rounded overflow-hidden min-h-[250px] lg:min-h-[350px]">
+                <img
+                  src="https://i.ytimg.com/vi/dvCQeUu1rsQ/maxresdefault.jpg"
+                  alt="Migronis"
+                  className="w-full h-full object-cover absolute inset-0"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <a
+                    href="https://www.youtube.com/watch?v=dvCQeUu1rsQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[60px] h-[60px] rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <span className="text-white text-xl ml-1">▶</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="py-12 lg:py-16"><div className="max-w-[1196px] mx-auto content-px"><h2 className="f-section-title text-black mb-4">Passport/visas Workflow</h2><p className="f-desc-bold text-black mb-8 lg:mb-12">From consultation to your new passport — we guide you through every step.</p><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative"><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Consultation</h3><p className="f-body text-black/60 mt-2">Define your goals and choose the right path.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Selection</h3><p className="f-body text-black/60 mt-2">We suggest a tailored program that fits your needs.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Support</h3><p className="f-body text-black/60 mt-2">Get full assistance with document preparation and submission.</p></div><div className="lg:max-w-[261px]"><div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px]"><svg width="34" height="23" viewBox="0 0 34 23" fill="black"><path d="M17 0L34 23H0L17 0Z"></path></svg></div><h3 className="f-section-title text-black mt-4" style={{fontSize: '24px', lineHeight: '32px'}}>Freedom</h3><p className="f-body text-black/60 mt-2">Obtain your residence or passport and start living without borders.</p></div><div className="hidden lg:block absolute top-[71px] left-[261px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[561px] w-[111px] h-[1px] bg-black"></div><div className="hidden lg:block absolute top-[71px] left-[861px] w-[111px] h-[1px] bg-black"></div></div></div></section>
+      {/* ── Get a Free Consultation (gradient) ── */}
+      <section style={{ background: "linear-gradient(135deg, #e582b4 0%, #02abe3 100%)" }}>
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-14 content-px">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+            <div>
+              <span className="f-cta-big block text-black">Get</span>
+              <span className="f-cta-sub block text-black">a free consultation</span>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              <input
+                type="text"
+                placeholder="First and Last Name"
+                className="f-input bg-white/90 text-black placeholder:text-black/40 outline-none h-[46px] px-4 w-full sm:w-[200px]"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="f-input bg-white/90 text-black placeholder:text-black/40 outline-none h-[46px] px-4 w-full sm:w-[200px]"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="f-input bg-white/90 text-black placeholder:text-black/40 outline-none h-[46px] px-4 w-full sm:w-[200px]"
+              />
+              <button className="f-btn bg-black text-white px-8 h-[46px] flex items-center justify-center hover:opacity-90 transition-opacity">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="bg-black min-h-0 lg:min-h-[810px]"><div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px"><div className="flex gap-4 lg:gap-6 mb-4 overflow-x-auto no-scrollbar"><button className="f-nav whitespace-nowrap f-nav-active text-white">Passport/visas</button><button className="f-nav whitespace-nowrap text-white/30">Travel</button><button className="f-nav whitespace-nowrap text-white/30">Investment</button><button className="f-nav whitespace-nowrap text-white/30">Education</button></div><div className="flex items-center justify-between mb-8"><h2 className="f-section-title text-white">Cases</h2><div className="flex gap-2"><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center"><span className="text-white text-sm">→</span></button></div></div><div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Why Costa Rica? Nature, Safety & Comfort</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Vanuatu: Fast Track to Global Mobility</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div><div className="bg-white/5 rounded p-6 lg:p-8" style={{minHeight: '250px'}}><p className="f-case-title text-white">Grenada: Gateway to the Caribbean & the U.S.</p><p className="f-body text-white/50 mt-4">Relocation case study</p><button className="f-btn text-white border border-white/20 px-4 py-2 mt-6 hover:bg-white/10 transition-colors">learn more</button></div></div></div></section>
+      {/* ── Main Products ── */}
+      <section className="py-10 lg:py-16">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <h2 className="f-section-title text-black mb-8 lg:mb-12">Main Products</h2>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Citizenship */}
+            <div className="lg:w-1/2">
+              <h3 className="f-desc-bold text-black mb-4 pb-4 border-b-2 border-black">Citizenship</h3>
+              <div className="space-y-0">
+                {citizenshipPrograms.map((p) => (
+                  <details key={p.slug} className="border-b border-[#d9d9d8] group">
+                    <summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between">
+                      {p.name}
+                      <span className="text-black/30 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p className="f-body text-black/60 pb-4 pr-4">
+                      {p.desc}{" "}
+                      <Link href={`/passport-visas/${p.slug}`} className="text-black underline hover:no-underline ml-1">
+                        learn more →
+                      </Link>
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+            {/* Residency */}
+            <div className="lg:w-1/2">
+              <h3 className="f-desc-bold text-black mb-4 pb-4 border-b-2 border-black">Residency</h3>
+              <div className="space-y-0">
+                {residencyPrograms.map((p) => (
+                  <details key={p.slug} className="border-b border-[#d9d9d8] group">
+                    <summary className="py-3 f-body text-black cursor-pointer hover:text-black/60 transition-colors list-none flex items-center justify-between">
+                      {p.name}
+                      <span className="text-black/30 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p className="f-body text-black/60 pb-4 pr-4">
+                      {p.desc}{" "}
+                      <Link href={`/passport-visas/${p.slug}`} className="text-black underline hover:no-underline ml-1">
+                        learn more →
+                      </Link>
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="flex items-start justify-between mb-4 lg:mb-6"><h3 className="f-heading-md text-black">Video<br />reviews</h3><div className="flex gap-2 flex-shrink-0 ml-4"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div><div className="flex-shrink-0 w-[240px] lg:w-[345px]"><div className="w-full h-[140px] lg:h-[160px] bg-black flex items-center justify-center rounded"><div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/50 flex items-center justify-center"><span className="text-white ml-0.5 text-sm">▶</span></div></div><p className="f-video-title mt-2 text-black">Nature, Safety & Comfort</p></div></div></div></section>
+      {/* ── Workflow ── */}
+      <section className="py-10 lg:py-16 bg-white">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <h2 className="f-section-title text-black mb-4">Passport/visas Workflow</h2>
+          <p className="f-body text-black/60 mb-8 lg:mb-12 max-w-[700px]">
+            Learn to transform chaos into new opportunities. Build a structure around working projects to fruition.
+            This passport visa and achieve your goals.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+            {[
+              { title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction." },
+              { title: "Documents", desc: "We prepare and verify all necessary documentation." },
+              { title: "Processing", desc: "Full submission and government liaison on your behalf." },
+              { title: "Freedom", desc: "Receive your residence permit or passport and start living without borders." },
+            ].map((step, i) => (
+              <div key={step.title}>
+                <div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px] rounded">
+                  <p className="f-nav text-black/40">Migronis Workflow Step {i + 1}</p>
+                </div>
+                <h3 className="f-desc-bold text-black mt-4">{step.title}</h3>
+                <p className="f-body text-black/60 mt-2">{step.desc}</p>
+              </div>
+            ))}
+            {/* Connecting lines (desktop) */}
+            <div className="hidden lg:block absolute top-[71px] left-[24%] w-[3%] h-[1px] bg-black" />
+            <div className="hidden lg:block absolute top-[71px] left-[49%] w-[3%] h-[1px] bg-black" />
+            <div className="hidden lg:block absolute top-[71px] left-[74%] w-[3%] h-[1px] bg-black" />
+          </div>
+        </div>
+      </section>
 
-      <section><div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6"><div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto"><h3 className="f-heading-md text-black flex-shrink-0">Text<br />reviews</h3><div className="flex gap-2 mt-1 lg:mt-2"><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">←</button><button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">→</button></div></div><div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto"><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div><div className="flex-shrink-0 w-[260px] lg:w-[345px]"><div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]"><span className="text-sm text-black">J</span></div><div><p className="f-review-name text-black">JOhn Doe</p><div className="flex gap-0.5"><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span><span className="text-[#f5c518]" style={{fontSize: '14px'}}>★</span></div></div></div><p className="f-body text-black/60">I was choosing between several companies, but settled on Migronis. For me, the competence and speed of answers played a key role.</p><p className="f-body mt-2 text-black/40">2 month ago</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+      {/* ── Cases ── */}
+      <section className="bg-[#191c1f]">
+        <div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="f-section-title text-white">Cases</h2>
+            <div className="flex gap-2">
+              <button className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">←</button>
+              <button className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">→</button>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Video */}
+            <a
+              href="https://www.youtube.com/watch?v=DcnY2h1vIos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative rounded overflow-hidden min-h-[250px] lg:min-h-[350px] group"
+            >
+              <img
+                src="https://i.ytimg.com/vi/DcnY2h1vIos/maxresdefault.jpg"
+                alt="Costa Rica case"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                  <span className="text-white text-lg ml-0.5">▶</span>
+                </div>
+              </div>
+            </a>
+            {/* Case text */}
+            <div className="flex flex-col justify-center">
+              <h3 className="f-case-title text-white mb-4">
+                Why Costa Rica? Nature, Safety & Comfort
+              </h3>
+              <p className="f-body text-white/50 mb-6">
+                Learn to transform chaos into new opportunities. Build a structure around
+                working projects to fruition. This passport visa case study shows the real
+                process of relocation to Costa Rica.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                {["Why Costa Rica?", "Why Costa Rica?", "Why Costa Rica?"].map((t, i) => (
+                  <button
+                    key={i}
+                    className="f-nav text-white/60 border border-white/20 px-4 py-2 hover:bg-white/10 transition-colors rounded"
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="bg-[#eeeeee] py-8 lg:py-10"><div className="max-w-[1196px] mx-auto content-px"><h3 className="f-heading-md text-black mb-6 lg:mb-8">Awards</h3><div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pb-2"><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div><div className="flex-shrink-0 bg-white px-6 lg:px-8 py-4 flex items-center justify-center h-[60px]"><span className="f-btn text-black">MIGRONIS</span></div></div></div></section>
+      {/* ── Video Reviews ── */}
+      <section className="py-8 lg:py-10">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <div className="flex items-start justify-between mb-4 lg:mb-6">
+            <h3 className="f-heading-md text-black">Video<br />reviews</h3>
+            <div className="flex gap-2 flex-shrink-0 ml-4">
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d8] flex items-center justify-center text-black hover:bg-black/5 transition-colors">←</button>
+              <button className="w-9 h-9 rounded-full border border-[#d9d9d8] flex items-center justify-center text-black hover:bg-black/5 transition-colors">→</button>
+            </div>
+          </div>
+          <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0">
+            {videoReviews.map((v) => (
+              <a
+                key={v.id}
+                href={`https://www.youtube.com/watch?v=${v.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 w-[240px] lg:w-[345px] group"
+              >
+                <div className="relative w-full h-[140px] lg:h-[200px] rounded overflow-hidden">
+                  <img
+                    src={`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`}
+                    alt={v.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                      <span className="text-white text-sm ml-0.5">▶</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="f-body text-black mt-2 group-hover:text-black/60 transition-colors">{v.title}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section><div className="max-w-[1196px] mx-auto py-8 content-px"><div className="border-t-[2px] border-[#d9d9d9]"></div><div className="flex flex-col lg:flex-row items-start justify-between py-8 gap-6"><div className="flex items-start gap-6"><h3 className="f-heading-md text-black">Media<br />about us</h3><div className="flex gap-2 mt-2"><button className="w-[36px] h-[36px] rounded-full bg-[#d9d9d9] flex items-center justify-center"><span className="text-[#414141] text-sm">←</span></button><button className="w-[36px] h-[36px] rounded-full bg-[#d9d9d9] flex items-center justify-center"><span className="text-[#414141] text-sm">→</span></button></div></div><div className="flex gap-4 lg:gap-[25px] overflow-x-auto no-scrollbar w-full lg:w-auto"><div className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d9] rounded flex flex-col items-center justify-center p-6"><span className="f-quote-mark text-black/20 block text-center">“</span><p className="f-body text-black text-center mt-2">Migronis helps people obtain second citizenship and residence permits.</p><p className="f-body text-black/40 mt-4">Forbes</p></div><div className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d9] rounded flex flex-col items-center justify-center p-6"><span className="f-quote-mark text-black/20 block text-center">“</span><p className="f-body text-black text-center mt-2">Migronis helps people obtain second citizenship and residence permits.</p><p className="f-body text-black/40 mt-4">Forbes</p></div></div></div><div className="border-b-[2px] border-[#d9d9d9]"></div></div></section>
+      {/* ── Text Reviews (shared component) ── */}
+      <ReviewsSection />
 
-      <section style={{backgroundColor: '#4b223d'}}><div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px"><div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10"><div className="mb-2 lg:mb-0"><span className="f-cta-big block text-white">Let's</span><span className="f-cta-sub block mt-1 text-white">Discuss your case</span></div><div className="flex flex-col gap-3 w-full lg:w-[343px]"><div><input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="email" placeholder="Email" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><div><input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4 " value="" /></div><label className="flex items-start gap-2 cursor-pointer text-white/60"><input type="checkbox" className="mt-1 accent-black" /><span className="text-xs leading-tight">I agree to the processing of personal data</span></label><button className="f-btn-lg bg-white text-black hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">Send</button></div></div></div></section>
+      {/* ── Awards ── */}
+      <section className="bg-[#eeeeee] py-8 lg:py-10">
+        <div className="max-w-[1196px] mx-auto content-px">
+          <h3 className="f-section-title text-black mb-6 lg:mb-8 text-center">Awards</h3>
+          <div className="flex gap-4 lg:gap-6 justify-center flex-wrap">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-white px-8 py-4 flex items-center justify-center h-[60px] rounded"
+              >
+                <span className="f-btn text-black">MIGRONIS</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Media About Us ── */}
+      <section>
+        <div className="max-w-[1196px] mx-auto py-8 content-px">
+          <div className="border-t-2 border-[#d9d9d8]" />
+          <div className="flex flex-col lg:flex-row items-start justify-between py-8 gap-6">
+            <div className="flex items-start gap-6">
+              <h3 className="f-heading-md text-black">Media<br />about us</h3>
+              <div className="flex gap-2 mt-2">
+                <button className="w-9 h-9 rounded-full bg-[#d9d9d8] flex items-center justify-center text-black hover:bg-[#c0c0c0] transition-colors">←</button>
+                <button className="w-9 h-9 rounded-full bg-[#d9d9d8] flex items-center justify-center text-black hover:bg-[#c0c0c0] transition-colors">→</button>
+              </div>
+            </div>
+            <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar w-full lg:w-auto">
+              {mediaMentions.map((m, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d8] rounded flex flex-col items-center justify-center p-6"
+                >
+                  <span className="f-quote-mark text-black/20 block text-center">&ldquo;</span>
+                  <p className="f-body text-black text-center mt-2">{m.quote}</p>
+                  <p className="f-body text-black/40 mt-4">{m.source}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border-b-2 border-[#d9d9d8]" />
+        </div>
+      </section>
+
+      {/* ── Let's Discuss Your Case ── */}
+      <section style={{ backgroundColor: "#4b213c" }}>
+        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
+            <div>
+              <span className="f-cta-big block text-white">Let&apos;s</span>
+              <span className="f-cta-sub block mt-1 text-white">discuss your case</span>
+            </div>
+            <div className="flex flex-col gap-3 w-full lg:w-[343px]">
+              <input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d8] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4" />
+              <input type="email" placeholder="Email" className="f-input bg-[#d9d9d8] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4" />
+              <input type="tel" placeholder="Phone Number" className="f-input bg-[#d9d9d8] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4" />
+              <label className="flex items-start gap-2 cursor-pointer text-white/60">
+                <input type="checkbox" className="mt-1 accent-black" />
+                <span className="text-xs leading-tight">I agree to the processing of personal data</span>
+              </label>
+              <button className="f-btn-lg bg-white text-black hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Vlog ── */}
+      <VlogSection />
     </>
   );
 }
