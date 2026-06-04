@@ -11,23 +11,23 @@ const investmentProjects = [
   {
     tag: "Residential · Costa Rica",
     title: "Project 1",
-    subtitle: "Eco Village",
+    subtitle: "Build Strong Teams",
     desc: "Learn to transform chaos into new opportunities. Build strong teams and achieve results through investment in sustainable living communities surrounded by rainforest.",
-    gradient: "linear-gradient(135deg, #e582b4 0%, #c87d33 50%, #e6cc53 100%)",
+    bg: "#e6cc53",
   },
   {
     tag: "Agricultural · Portugal",
     title: "Project 2",
-    subtitle: "Vineyard Estate",
+    subtitle: "Build Strong Teams",
     desc: "Learn to transform chaos into new opportunities. Build strong teams investing in premium wine production with EU residency pathway in the Alentejo region.",
-    gradient: "linear-gradient(135deg, #e6cc53 0%, #608b8c 50%, #02abe3 100%)",
+    bg: "#7ec8e3",
   },
   {
     tag: "Hospitality · Bali",
     title: "Project 3",
-    subtitle: "Wellness Resort",
+    subtitle: "Build Strong Teams",
     desc: "Learn to transform chaos into new opportunities. Build strong teams through luxury wellness retreat combining traditional Balinese healing with modern sustainability.",
-    gradient: "linear-gradient(135deg, #02abe3 0%, #608b8c 50%, #4b213c 100%)",
+    bg: "#e6cc53",
   },
 ];
 
@@ -181,10 +181,10 @@ export default function InvestmentPage() {
                   key={project.title}
                   className={`flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} gap-6 lg:gap-8`}
                 >
-                  {/* Gradient visual */}
+                  {/* Colored visual */}
                   <div
                     className="lg:w-1/2 min-h-[200px] lg:min-h-[350px] flex items-end p-6 lg:p-10"
-                    style={{ background: project.gradient }}
+                    style={{ backgroundColor: project.bg }}
                   >
                     <div>
                       <p className="f-nav text-black/50 mb-1">{project.tag}</p>
@@ -242,24 +242,24 @@ export default function InvestmentPage() {
       </section>
 
       {/* ── Cases ── */}
-      <section className="bg-[#191c1f]">
+      <section style={{ background: "linear-gradient(135deg, #f5a0b8 0%, #f0c27f 100%)" }}>
         <div className="max-w-[1400px] mx-auto py-12 lg:py-16 content-px">
           {/* Category tabs */}
           <div className="flex gap-4 lg:gap-6 mb-4 overflow-x-auto no-scrollbar">
-            <button className="f-nav whitespace-nowrap text-white/30">Passport/visas</button>
-            <button className="f-nav whitespace-nowrap text-white/30">Travel</button>
-            <button className="f-nav whitespace-nowrap f-nav-active text-white">Investment</button>
-            <button className="f-nav whitespace-nowrap text-white/30">Education</button>
+            <button className="f-nav whitespace-nowrap text-black/30">Passport/visas</button>
+            <button className="f-nav whitespace-nowrap text-black/30">Travel</button>
+            <button className="f-nav whitespace-nowrap f-nav-active text-black">Investment</button>
+            <button className="f-nav whitespace-nowrap text-black/30">Education</button>
           </div>
 
           <div className="flex items-center justify-between mb-8">
-            <h2 className="f-section-title text-white">Cases</h2>
+            <h2 className="f-section-title text-black">Cases</h2>
             <div className="flex gap-2">
-              <button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <span className="text-white text-sm">←</span>
+              <button className="w-[36px] h-[36px] rounded-full border border-black/20 flex items-center justify-center hover:bg-black/10 transition-colors">
+                <span className="text-black text-sm">←</span>
               </button>
-              <button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <span className="text-white text-sm">→</span>
+              <button className="w-[36px] h-[36px] rounded-full border border-black/20 flex items-center justify-center hover:bg-black/10 transition-colors">
+                <span className="text-black text-sm">→</span>
               </button>
             </div>
           </div>
@@ -284,11 +284,11 @@ export default function InvestmentPage() {
               </div>
             </a>
             <div className="flex flex-col justify-center">
-              <h3 className="f-case-title text-white whitespace-pre-line mb-4">
+              <h3 className="f-case-title text-black whitespace-pre-line mb-4">
                 {investmentCases[0].title}
               </h3>
-              <p className="f-body text-white/50 mb-6">{investmentCases[0].desc}</p>
-              <button className="f-btn text-white border border-white/20 px-6 py-3 self-start hover:bg-white/10 transition-colors">
+              <p className="f-body text-black/60 mb-6">{investmentCases[0].desc}</p>
+              <button className="f-btn text-black border border-black/20 px-6 py-3 self-start hover:bg-black/10 transition-colors">
                 learn more
               </button>
             </div>
@@ -355,20 +355,20 @@ export default function InvestmentPage() {
       {/* ── Text Reviews (shared component) ── */}
       <ReviewsSection />
 
-      {/* ── Get a Free Consultation (gradient) ── */}
-      <section style={{ background: "linear-gradient(135deg, #e582b4 0%, #02abe3 100%)" }}>
-        <div className="max-w-[1400px] mx-auto py-10 lg:py-14 content-px">
+      {/* ── Get a Free Consultation ── */}
+      <section style={{ backgroundColor: "#1f4a2e" }}>
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
             <div>
-              <span className="f-cta-big block text-black">Get</span>
-              <span className="f-cta-sub block mt-1 text-black">a free consultation</span>
+              <span className="f-cta-big block text-white">Get</span>
+              <span className="f-cta-sub block mt-1 text-white">a free consultation</span>
             </div>
             <InlineForm
               formKey="InvestmentConsultation"
               pageSource="/investment"
-              inputClassName="f-input bg-white/90 text-black placeholder:text-black/40 outline-none px-4"
-              buttonClassName="f-btn bg-black text-white"
-              inputWidth="w-full lg:w-[224px]"
+              inputClassName="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none px-4"
+              buttonClassName="f-btn-lg bg-white text-black hover:opacity-90 transition-opacity"
+              inputWidth="w-full lg:w-[343px]"
             />
           </div>
         </div>
