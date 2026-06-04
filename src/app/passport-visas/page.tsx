@@ -271,17 +271,14 @@ export default function PassportVisasPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {[
-              { num: "01", title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction. We build a personalized roadmap.", img: "/images/workflow/consultation.png" },
-              { num: "02", title: "Documents", desc: "We prepare, verify, and legalize all necessary documentation on your behalf.", img: "/images/workflow/documents.png" },
-              { num: "03", title: "Processing", desc: "Full application submission and government liaison. We track every stage for you.", img: "/images/workflow/processing.png" },
-              { num: "04", title: "Freedom", desc: "Receive your residence permit or passport and start living without borders.", img: "/images/workflow/freedom.png" },
+              { num: "01", title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction. We build a personalized roadmap." },
+              { num: "02", title: "Documents", desc: "We prepare, verify, and legalize all necessary documentation on your behalf." },
+              { num: "03", title: "Processing", desc: "Full application submission and government liaison. We track every stage for you." },
+              { num: "04", title: "Freedom", desc: "Receive your residence permit or passport and start living without borders." },
             ].map((step) => (
               <div key={step.title} className="text-center">
-                <div className="w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mx-auto mb-6 flex items-center justify-center">
-                  <img src={step.img} alt={step.title} className="w-full h-full object-contain" loading="lazy" />
-                </div>
-                <span className="text-[#c87d33] text-sm font-bold tracking-widest">{step.num}</span>
-                <h3 className="f-desc-bold text-black mt-2 text-lg">{step.title}</h3>
+                <span className="text-[#c87d33] text-4xl lg:text-5xl font-bold">{step.num}</span>
+                <h3 className="f-desc-bold text-black mt-4 text-lg">{step.title}</h3>
                 <p className="f-body text-black/50 mt-3 text-sm leading-relaxed max-w-[240px] mx-auto">{step.desc}</p>
               </div>
             ))}
