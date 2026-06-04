@@ -117,7 +117,14 @@
     padding-right: 16px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
+    .content-px {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  @media (min-width: 1440px) {
     .content-px {
       padding-left: 0;
       padding-right: 0;

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
 
 export default function TravelPage() {
   return (
     <>
-      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Travel</h1></div></section>
+      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Travel</h1></div></section>
 
       <section className="bg-white py-8 lg:py-12"><div className="max-w-[1400px] mx-auto content-px"><h2 className="f-heading-md text-black mb-4">Explore the world — and learn from it</h2><p className="f-desc-bold text-black">Educational expeditions for families who travel with purpose: through geography, history, and real connection with the world.</p></div></section>
 

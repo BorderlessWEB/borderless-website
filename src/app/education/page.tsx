@@ -1,10 +1,9 @@
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
 
 export default function EducationPage() {
   return (
     <>
-      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">education</h1></div></section>
+      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title text-black">Education</h1></div></section>
 
       <section className="bg-white py-8 lg:py-12"><div className="max-w-[1400px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8 mb-12"><div className="lg:w-1/2"><p className="f-desc-bold text-black mb-6">Education at BORDERLESS is practical and transformative. Our courses help you understand global mobility and take real steps toward freedom.</p><p className="f-body text-black">We don't just share information — we share a system built on real experience. From choosing a country to securing residency, from childbirth abroad to building a life without borders.</p></div><div className="lg:w-1/2 bg-[#eeeeee] rounded flex items-center justify-center min-h-[250px] lg:min-h-[400px]"><div className="w-[55px] h-[55px] rounded-full border-2 border-black/30 flex items-center justify-center cursor-pointer"><span className="text-black ml-1 text-lg">▶</span></div></div></div></div></section>
 

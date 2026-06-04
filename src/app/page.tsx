@@ -24,7 +24,7 @@ export default function HomePage() {
 
           {/* Hero content */}
           <div className="relative flex-1 flex items-end pb-[15vh] lg:pb-[120px]">
-            <div className="max-w-[1400px] mx-auto w-full px-4 lg:px-0">
+            <div className="max-w-[1400px] mx-auto w-full content-px">
               <div className="max-w-full lg:max-w-[650px]">
                 <h1 className="f-hero-text text-white">
                   A platform for living, investing, and growing without borders

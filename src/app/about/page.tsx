@@ -1,10 +1,9 @@
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title-light text-black">About us</h1></div></section>
+      <section className="bg-white"><div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]"><p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p><h1 className="f-page-title-light text-black">About us</h1></div></section>
 
       <section className="bg-white py-8 lg:py-12"><div className="max-w-[1400px] mx-auto content-px"><div className="flex flex-col lg:flex-row gap-8"><div className="lg:w-1/2"><h2 className="f-heading-md text-black mb-6">Our Ideology</h2><p className="f-desc-bold text-black mb-4">We believe in a world where people choose their place, not inherit it.</p><p className="f-body text-black">A world without borders — geographical, economic, or mental. A world where freedom is a strategy, not a dream.</p></div><div className="lg:w-1/2"><img src="/images/team-anatoliy.jpg" alt="Anatoliy Lyetayev" className="w-full h-full object-cover rounded" /></div></div></div></section>
 
