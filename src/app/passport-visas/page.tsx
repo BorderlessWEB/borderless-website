@@ -234,23 +234,23 @@ export default function PassportVisasPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
             {[
-              { title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction." },
-              { title: "Documents", desc: "We prepare and verify all necessary documentation." },
-              { title: "Processing", desc: "Full submission and government liaison on your behalf." },
-              { title: "Freedom", desc: "Receive your residence permit or passport and start living without borders." },
+              { title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction.", img: "/images/workflow/consultation.png" },
+              { title: "Documents", desc: "We prepare and verify all necessary documentation.", img: "/images/workflow/documents.png" },
+              { title: "Processing", desc: "Full submission and government liaison on your behalf.", img: "/images/workflow/processing.png" },
+              { title: "Freedom", desc: "Receive your residence permit or passport and start living without borders.", img: "/images/workflow/freedom.png" },
             ].map((step, i) => (
               <div key={step.title}>
-                <div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px] rounded">
-                  <p className="f-nav text-black/40">Migronis Workflow Step {i + 1}</p>
+                <div className="bg-[#f5f5f5] flex items-center justify-center h-[140px] lg:h-[160px] rounded overflow-hidden p-4">
+                  <img src={step.img} alt={step.title} className="h-full w-auto object-contain" loading="lazy" />
                 </div>
                 <h3 className="f-desc-bold text-black mt-4">{step.title}</h3>
                 <p className="f-body text-black/60 mt-2">{step.desc}</p>
               </div>
             ))}
-            {/* Connecting lines (desktop) */}
-            <div className="hidden lg:block absolute top-[71px] left-[24%] w-[3%] h-[1px] bg-black" />
-            <div className="hidden lg:block absolute top-[71px] left-[49%] w-[3%] h-[1px] bg-black" />
-            <div className="hidden lg:block absolute top-[71px] left-[74%] w-[3%] h-[1px] bg-black" />
+            {/* Connecting arrows (desktop) */}
+            <div className="hidden lg:block absolute top-[80px] left-[24%] w-[3%] h-[1px] bg-black/30" />
+            <div className="hidden lg:block absolute top-[80px] left-[49%] w-[3%] h-[1px] bg-black/30" />
+            <div className="hidden lg:block absolute top-[80px] left-[74%] w-[3%] h-[1px] bg-black/30" />
           </div>
         </div>
       </section>
