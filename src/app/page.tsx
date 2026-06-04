@@ -170,17 +170,17 @@ export default function HomePage() {
       </section>
 
       {/* Section 5: Insights */}
-      <section className="bg-[#02abe3]">
+      <section style={{ background: 'linear-gradient(135deg, #c87d33 0%, #e6cc53 25%, #02abe3 70%, #608b8c 100%)' }}>
         <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <div className="flex gap-3 lg:gap-6 overflow-x-auto no-scrollbar">
-              <button className="f-nav whitespace-nowrap f-nav-active text-white">
+              <button className="f-nav whitespace-nowrap f-nav-active text-black">
                 Insights
               </button>
-              <button className="f-nav whitespace-nowrap text-white/40">
+              <button className="f-nav whitespace-nowrap text-black/30">
                 Vlog
               </button>
-              <button className="f-nav whitespace-nowrap text-white/40">
+              <button className="f-nav whitespace-nowrap text-black/30">
                 Podcast
               </button>
             </div>
@@ -198,11 +198,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className="lg:col-span-2 flex flex-col justify-end">
-              <p className="f-body text-white/40 mb-1 lg:mb-2">12.03.2026</p>
-              <h3 className="f-article-title text-white">
+              <p className="f-body text-black/40 mb-1 lg:mb-2">12.03.2026</p>
+              <h3 className="f-article-title text-black">
                 A warmer world will hurt this group more than any other
               </h3>
-              <p className="f-body text-white/70 mt-2 lg:mt-3">
+              <p className="f-body text-black/60 mt-2 lg:mt-3">
                 We need to help the world&apos;s poorest people adapt to climate
                 change.
               </p>
@@ -215,8 +215,8 @@ export default function HomePage() {
                   <span className="text-white ml-0.5 text-sm">▶</span>
                 </div>
               </div>
-              <p className="f-body text-white/40 mt-2 lg:mt-3">28.02.2026</p>
-              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+              <p className="f-body text-black/40 mt-2 lg:mt-3">28.02.2026</p>
+              <h4 className="f-btn text-black mt-1 group-hover:text-black/60 transition-colors">
                 The future of citizenship by investment in 2026
               </h4>
             </Link>
@@ -226,8 +226,8 @@ export default function HomePage() {
                   <span className="text-white ml-0.5 text-sm">▶</span>
                 </div>
               </div>
-              <p className="f-body text-white/40 mt-2 lg:mt-3">15.02.2026</p>
-              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+              <p className="f-body text-black/40 mt-2 lg:mt-3">15.02.2026</p>
+              <h4 className="f-btn text-black mt-1 group-hover:text-black/60 transition-colors">
                 Why sustainable investing is no longer optional
               </h4>
             </Link>
@@ -237,8 +237,8 @@ export default function HomePage() {
                   <span className="text-white ml-0.5 text-sm">▶</span>
                 </div>
               </div>
-              <p className="f-body text-white/40 mt-2 lg:mt-3">01.02.2026</p>
-              <h4 className="f-btn text-white mt-1 group-hover:text-white/80 transition-colors">
+              <p className="f-body text-black/40 mt-2 lg:mt-3">01.02.2026</p>
+              <h4 className="f-btn text-black mt-1 group-hover:text-black/60 transition-colors">
                 Top 5 countries for digital nomad visas
               </h4>
             </Link>
