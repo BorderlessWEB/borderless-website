@@ -100,7 +100,6 @@ export default function HomePage() {
         <div className="max-w-[1196px] mx-auto content-px">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             <Link href="/passport-visas" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:border-r lg:pr-12">
-              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
               <h3
                 className="f-section-title text-black group-hover:text-black/60 transition-colors"
                 style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
@@ -116,7 +115,6 @@ export default function HomePage() {
               </span>
             </Link>
             <Link href="/investment" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:pl-12">
-              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
               <h3
                 className="f-section-title text-black group-hover:text-black/60 transition-colors"
                 style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
@@ -132,7 +130,6 @@ export default function HomePage() {
               </span>
             </Link>
             <Link href="/education" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:border-r lg:pr-12">
-              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
               <h3
                 className="f-section-title text-black group-hover:text-black/60 transition-colors"
                 style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
@@ -148,7 +145,6 @@ export default function HomePage() {
               </span>
             </Link>
             <Link href="/travel" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:pl-12">
-              <p className="f-nav text-black/30 mb-2 lg:mb-3">Borderless</p>
               <h3
                 className="f-section-title text-black group-hover:text-black/60 transition-colors"
                 style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
