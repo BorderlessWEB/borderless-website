@@ -45,7 +45,7 @@ export default function InsightsPage() {
     <>
       {/* Hero */}
       <section className="bg-white">
-        <div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
+        <div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
           <p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p>
           <h1 className="f-page-title text-black">Insights</h1>
         </div>
@@ -53,7 +53,7 @@ export default function InsightsPage() {
 
       {/* Intro */}
       <section className="bg-white">
-        <div className="max-w-[1196px] mx-auto pt-6 lg:pt-8 content-px">
+        <div className="max-w-[1400px] mx-auto pt-6 lg:pt-8 content-px">
           <p className="f-body text-black/60 max-w-[700px]">
             A curated selection of places for a happy life and business — a unique
             channel you&apos;ll want to follow. We are happy to share these discoveries
@@ -64,7 +64,7 @@ export default function InsightsPage() {
 
       {/* Content grid */}
       <section className="bg-white">
-        <div className="max-w-[1196px] mx-auto py-8 lg:py-12 content-px">
+        <div className="max-w-[1400px] mx-auto py-8 lg:py-12 content-px">
 
           {/* Featured */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 mb-8 lg:mb-12">

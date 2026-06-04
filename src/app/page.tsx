@@ -26,7 +26,7 @@ export default function HomePage() {
 
           {/* Hero content */}
           <div className="relative flex-1 flex items-start pt-[25vh] lg:pt-[180px]">
-            <div className="max-w-[1196px] mx-auto w-full px-4 lg:px-0">
+            <div className="max-w-[1400px] mx-auto w-full px-4 lg:px-0">
               <div className="max-w-full lg:max-w-[500px]">
                 <h1 className="f-hero-text text-white">
                   A platform for living, investing, and growing without borders
@@ -49,33 +49,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 1: Vision */}
+      {/* Section 1: Vision — full bleed image */}
       <section className="bg-[#eeeeee]">
-        <div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px">
-          <h2 className="f-section-title text-black text-center mb-8 lg:mb-16">
+        <div className="max-w-[1400px] mx-auto pt-12 lg:pt-16 content-px">
+          <h2 className="f-section-title text-black text-center mb-8 lg:mb-12">
             Borderless Vision
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div className="order-2 lg:order-1">
-              <img
-                src="/images/vision-anatoliy.jpg"
-                alt="Anatoliy Lyetayev"
-                className="w-full h-full object-cover rounded min-h-[200px] lg:min-h-[400px]"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <span className="f-quote-mark text-black block">&ldquo;</span>
-              <blockquote className="f-desc-bold text-black -mt-2 lg:-mt-4">
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px] lg:min-h-[600px]">
+          <div className="relative min-h-[300px] lg:min-h-[600px]">
+            <img
+              src="/images/vision-anatoliy.jpg"
+              alt="Anatoliy Lyetayev"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex items-center px-6 lg:px-16 xl:px-24 py-10 lg:py-16">
+            <div>
+              <span className="f-quote-mark text-black block text-5xl lg:text-7xl leading-none">&ldquo;</span>
+              <blockquote className="f-desc-bold text-black text-xl lg:text-2xl -mt-2 lg:-mt-4">
                 The world doesn&apos;t limit you.
               </blockquote>
-              <p className="f-body text-black mt-4 lg:mt-6">
+              <p className="f-body text-black/70 mt-6 lg:mt-8 text-base lg:text-lg leading-relaxed">
                 Freedom is not a destination — it&apos;s a system you build, one decision at a time. Over the last ten years, I&apos;ve moved across countries, always choosing the best place for my family, my capital, and my future.
               </p>
-              <p className="f-body text-black mt-3 lg:mt-4">
+              <p className="f-body text-black/70 mt-4 text-base lg:text-lg leading-relaxed">
                 Here, my guests and I share what actually works: how to choose where to live, where to invest, and how to travel with purpose.
               </p>
-              <span className="f-quote-mark text-black block text-right">&rdquo;</span>
-              <p className="f-body text-black">Anatoliy Letaev</p>
+              <span className="f-quote-mark text-black block text-right text-5xl lg:text-7xl leading-none">&rdquo;</span>
+              <p className="f-body text-black font-bold mt-2">Anatoliy Letaev</p>
+              <p className="f-small text-black/40">Founder, Borderless</p>
             </div>
           </div>
         </div>
@@ -83,7 +86,7 @@ export default function HomePage() {
 
       {/* Section 2: Products intro */}
       <section className="py-10 lg:py-16">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black mb-4 lg:mb-6">
             Borderless products
           </h2>
@@ -100,7 +103,7 @@ export default function HomePage() {
 
       {/* Section 4: Product cards grid */}
       <section className="pb-6 lg:pb-12">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             <Link href="/passport-visas" className="group flex flex-col py-6 lg:py-12 border-b border-[#d9d9d9] lg:border-r lg:pr-12">
               <h3
@@ -169,7 +172,7 @@ export default function HomePage() {
 
       {/* Section 5: Insights */}
       <section style={{ background: 'linear-gradient(135deg, #c87d33 0%, #e6cc53 25%, #02abe3 70%, #608b8c 100%)' }}>
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <h2 className="f-section-title text-black">Insights</h2>
             <Link
@@ -270,7 +273,7 @@ export default function HomePage() {
 function CTASection() {
   return (
     <section style={{ backgroundColor: "#02abe3" }}>
-      <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+      <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
           <div className="mb-2 lg:mb-0">
             <span className="f-cta-big block text-black">Join</span>

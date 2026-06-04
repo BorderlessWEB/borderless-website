@@ -14,7 +14,7 @@ export default function VlogSection() {
 
   return (
     <section className="py-8 lg:py-12">
-      <div className="max-w-[1196px] mx-auto content-px">
+      <div className="max-w-[1400px] mx-auto content-px">
         <div className="flex items-center justify-between mb-4 lg:mb-8">
           <h2 className="f-desc-bold text-black">
             Featured Experiences / Vlog

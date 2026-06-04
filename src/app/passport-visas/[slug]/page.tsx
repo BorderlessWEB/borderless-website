@@ -34,7 +34,7 @@ export default async function ProgramPage({ params }: Props) {
     <>
       {/* ── Hero ── */}
       <section className="bg-[#191c1f]">
-        <div className="max-w-[1196px] mx-auto content-px pt-[90px] pb-10 lg:pb-16">
+        <div className="max-w-[1400px] mx-auto content-px pt-[90px] pb-10 lg:pb-16">
           <p className="f-nav text-white/40 mb-3">
             <Link href="/passport-visas" className="hover:text-white/70 transition-colors">
               Borderless — Passport/visas
@@ -96,7 +96,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Featured Video ── */}
       {hasDetail && detail.videoId && (
         <section className="bg-[#191c1f] pb-10 lg:pb-16">
-          <div className="max-w-[1196px] mx-auto content-px">
+          <div className="max-w-[1400px] mx-auto content-px">
             <a
               href={`https://www.youtube.com/watch?v=${detail.videoId}`}
               target="_blank"
@@ -122,7 +122,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Main Content ── */}
       {hasDetail ? (
         <section className="py-10 lg:py-16">
-          <div className="max-w-[1196px] mx-auto content-px">
+          <div className="max-w-[1400px] mx-auto content-px">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               {/* Main column */}
               <div className="lg:col-span-2">
@@ -342,7 +342,7 @@ export default async function ProgramPage({ params }: Props) {
       ) : (
         /* Fallback */
         <section className="py-10 lg:py-16">
-          <div className="max-w-[1196px] mx-auto content-px">
+          <div className="max-w-[1400px] mx-auto content-px">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               <div className="lg:col-span-2">
                 <h2 className="f-heading-md text-black mb-6">About the program</h2>
@@ -371,7 +371,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Related Videos ── */}
       {hasDetail && detail.relatedVideos && detail.relatedVideos.length > 0 && (
         <section className="bg-[#f5f5f5] py-8 lg:py-12">
-          <div className="max-w-[1196px] mx-auto content-px">
+          <div className="max-w-[1400px] mx-auto content-px">
             <h3 className="f-heading-md text-black mb-6">Related Videos</h3>
             <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 lg:mx-0 lg:px-0">
               {detail.relatedVideos.map((v) => (
@@ -405,7 +405,7 @@ export default async function ProgramPage({ params }: Props) {
 
       {/* ── CTA Bottom ── */}
       <section style={{ background: "linear-gradient(135deg, #e582b4 0%, #02abe3 100%)" }}>
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-14 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-14 content-px">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
             <div>
               <span className="f-cta-big block text-black">Get</span>

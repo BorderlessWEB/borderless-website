@@ -79,7 +79,7 @@ export default function PassportVisasPage() {
     <>
       {/* ── Hero ── */}
       <section className="bg-white">
-        <div className="max-w-[1196px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
+        <div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
           <p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p>
           <h1 className="f-page-title text-black">Passport/visas</h1>
         </div>
@@ -87,7 +87,7 @@ export default function PassportVisasPage() {
 
       {/* ── Steps: What is required? ── */}
       <section className="py-6 lg:py-10">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <h2 className="f-heading-md text-black">
               What is required to obtain a passport?
@@ -140,7 +140,7 @@ export default function PassportVisasPage() {
 
       {/* ── Migronis Section (dark) ── */}
       <section className="bg-[#191c1f]">
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="lg:w-1/2">
               <p className="f-nav text-white/40 mb-2">Borderless</p>
@@ -183,7 +183,7 @@ export default function PassportVisasPage() {
 
       {/* ── Get a Free Consultation (gradient) ── */}
       <section style={{ background: "linear-gradient(135deg, #e582b4 0%, #02abe3 100%)" }}>
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-14 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-14 content-px">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
             <div>
               <span className="f-cta-big block text-black">Get</span>
@@ -215,7 +215,7 @@ export default function PassportVisasPage() {
 
       {/* ── Main Products ── */}
       <section className="py-10 lg:py-16">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black mb-8 lg:mb-12">Main Products</h2>
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             {/* Citizenship */}
@@ -264,7 +264,7 @@ export default function PassportVisasPage() {
 
       {/* ── Workflow ── */}
       <section className="py-10 lg:py-16 bg-white">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black mb-4">Passport/visas Workflow</h2>
           <p className="f-body text-black/60 mb-8 lg:mb-12 max-w-[700px]">
             Learn to transform chaos into new opportunities. Build a structure around working projects to fruition.
@@ -295,7 +295,7 @@ export default function PassportVisasPage() {
 
       {/* ── Cases — real videos from @Migroniscitizenship ── */}
       <section className="bg-[#191c1f]">
-        <div className="max-w-[1196px] mx-auto py-12 lg:py-16 content-px">
+        <div className="max-w-[1400px] mx-auto py-12 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-8">
             <h2 className="f-section-title text-white">Cases</h2>
           </div>
@@ -361,7 +361,7 @@ export default function PassportVisasPage() {
 
       {/* ── Video Reviews ── */}
       <section className="py-8 lg:py-10">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <div className="flex items-start justify-between mb-4 lg:mb-6">
             <h3 className="f-heading-md text-black">Video<br />reviews</h3>
             <div className="flex gap-2 flex-shrink-0 ml-4">
@@ -403,7 +403,7 @@ export default function PassportVisasPage() {
 
       {/* ── Awards ── */}
       <section className="bg-[#eeeeee] py-8 lg:py-12">
-        <div className="max-w-[1196px] mx-auto content-px">
+        <div className="max-w-[1400px] mx-auto content-px">
           <h3 className="f-section-title text-black mb-6 lg:mb-8 text-center">Awards</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {awards.map((a, i) => (
@@ -432,7 +432,7 @@ export default function PassportVisasPage() {
 
       {/* ── Media About Us ── */}
       <section>
-        <div className="max-w-[1196px] mx-auto py-8 content-px">
+        <div className="max-w-[1400px] mx-auto py-8 content-px">
           <div className="border-t-2 border-[#d9d9d8]" />
           <div className="flex flex-col lg:flex-row items-start justify-between py-8 gap-6">
             <div className="flex items-start gap-6">
@@ -464,7 +464,7 @@ export default function PassportVisasPage() {
 
       {/* ── Insights (same as homepage) ── */}
       <section style={{ background: 'linear-gradient(135deg, #c87d33 0%, #e6cc53 25%, #02abe3 70%, #608b8c 100%)' }}>
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <h2 className="f-section-title text-black">Insights</h2>
             <Link href="/insights" className="f-btn bg-black text-white hidden sm:flex items-center justify-center flex-shrink-0 px-6 h-[36px]">
@@ -515,7 +515,7 @@ export default function PassportVisasPage() {
 
       {/* ── Let's Discuss Your Case ── */}
       <section style={{ backgroundColor: "#4b213c" }}>
-        <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
+        <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
             <div>
               <span className="f-cta-big block text-white">Let&apos;s</span>

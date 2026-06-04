@@ -630,7 +630,7 @@ export const programDetails: Record<string, ProgramDetail> = {
 
   "st-kitts-and-nevis": {
     slug: "st-kitts-and-nevis",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "G0VNW90YG8w",
     investment: "from $250,000",
     citizenship: "3–6 months",
     processingTime: "3–6 months",
@@ -696,13 +696,15 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make the investment/contribution and receive your Certificate of Citizenship and passport." },
     ],
     relatedVideos: [
+      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport — Real Estate or Donation?" },
+      { id: "I2ejNaJ6ghU", title: "Caribbean real estate and second citizenship" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
     ],
   },
 
   "dominica": {
     slug: "dominica",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "G0VNW90YG8w",
     investment: "from $100,000",
     citizenship: "3–4 months",
     processingTime: "3–4 months",
@@ -767,13 +769,14 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make your investment/contribution. Receive your Dominican passport and Certificate of Naturalization." },
     ],
     relatedVideos: [
+      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
     ],
   },
 
   "antigua-and-barbuda": {
     slug: "antigua-and-barbuda",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "I2ejNaJ6ghU",
     investment: "from $230,000",
     citizenship: "3–6 months",
     processingTime: "3–6 months",
@@ -846,6 +849,8 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make your investment/contribution. Receive citizenship and passports. Plan your 5-day visit to paradise!" },
     ],
     relatedVideos: [
+      { id: "I2ejNaJ6ghU", title: "Caribbean real estate and second citizenship" },
+      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
     ],
   },
@@ -925,7 +930,7 @@ export const programDetails: Record<string, ProgramDetail> = {
 
   "st-lucia": {
     slug: "st-lucia",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "m1NThT2GAjA",
     investment: "from $240,000",
     citizenship: "3–4 months",
     processingTime: "3–4 months",
@@ -1005,6 +1010,8 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, complete your investment and receive your St Lucian citizenship certificate and passport." },
     ],
     relatedVideos: [
+      { id: "m1NThT2GAjA", title: "Interview with the Head of St Lucia CIP" },
+      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
     ],
   },

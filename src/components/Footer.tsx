@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#d1d3d4]">
-      <div className="max-w-[1196px] mx-auto py-8 lg:py-12 content-px">
+      <div className="max-w-[1400px] mx-auto py-8 lg:py-12 content-px">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           <div>
             <span className="f-nav-active text-black tracking-[3px] block mb-4 lg:mb-6">
@@ -78,7 +78,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-black/10">
-        <div className="max-w-[1196px] mx-auto py-5 lg:py-8 content-px flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="max-w-[1400px] mx-auto py-5 lg:py-8 content-px flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex flex-wrap gap-3 lg:gap-6">
             <a
               href="#"

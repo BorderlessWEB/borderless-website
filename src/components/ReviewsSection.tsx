@@ -65,7 +65,7 @@ export default function ReviewsSection() {
 
   return (
     <section>
-      <div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px">
+      <div className="max-w-[1400px] mx-auto py-6 lg:py-8 content-px">
         <div className="border-t-[2px] border-[#d9d9d8]" />
         <div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6">
           <div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto">
