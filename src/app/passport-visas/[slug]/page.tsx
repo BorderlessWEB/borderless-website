@@ -42,34 +42,52 @@ export default async function ProgramPage({ params }: Props) {
           </p>
           <h1 className="f-page-title text-white">{program.name}</h1>
           {hasDetail && (
-            <p className="f-body-lg text-white/60 mt-4 max-w-[600px]">{detail.tagline}</p>
+            <p className="f-body-lg text-white/60 mt-4 max-w-[640px]">{detail.tagline}</p>
           )}
 
           {/* Key stats */}
           {hasDetail && (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-8">
               <div className="border border-white/15 rounded p-4">
-                <p className="f-small text-white/40 uppercase">Investment</p>
+                <p className="text-[11px] text-white/40 uppercase tracking-wider">Investment</p>
                 <p className="f-desc-bold text-white mt-1">{detail.investment}</p>
               </div>
+              {detail.minStay && (
+                <div className="border border-[#c87d33]/50 rounded p-4 bg-[#c87d33]/10">
+                  <p className="text-[11px] text-[#c87d33] uppercase tracking-wider">Min. Stay</p>
+                  <p className="f-desc-bold text-white mt-1">{detail.minStay}</p>
+                </div>
+              )}
+              {detail.permanentResidency && (
+                <div className="border border-white/15 rounded p-4">
+                  <p className="text-[11px] text-white/40 uppercase tracking-wider">Perm. Residency</p>
+                  <p className="f-desc-bold text-white mt-1">{detail.permanentResidency}</p>
+                </div>
+              )}
               {detail.citizenship && (
                 <div className="border border-white/15 rounded p-4">
-                  <p className="f-small text-white/40 uppercase">Citizenship</p>
+                  <p className="text-[11px] text-white/40 uppercase tracking-wider">Citizenship</p>
                   <p className="f-desc-bold text-white mt-1">{detail.citizenship}</p>
                 </div>
               )}
               {detail.processingTime && (
                 <div className="border border-white/15 rounded p-4">
-                  <p className="f-small text-white/40 uppercase">Processing</p>
+                  <p className="text-[11px] text-white/40 uppercase tracking-wider">Processing</p>
                   <p className="f-desc-bold text-white mt-1">{detail.processingTime}</p>
                 </div>
               )}
-              {detail.visaFree && (
-                <div className="border border-white/15 rounded p-4">
-                  <p className="f-small text-white/40 uppercase">Visa-free</p>
-                  <p className="f-desc-bold text-white mt-1">{detail.visaFree}</p>
+            </div>
+          )}
+
+          {/* Highlights — killer features */}
+          {hasDetail && detail.highlights && (
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {detail.highlights.map((h, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-[#c87d33] mt-0.5 flex-shrink-0 text-lg">★</span>
+                  <p className="text-white/80 text-sm leading-relaxed">{h}</p>
                 </div>
-              )}
+              ))}
             </div>
           )}
         </div>
@@ -101,17 +119,83 @@ export default async function ProgramPage({ params }: Props) {
         </section>
       )}
 
-      {/* ── Overview ── */}
+      {/* ── Main Content ── */}
       {hasDetail ? (
         <section className="py-10 lg:py-16">
           <div className="max-w-[1196px] mx-auto content-px">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              {/* Main content */}
+              {/* Main column */}
               <div className="lg:col-span-2">
                 <h2 className="f-heading-md text-black mb-6">About the program</h2>
-                <p className="f-body text-black/70 leading-relaxed text-lg">{detail.overview}</p>
+                <p className="f-body text-black/70 leading-relaxed text-[17px]">{detail.overview}</p>
 
-                {/* Benefits */}
+                {/* ── Investment Routes ── */}
+                {detail.investmentRoutes && (
+                  <div className="mt-12">
+                    <h3 className="f-desc-bold text-black mb-6 text-lg">Investment Routes</h3>
+                    <div className="space-y-4">
+                      {detail.investmentRoutes.map((route, i) => (
+                        <div
+                          key={i}
+                          className={`border rounded p-5 relative ${
+                            route.highlight
+                              ? "border-[#c87d33] bg-[#c87d33]/5"
+                              : "border-[#d9d9d8]"
+                          }`}
+                        >
+                          {route.badge && (
+                            <span className={`absolute -top-3 right-4 px-3 py-0.5 text-xs font-bold text-white rounded-full ${
+                              route.highlight ? "bg-[#c87d33]" : "bg-[#608b8c]"
+                            }`}>
+                              {route.badge}
+                            </span>
+                          )}
+                          <div className="flex items-start justify-between gap-4 mb-2">
+                            <h4 className="f-desc-bold text-black">{route.name}</h4>
+                            <span className="f-desc-bold text-[#c87d33] whitespace-nowrap">{route.amount}</span>
+                          </div>
+                          <p className="f-body text-black/60 text-sm leading-relaxed">{route.description}</p>
+                          <div className="mt-2">
+                            <span className={`text-xs font-medium px-2 py-0.5 rounded ${
+                              route.returnable
+                                ? "bg-green-100 text-green-700"
+                                : "bg-amber-100 text-amber-700"
+                            }`}>
+                              {route.returnable ? "Capital returnable" : "Non-refundable donation"}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Government Fees ── */}
+                {detail.fees && (
+                  <div className="mt-10">
+                    <h3 className="f-desc-bold text-black mb-4 text-lg">Government Fees (AIMA)</h3>
+                    <div className="bg-[#f5f5f5] rounded p-5">
+                      <div className="space-y-2">
+                        {detail.fees.map((fee, i) => (
+                          <div key={i} className="flex items-center justify-between py-2 border-b border-white/80 last:border-0">
+                            <span className="f-body text-black/60 text-sm">{fee.label}</span>
+                            <span className="f-desc-bold text-black text-sm">{fee.amount}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {detail.familyNote && (
+                        <div className="mt-4 pt-3 border-t border-[#d9d9d8]">
+                          <p className="text-xs text-black/50 leading-relaxed">
+                            <span className="font-bold text-black/70">Family note: </span>
+                            {detail.familyNote}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Benefits ── */}
                 <div className="mt-10">
                   <h3 className="f-desc-bold text-black mb-4 text-lg">Key Benefits</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -124,7 +208,7 @@ export default async function ProgramPage({ params }: Props) {
                   </div>
                 </div>
 
-                {/* Requirements */}
+                {/* ── Requirements ── */}
                 <div className="mt-10">
                   <h3 className="f-desc-bold text-black mb-4 text-lg">Requirements</h3>
                   <div className="space-y-3">
@@ -136,7 +220,7 @@ export default async function ProgramPage({ params }: Props) {
                   </div>
                 </div>
 
-                {/* Process */}
+                {/* ── Process ── */}
                 <div className="mt-10">
                   <h3 className="f-desc-bold text-black mb-6 text-lg">How It Works</h3>
                   <div className="space-y-0">
@@ -153,16 +237,26 @@ export default async function ProgramPage({ params }: Props) {
                     ))}
                   </div>
                 </div>
+
+                {/* ── Legal Basis ── */}
+                {detail.legalBasis && (
+                  <div className="mt-8 p-4 bg-[#f5f5f5] rounded">
+                    <p className="text-xs text-black/40 leading-relaxed">
+                      <span className="font-bold text-black/50">Legal basis: </span>
+                      {detail.legalBasis}
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {/* Sidebar */}
+              {/* ── Sidebar ── */}
               <div className="lg:col-span-1">
                 <div className="sticky top-20 space-y-6">
-                  {/* CTA */}
+                  {/* CTA Form */}
                   <div className="bg-[#f5f5f5] p-6 rounded">
                     <h3 className="f-desc-bold text-black mb-2">Get a free consultation</h3>
-                    <p className="f-body text-black/50 mb-4">
-                      Our experts will help you with the {program.name} program.
+                    <p className="f-body text-black/50 mb-4 text-sm">
+                      Our experts will guide you through the {program.name} program.
                     </p>
                     <div className="space-y-3">
                       <input type="text" placeholder="First and Last Name" className="f-small bg-white text-black placeholder:text-black/40 outline-none px-4 w-full h-[42px] border border-[#d9d9d8]" />
@@ -176,7 +270,7 @@ export default async function ProgramPage({ params }: Props) {
                     </div>
                   </div>
 
-                  {/* Quick facts */}
+                  {/* Quick Facts */}
                   <div className="border border-[#d9d9d8] p-5 rounded">
                     <h4 className="f-desc-bold text-black mb-3">Quick Facts</h4>
                     <div className="space-y-2 text-sm">
@@ -184,6 +278,18 @@ export default async function ProgramPage({ params }: Props) {
                         <span className="text-black/50">Investment</span>
                         <span className="text-black font-medium">{detail.investment}</span>
                       </div>
+                      {detail.minStay && (
+                        <div className="flex justify-between py-1 border-b border-[#f0f0f0]">
+                          <span className="text-black/50">Min. stay</span>
+                          <span className="text-[#c87d33] font-bold">{detail.minStay}</span>
+                        </div>
+                      )}
+                      {detail.permanentResidency && (
+                        <div className="flex justify-between py-1 border-b border-[#f0f0f0]">
+                          <span className="text-black/50">Perm. residency</span>
+                          <span className="text-black font-medium">{detail.permanentResidency}</span>
+                        </div>
+                      )}
                       {detail.citizenship && (
                         <div className="flex justify-between py-1 border-b border-[#f0f0f0]">
                           <span className="text-black/50">Citizenship</span>
@@ -203,6 +309,7 @@ export default async function ProgramPage({ params }: Props) {
                         </div>
                       )}
                     </div>
+                    <p className="text-[10px] text-black/30 mt-3">*10 years for non-EU/CPLP nationals (Lei Orgânica n.º 1/2026)</p>
                   </div>
 
                   {/* Other programs */}
@@ -233,7 +340,7 @@ export default async function ProgramPage({ params }: Props) {
           </div>
         </section>
       ) : (
-        /* Fallback for pages without detail data yet */
+        /* Fallback */
         <section className="py-10 lg:py-16">
           <div className="max-w-[1196px] mx-auto content-px">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
