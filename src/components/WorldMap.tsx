@@ -92,12 +92,12 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
     <div className="relative w-full">
       <ComposableMap
         projection="geoNaturalEarth1"
-        projectionConfig={{ scale: 160, center: [10, 10] }}
-        width={900}
-        height={440}
-        style={{ width: "100%", height: "auto", maxHeight: 500 }}
+        projectionConfig={{ scale: 200, center: [10, 10] }}
+        width={1200}
+        height={600}
+        style={{ width: "100%", height: "auto" }}
       >
-        <rect x={0} y={0} width={900} height={440} fill={OCEAN} />
+        <rect x={0} y={0} width={1200} height={600} fill={OCEAN} />
 
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
