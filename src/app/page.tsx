@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MapSection from "@/components/MapSection";
 import VlogSection from "@/components/VlogSection";
+import ReviewsSection from "@/components/ReviewsSection";
 
 export default function HomePage() {
   return (
@@ -256,54 +257,7 @@ export default function HomePage() {
       <VlogSection />
 
       {/* Section 7: Reviews */}
-      <section>
-        <div className="max-w-[1196px] mx-auto py-6 lg:py-8 content-px">
-          <div className="border-t-[2px] border-[#d9d9d9]" />
-          <div className="flex flex-col lg:flex-row items-start justify-between py-6 lg:py-8 gap-4 lg:gap-6">
-            <div className="flex items-start gap-4 lg:gap-6 w-full lg:w-auto">
-              <h3 className="f-heading-md text-black flex-shrink-0">
-                Text<br />reviews
-              </h3>
-              <div className="flex gap-2 mt-1 lg:mt-2">
-                <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
-                  ←
-                </button>
-                <button className="w-9 h-9 rounded-full border border-[#d9d9d9] flex items-center justify-center f-small text-black">
-                  →
-                </button>
-              </div>
-            </div>
-            <div className="flex gap-3 lg:gap-[25px] overflow-x-auto no-scrollbar w-full -mx-4 px-4 lg:mx-0 lg:px-0 lg:w-auto">
-              {[1, 2].map((i) => (
-                <div key={i} className="flex-shrink-0 w-[260px] lg:w-[345px]">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[#d9d9d9]">
-                      <span className="text-sm text-black">J</span>
-                    </div>
-                    <div>
-                      <p className="f-review-name text-black">JOhn Doe</p>
-                      <div className="flex gap-0.5">
-                        {[1, 2, 3, 4, 5].map((s) => (
-                          <span key={s} className="text-[#f5c518]" style={{ fontSize: 14 }}>
-                            ★
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="f-body text-black/60">
-                    I was choosing between several companies, but settled on
-                    Migronis. For me, the competence and speed of answers played a
-                    key role.
-                  </p>
-                  <p className="f-body mt-2 text-black/40">2 month ago</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="border-b-[2px] border-[#d9d9d9]" />
-        </div>
-      </section>
+      <ReviewsSection />
 
       {/* Section 8: CTA */}
       <CTASection />
