@@ -262,33 +262,29 @@ export default function PassportVisasPage() {
         </div>
       </section>
 
-      {/* ── Workflow ── */}
-      <section className="py-10 lg:py-16 bg-white">
+      {/* ── Workflow — Apple-inspired minimal ── */}
+      <section className="bg-[#f5f5f7] py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto content-px">
-          <h2 className="f-section-title text-black mb-4">Passport/visas Workflow</h2>
-          <p className="f-body text-black/60 mb-8 lg:mb-12 max-w-[700px]">
-            Learn to transform chaos into new opportunities. Build a structure around working projects to fruition.
-            This passport visa and achieve your goals.
+          <h2 className="f-section-title text-black text-center mb-3">How It Works</h2>
+          <p className="f-body text-black/50 text-center mb-12 lg:mb-20 max-w-[500px] mx-auto">
+            Four steps from your first call to a new passport.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {[
-              { title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction.", img: "/images/workflow/consultation.png" },
-              { title: "Documents", desc: "We prepare and verify all necessary documentation.", img: "/images/workflow/documents.png" },
-              { title: "Processing", desc: "Full submission and government liaison on your behalf.", img: "/images/workflow/processing.png" },
-              { title: "Freedom", desc: "Receive your residence permit or passport and start living without borders.", img: "/images/workflow/freedom.png" },
-            ].map((step, i) => (
-              <div key={step.title}>
-                <div className="bg-[#f5f5f5] flex items-center justify-center h-[140px] lg:h-[160px] rounded overflow-hidden p-4">
-                  <img src={step.img} alt={step.title} className="h-full w-auto object-contain" loading="lazy" />
+              { num: "01", title: "Consultation", desc: "Define your goals, choose the right program and jurisdiction. We build a personalized roadmap.", img: "/images/workflow/consultation.png" },
+              { num: "02", title: "Documents", desc: "We prepare, verify, and legalize all necessary documentation on your behalf.", img: "/images/workflow/documents.png" },
+              { num: "03", title: "Processing", desc: "Full application submission and government liaison. We track every stage for you.", img: "/images/workflow/processing.png" },
+              { num: "04", title: "Freedom", desc: "Receive your residence permit or passport and start living without borders.", img: "/images/workflow/freedom.png" },
+            ].map((step) => (
+              <div key={step.title} className="text-center">
+                <div className="w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mx-auto mb-6 flex items-center justify-center">
+                  <img src={step.img} alt={step.title} className="w-full h-full object-contain" loading="lazy" />
                 </div>
-                <h3 className="f-desc-bold text-black mt-4">{step.title}</h3>
-                <p className="f-body text-black/60 mt-2">{step.desc}</p>
+                <span className="text-[#c87d33] text-sm font-bold tracking-widest">{step.num}</span>
+                <h3 className="f-desc-bold text-black mt-2 text-lg">{step.title}</h3>
+                <p className="f-body text-black/50 mt-3 text-sm leading-relaxed max-w-[240px] mx-auto">{step.desc}</p>
               </div>
             ))}
-            {/* Connecting arrows (desktop) */}
-            <div className="hidden lg:block absolute top-[80px] left-[24%] w-[3%] h-[1px] bg-black/30" />
-            <div className="hidden lg:block absolute top-[80px] left-[49%] w-[3%] h-[1px] bg-black/30" />
-            <div className="hidden lg:block absolute top-[80px] left-[74%] w-[3%] h-[1px] bg-black/30" />
           </div>
         </div>
       </section>
