@@ -7,7 +7,6 @@ const navItems = [
   { href: "/passport-visas", label: "Passport/visas" },
   { href: "/investment", label: "Investment" },
   { href: "/education", label: "Education" },
-  { href: "/collaboration", label: "Collaboration" },
   { href: "/travel", label: "Travel" },
   { href: "/insights", label: "Insights" },
   { href: "/about", label: "About Us" },

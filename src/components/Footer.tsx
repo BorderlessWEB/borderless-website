@@ -56,12 +56,6 @@ export default function Footer() {
               Education
             </Link>
             <Link
-              href="/collaboration"
-              className="f-footer-nav text-black block hover:text-black/60 transition-colors"
-            >
-              Collaboration
-            </Link>
-            <Link
               href="/travel"
               className="f-footer-nav text-black block hover:text-black/60 transition-colors"
             >

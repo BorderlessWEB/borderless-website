@@ -9,7 +9,7 @@ const tabs: { key: MapTab; label: string }[] = [
   { key: "travel", label: "Travel" },
   { key: "investment", label: "Investment" },
   { key: "education", label: "Education" },
-  { key: "collaboration", label: "Collaboration" },
+
 ];
 
 export default function MapSection() {

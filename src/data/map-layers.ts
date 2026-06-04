@@ -3,7 +3,7 @@ export type MapTab =
   | "travel"
   | "investment"
   | "education"
-  | "collaboration";
+;
 
 export interface MapCountry {
   slug: string;
@@ -88,15 +88,7 @@ export const mapLayers: MapLayer[] = [
     ],
   },
 
-  /* ── COLLABORATION ── */
-  {
-    tab: "collaboration",
-    label: "Collaboration",
-    linkPrefix: "/collaboration",
-    countries: [
-      // Placeholder
-    ],
-  },
+
 ];
 
 export function getLayer(tab: MapTab): MapLayer {
