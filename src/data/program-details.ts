@@ -128,12 +128,12 @@ export const programDetails: Record<string, ProgramDetail> = {
     legalBasis:
       "Program regulated by Lei n.º 23/2007, amended by Decreto-Lei n.º 14/2021, Lei n.º 56/2023 (Mais Habitação — real estate route abolished), Law n.º 61/2025 (family reunification rules), and Lei Orgânica n.º 1/2026 (citizenship timeline). Administered by AIMA through Portal ARI.",
     relatedVideos: [
-      { id: "2UPGZjq5MsU", title: "What is it like to be a citizen of Portugal?" },
-      { id: "WcrITfyvEQA", title: "Moving to Portugal: best destinations for retirement" },
-      { id: "57TMY6iQ_9w", title: "How to move to Portugal — step by step" },
-      { id: "6GE_ljHAmNY", title: "Portugal vs Spain Golden Visa: pros and cons" },
+      { id: "KTXur3_-yvg", title: "Portugal: the ideal choice for crypto investors" },
+      { id: "KNhhCKd1Dh4", title: "More to Portugal than cities: ESG funds & agriculture" },
+      { id: "MBXUj-nV43s", title: "Portugal: invest in renovated palaces via fund" },
       { id: "i7Gqt6Pa0B0", title: "Why Portugal NHR is a top choice for investors" },
-      { id: "4JKimjQL0UI", title: "Portugal vs Greece Golden Visa: which to choose?" },
+      { id: "S-iP__YPgXA", title: "Is it profitable to invest in funds? Real case" },
+      { id: "mpFTkOT41_4", title: "Luxurious villa in Gerês National Park" },
     ],
   },
 
@@ -181,10 +181,11 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Residence Permit", desc: "Receive your residence permit and relocate to Portugal. Begin building your new life in the EU." },
     ],
     relatedVideos: [
-      { id: "57TMY6iQ_9w", title: "How to move to Portugal — step by step" },
-      { id: "2UPGZjq5MsU", title: "What is it like to be a citizen of Portugal?" },
-      { id: "WcrITfyvEQA", title: "Moving to Portugal: best destinations for retirement" },
-      { id: "i7Gqt6Pa0B0", title: "Why Portugal NHR is a top choice for investors" },
+      { id: "tzP4R6wCXEk", title: "Digital Nomads in Madeira — D7 Visa Portugal" },
+      { id: "Kqnh1mYl5IQ", title: "Startup Madeira: how an incubator can benefit your business" },
+      { id: "aqsUPacvTn0", title: "Madeira: support and development of businesses" },
+      { id: "9lYTq9aVep4", title: "Schools in Portugal: the best universities, surf for kids" },
+      { id: "F8zB6ZJX6_s", title: "Cascais: life in Portugal — pros & cons" },
     ],
   },
 
@@ -257,8 +258,9 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Residence Card", desc: "Receive your 5-year Golden Visa residence permit. Renew every 5 years while maintaining ownership. After 7 years of tax residency — apply for citizenship." },
     ],
     relatedVideos: [
-      { id: "yZJKpAp_jTQ", title: "Investing in real estate in Greece: residence permit & rental income" },
       { id: "4JKimjQL0UI", title: "Portugal vs Greece Golden Visa: which to choose?" },
+      { id: "6GE_ljHAmNY", title: "Portugal & Spain Golden Visa: pros and cons" },
+      { id: "xUoq7mGeUJA", title: "Flag Theory: living without borders" },
     ],
   },
 
@@ -323,14 +325,15 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Residence Permit", desc: "Receive your 10-year Guest Investor Residence Permit. After 3 years — eligible for permanent residency. After 8 years — eligible for citizenship." },
     ],
     relatedVideos: [
-      { id: "G8Z1bvxKrrQ", title: "Hungary Guest Investor Residence Permit" },
+      { id: "xUoq7mGeUJA", title: "Flag Theory: living without borders" },
+      { id: "Z1sXoccTEJI", title: "How investors earn on shopping malls: fund manager experience" },
       { id: "6GE_ljHAmNY", title: "Portugal vs Spain Golden Visa comparison" },
     ],
   },
 
   "cyprus": {
     slug: "cyprus",
-    videoId: "S-iP__YPgXA",
+    videoId: "xUoq7mGeUJA",
     investment: "from €300,000",
     permanentResidency: "immediate",
     citizenship: "after 7 years",
@@ -391,14 +394,15 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Permanent Residence Permit", desc: "Receive your permanent residence permit valid for life (as long as you maintain the property). After 7 years — eligible for EU citizenship." },
     ],
     relatedVideos: [
-      { id: "S-iP__YPgXA", title: "Cyprus permanent residence by investment" },
-      { id: "4JKimjQL0UI", title: "Portugal vs Greece Golden Visa comparison" },
+      { id: "S-iP__YPgXA", title: "Is it profitable to invest in funds? Real case" },
+      { id: "4JKimjQL0UI", title: "Portugal vs Greece Golden Visa: which to choose?" },
+      { id: "Z1sXoccTEJI", title: "How investors earn on shopping malls: fund manager experience" },
     ],
   },
 
   "spain": {
     slug: "spain",
-    videoId: "6GE_ljHAmNY",
+    videoId: "EejVkl8fupo",
     investment: "Varies by visa type",
     permanentResidency: "after 5 years",
     citizenship: "after 10 years",
@@ -473,13 +477,16 @@ export const programDetails: Record<string, ProgramDetail> = {
     ],
     relatedVideos: [
       { id: "6GE_ljHAmNY", title: "Portugal vs Spain Golden Visa: pros and cons" },
-      { id: "4JKimjQL0UI", title: "Comparison of European Golden Visa programs" },
+      { id: "fn3NYQ8O0jg", title: "Mallorca: Balearic Islands for life and business" },
+      { id: "vWWMNFWt2as", title: "Life in Marbella: pros, cons, neighborhoods" },
+      { id: "nO5OPjuquRI", title: "Barcelona: pros and cons for expats" },
+      { id: "W2_-ZP2tuMw", title: "Spain: why people come here for medical treatment" },
     ],
   },
 
   "us-eb5-visa": {
     slug: "us-eb5-visa",
-    videoId: "fFDA03rnAhY",
+    videoId: "dvCQeUu1rsQ",
     investment: "from $800,000",
     permanentResidency: "with Green Card",
     citizenship: "after 5 years",
@@ -548,13 +555,15 @@ export const programDetails: Record<string, ProgramDetail> = {
     ],
     legalBasis: "Immigration and Nationality Act §203(b)(5), EB-5 Reform and Integrity Act of 2022 (RIA). Administered by USCIS.",
     relatedVideos: [
-      { id: "fFDA03rnAhY", title: "US EB-5 investor visa — how to get a Green Card" },
+      { id: "dvCQeUu1rsQ", title: "Caribbean passport, life in the USA, and the philosophy of freedom" },
+      { id: "xUoq7mGeUJA", title: "Flag Theory: living without borders" },
+      { id: "Z1sXoccTEJI", title: "How investors earn: fund manager experience & flag theory" },
     ],
   },
 
   "brazil": {
     slug: "brazil",
-    videoId: "3DdCBuhPjkA",
+    videoId: "l4xuFc0oNqg",
     investment: "from R$500,000 (~$90,000)",
     permanentResidency: "immediate",
     citizenship: "after 4 years",
@@ -620,7 +629,9 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Permanent Residency & Path to Citizenship", desc: "Receive your permanent residence card (CRNM). After 4 years of residency — apply for Brazilian citizenship and one of the world's most versatile passports." },
     ],
     relatedVideos: [
-      { id: "3DdCBuhPjkA", title: "Brazil investor visa — residency and citizenship" },
+      { id: "DcnY2h1vIos", title: "Costa Rica: one of the best countries for living" },
+      { id: "nsFkDr_yeIs", title: "Chile: why expats are moving here in 2026" },
+      { id: "xUoq7mGeUJA", title: "Flag Theory: living without borders" },
     ],
   },
 
@@ -696,15 +707,16 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make the investment/contribution and receive your Certificate of Citizenship and passport." },
     ],
     relatedVideos: [
-      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport — Real Estate or Donation?" },
-      { id: "I2ejNaJ6ghU", title: "Caribbean real estate and second citizenship" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
+      { id: "dvCQeUu1rsQ", title: "Caribbean passport, life in the USA, freedom philosophy" },
+      { id: "q3r98pbm7p4", title: "Roger Ver: renunciation of US citizenship & Caribbean passport" },
+      { id: "xUoq7mGeUJA", title: "Flag Theory: living without borders" },
     ],
   },
 
   "dominica": {
     slug: "dominica",
-    videoId: "G0VNW90YG8w",
+    videoId: "2CWSMNcx2Mk",
     investment: "from $100,000",
     citizenship: "3–4 months",
     processingTime: "3–4 months",
@@ -769,14 +781,15 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make your investment/contribution. Receive your Dominican passport and Certificate of Naturalization." },
     ],
     relatedVideos: [
-      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
+      { id: "Hof0AglUdqw", title: "Sanctuary Rainforest in Dominica: project overview" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
+      { id: "dvCQeUu1rsQ", title: "Caribbean passport, freedom philosophy" },
     ],
   },
 
   "antigua-and-barbuda": {
     slug: "antigua-and-barbuda",
-    videoId: "I2ejNaJ6ghU",
+    videoId: "YlneqPoFzVQ",
     investment: "from $230,000",
     citizenship: "3–6 months",
     processingTime: "3–6 months",
@@ -849,15 +862,16 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, make your investment/contribution. Receive citizenship and passports. Plan your 5-day visit to paradise!" },
     ],
     relatedVideos: [
-      { id: "I2ejNaJ6ghU", title: "Caribbean real estate and second citizenship" },
-      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
+      { id: "h2jgNXY9dL0", title: "Antigua & Barbuda: interview with a new citizen" },
+      { id: "m5sN-32HK4c", title: "Antigua citizenship by investment: client review" },
+      { id: "G4TdBmwIKyg", title: "Tamarind Hills in Antigua: project overview" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
     ],
   },
 
   "grenada": {
     slug: "grenada",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "m1NThT2GAjA",
     investment: "from $235,000",
     citizenship: "3–6 months",
     processingTime: "3–6 months",
@@ -930,7 +944,7 @@ export const programDetails: Record<string, ProgramDetail> = {
 
   "st-lucia": {
     slug: "st-lucia",
-    videoId: "m1NThT2GAjA",
+    videoId: "e9jjP0rs-lk",
     investment: "from $240,000",
     citizenship: "3–4 months",
     processingTime: "3–4 months",
@@ -1010,15 +1024,15 @@ export const programDetails: Record<string, ProgramDetail> = {
       { step: "Approval & Citizenship", desc: "Upon approval, complete your investment and receive your St Lucian citizenship certificate and passport." },
     ],
     relatedVideos: [
-      { id: "m1NThT2GAjA", title: "Interview with the Head of St Lucia CIP" },
-      { id: "G0VNW90YG8w", title: "How to get a Caribbean passport?" },
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
+      { id: "dvCQeUu1rsQ", title: "Caribbean passport, freedom philosophy" },
+      { id: "q3r98pbm7p4", title: "Roger Ver: Caribbean passport & libertarianism" },
     ],
   },
 
   "sao-tome-e-principe": {
     slug: "sao-tome-e-principe",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "xUoq7mGeUJA",
     investment: "from $75,000",
     citizenship: "2–3 months",
     processingTime: "2–3 months",
@@ -1082,7 +1096,7 @@ export const programDetails: Record<string, ProgramDetail> = {
 
   "vanuatu": {
     slug: "vanuatu",
-    videoId: "DXUU85Ox4Ys",
+    videoId: "xUoq7mGeUJA",
     investment: "from $130,000",
     citizenship: "1–3 months",
     processingTime: "1–3 months",
@@ -1140,6 +1154,7 @@ export const programDetails: Record<string, ProgramDetail> = {
     ],
     relatedVideos: [
       { id: "DXUU85Ox4Ys", title: "How to decide which Caribbean CBI program" },
+      { id: "dvCQeUu1rsQ", title: "Caribbean passport, life in the USA, freedom philosophy" },
     ],
   },
 };
