@@ -29,8 +29,13 @@ function ArticleThumb({ image, className = "" }: { image: string; className?: st
   );
 }
 
-function Badge({ category }: { category: string }) {
-  return <span className="f-nav text-black/30" style={{ fontSize: 12 }}>{category}</span>;
+function Badge({ category, source }: { category: string; source?: string }) {
+  return (
+    <span className="f-nav text-black/30" style={{ fontSize: 12 }}>
+      {category}
+      {source && <span className="ml-2 text-[#c87d33]">· {source}</span>}
+    </span>
+  );
 }
 
 export default function InsightsPage() {
