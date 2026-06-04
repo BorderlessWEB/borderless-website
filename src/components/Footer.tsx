@@ -3,31 +3,6 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#d1d3d4]">
-      <div className="max-w-[1196px] mx-auto pt-10 lg:pt-16 pb-6 lg:pb-8 content-px">
-        <div className="border-t-[2px] border-[#d9d9d9] pt-6 lg:pt-8" />
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <h3 className="f-heading-md">Get our newsletters</h3>
-          <div className="flex flex-col gap-2 w-full lg:w-auto">
-            <div className="flex flex-col sm:flex-row gap-0 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Email"
-                className="f-small border border-[#d9d9d9] bg-white px-4 h-[50px] w-full sm:w-[300px] outline-none"
-              />
-              <button className="f-btn bg-black text-white px-6 h-[50px] hover:bg-black/80 transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
-                Subscribe
-              </button>
-            </div>
-            <label className="flex items-start gap-2 cursor-pointer text-black/50">
-              <input type="checkbox" className="mt-0.5 accent-black" />
-              <span className="text-xs leading-tight">
-                I agree to the processing of personal data
-              </span>
-            </label>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-[1196px] mx-auto py-8 lg:py-12 content-px">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           <div>

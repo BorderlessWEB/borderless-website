@@ -275,6 +275,9 @@ function CTASection() {
             <span className="f-cta-sub block mt-1 text-black">
               Borderless Community
             </span>
+            <p className="f-body text-black/60 mt-4 max-w-[400px]">
+              Subscribe to stay connected — get insights, travel stories, and investment opportunities delivered to your inbox.
+            </p>
           </div>
           <div className="flex flex-col gap-3 w-full lg:w-[343px]">
             <input
@@ -299,7 +302,7 @@ function CTASection() {
               </span>
             </label>
             <button className="f-btn-lg bg-black text-white hover:opacity-90 transition-opacity w-full h-[54px] flex items-center justify-center gap-2 disabled:opacity-60">
-              Send
+              Subscribe
             </button>
           </div>
         </div>
