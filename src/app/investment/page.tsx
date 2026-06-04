@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import ReviewsSection from "@/components/ReviewsSection";
 import VlogSection from "@/components/VlogSection";
+import InsightsSection from "@/components/InsightsSection";
 import InlineForm from "@/components/InlineForm";
 
 /* ── Investment Projects ── */
@@ -369,6 +370,9 @@ export default function InvestmentPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Insights ── */}
+      <InsightsSection />
 
       {/* ── Featured Experiences / Vlog ── */}
       <VlogSection />
