@@ -32,9 +32,26 @@ const videoReviews = [
   { id: "xUoq7mGeUJA", title: "Flag Theory: how to live without borders" },
 ];
 
+const awards = [
+  { img: "/images/awards/awards1.png", title: "Global Law Experts Awards — Best Citizenship-for-Investment Company 2021" },
+  { img: "/images/awards/awards2.png", title: "UGLOBAL — Top 25 Immigration Companies in the World" },
+  { img: "/images/awards/awards3.png", title: "Global Law Experts Awards — Best Citizenship-for-Investment Company 2020" },
+];
+
+const mediaEditions = [
+  { img: "/images/media/editions1.svg", name: "Forbes", link: "https://www.forbes.ru/article/351557-grazhdanstvo-i-pmzh-za-investicii-sravnenie-programm" },
+  { img: "/images/media/editions2.svg", name: "BusinessTech", link: "https://businesstech.co.za/news/wealth/237599/8-of-the-cheapest-countries-for-south-africans-to-buy-citizenship-in-2018/" },
+  { img: "/images/media/editions3.svg", name: "Medium", link: "https://medium.com/@immigrationexpert23" },
+  { img: "/images/media/editions4.svg", name: "Nur.kz", link: "https://finance.nur.kz/1697497-vid-na-zhitelstvo-v-evrope-dlya-kazakhst.html" },
+  { img: "/images/media/editions5.svg", name: "Publication 5" },
+  { img: "/images/media/editions6.svg", name: "Publication 6" },
+  { img: "/images/media/editions7.svg", name: "Publication 7" },
+  { img: "/images/media/editions8.svg", name: "Publication 8" },
+];
+
 const mediaMentions = [
-  { source: "Forbes", quote: "Migronis is one of the leading companies helping HNWI obtain second citizenship." },
-  { source: "Bloomberg", quote: "Investment migration is booming, and Migronis is at the forefront of this global trend." },
+  { source: "The Portugal News", quote: "Investing in a fund in Portugal: Everything you need to know before making a decision.", link: "https://www.theportugalnews.com/news/2023-03-02/investing-in-a-fund-in-portugal-everything-you-need-to-know-before-making-a-decision/75306" },
+  { source: "IMI Daily", quote: "Expert analysis on citizenship and residency by investment from Anatoliy Lyetayev.", link: "https://www.imidaily.com/author/anatoliy-lyetayev/" },
 ];
 
 export default function PassportVisasPage() {
@@ -352,17 +369,29 @@ export default function PassportVisasPage() {
       <ReviewsSection />
 
       {/* ── Awards ── */}
-      <section className="bg-[#eeeeee] py-8 lg:py-10">
+      <section className="bg-[#eeeeee] py-8 lg:py-12">
         <div className="max-w-[1196px] mx-auto content-px">
           <h3 className="f-section-title text-black mb-6 lg:mb-8 text-center">Awards</h3>
-          <div className="flex gap-4 lg:gap-6 justify-center flex-wrap">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <div
-                key={i}
-                className="bg-white px-8 py-4 flex items-center justify-center h-[60px] rounded"
-              >
-                <span className="f-btn text-black">MIGRONIS</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {awards.map((a, i) => (
+              <div key={i} className="bg-white rounded p-6 flex flex-col items-center text-center">
+                <img src={a.img} alt={a.title} className="h-[80px] object-contain mb-4" loading="lazy" />
+                <p className="f-body text-black/60">{a.title}</p>
               </div>
+            ))}
+          </div>
+          {/* Media logos row */}
+          <div className="mt-8 lg:mt-10 flex gap-6 lg:gap-8 overflow-x-auto no-scrollbar items-center justify-center flex-wrap">
+            {mediaEditions.map((m, i) => (
+              <a
+                key={i}
+                href={m.link || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <img src={m.img} alt={m.name} className="h-[30px] lg:h-[40px] object-contain" loading="lazy" />
+              </a>
             ))}
           </div>
         </div>
@@ -382,14 +411,17 @@ export default function PassportVisasPage() {
             </div>
             <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar w-full lg:w-auto">
               {mediaMentions.map((m, i) => (
-                <div
+                <a
                   key={i}
-                  className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d8] rounded flex flex-col items-center justify-center p-6"
+                  href={m.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 w-[280px] lg:w-[345px] h-[205px] border border-[#d9d9d8] rounded flex flex-col items-center justify-center p-6 hover:border-black/30 transition-colors"
                 >
                   <span className="f-quote-mark text-black/20 block text-center">&ldquo;</span>
                   <p className="f-body text-black text-center mt-2">{m.quote}</p>
-                  <p className="f-body text-black/40 mt-4">{m.source}</p>
-                </div>
+                  <p className="f-body text-[#c87d33] mt-4">{m.source}</p>
+                </a>
               ))}
             </div>
           </div>
