@@ -22,25 +22,16 @@ export default function HomePage() {
 
 
           {/* Hero content */}
-          <div className="relative flex-1 flex items-center">
+          <div className="relative flex-1 flex items-start pt-[25vh] lg:pt-[180px]">
             <div className="max-w-[1196px] mx-auto w-full px-4 lg:px-0">
               <div className="max-w-full lg:max-w-[500px]">
                 <h1 className="f-hero-text text-white">
                   A platform for living, investing, and growing without borders
                 </h1>
-                <div className="mt-6 lg:mt-8 space-y-1">
-                  <p className="f-hero-adv text-white/80">freedom</p>
-                  <p className="f-hero-adv text-white/80">sustainability</p>
-                  <p className="f-hero-adv text-white/80">smart investments</p>
-                  <p className="f-hero-adv text-white/80">new luxury</p>
-                </div>
+                <p className="f-hero-adv text-white/80 mt-6 lg:mt-8">
+                  freedom · sustainability · smart investments · new luxury
+                </p>
               </div>
-            </div>
-            {/* Arrow icon */}
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block">
-              <svg width="109" height="109" viewBox="0 0 109 109" fill="white">
-                <polygon points="30,15 95,54.5 30,94" />
-              </svg>
             </div>
           </div>
 
