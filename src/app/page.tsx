@@ -9,36 +9,44 @@ export default function HomePage() {
     <>
       {/* Section 0: Hero */}
       <section className="relative bg-black">
-        <div className="min-h-[100svh] lg:h-[810px] relative flex flex-col">
-          {/* BG image */}
+        <div className="min-h-[100svh] lg:h-[900px] relative flex flex-col">
+          {/* BG image — positioned lower so face isn't cut by header */}
           <div
             className="absolute inset-0 opacity-60"
             style={{
               backgroundImage: "url('/images/hero-sunset.jpg')",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center 30%",
             }}
           />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/60 to-transparent" />
-
-
+          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
           {/* Hero content */}
-          <div className="relative flex-1 flex items-start pt-[25vh] lg:pt-[180px]">
+          <div className="relative flex-1 flex items-end pb-[15vh] lg:pb-[120px]">
             <div className="max-w-[1400px] mx-auto w-full px-4 lg:px-0">
-              <div className="max-w-full lg:max-w-[500px]">
+              <div className="max-w-full lg:max-w-[650px]">
                 <h1 className="f-hero-text text-white">
                   A platform for living, investing, and growing without borders
                 </h1>
-                <p className="f-hero-adv text-white/80 mt-6 lg:mt-8">
+                <p className="f-hero-adv text-white/70 mt-5 lg:mt-6">
                   freedom · sustainability · smart investments · new luxury
                 </p>
+                {/* Watch Video button */}
+                <a
+                  href="https://www.youtube.com/watch?v=xUoq7mGeUJA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 mt-8 lg:mt-10 group"
+                >
+                  <span className="w-12 h-12 rounded-full border-2 border-white/60 flex items-center justify-center group-hover:border-white group-hover:bg-white/10 transition-all">
+                    <span className="text-white text-sm ml-0.5">▶</span>
+                  </span>
+                  <span className="f-nav text-white/70 group-hover:text-white transition-colors uppercase tracking-wider">Watch Video</span>
+                </a>
               </div>
             </div>
           </div>
-
-
 
           {/* Mobile scroll indicator */}
           <div className="lg:hidden relative py-6 flex justify-center">
