@@ -61,24 +61,18 @@ export default function HomePage() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <span className="f-quote-mark text-black block">"</span>
+              <span className="f-quote-mark text-black block">&ldquo;</span>
               <blockquote className="f-desc-bold text-black -mt-2 lg:-mt-4">
-                I travel a lot with my children — not just to see places, but to
-                understand the world together.
+                The world doesn&apos;t limit you.
               </blockquote>
               <p className="f-body text-black mt-4 lg:mt-6">
-                Our journeys are about connection — between parents and children,
-                people and nature, comfort and adventure. Sometimes it&apos;s a
-                luxury hotel, sometimes a night in a cave, but always an experience
-                that teaches more than any classroom.
+                Freedom is not a destination — it&apos;s a system you build, one decision at a time. Over the last ten years, I&apos;ve moved across countries, always choosing the best place for my family, my capital, and my future.
               </p>
               <p className="f-body text-black mt-3 lg:mt-4">
-                We learn through contact with nature, with different cultures, and
-                with extraordinary teachers. Every trip is both exploration and
-                education — a way to grow together and to live without borders.
+                Here, my guests and I share what actually works: how to choose where to live, where to invest, and how to travel with purpose.
               </p>
-              <span className="f-quote-mark text-black block text-right">"</span>
-              <p className="f-body text-black">Anatoliy Lyetayev</p>
+              <span className="f-quote-mark text-black block text-right">&rdquo;</span>
+              <p className="f-body text-black">Anatoliy Letaev</p>
             </div>
           </div>
         </div>
