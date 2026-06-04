@@ -185,7 +185,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 5: Insights */}
-      <section className="bg-[#26aae1]">
+      <section className="bg-[#02abe3]">
         <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <div className="flex gap-3 lg:gap-6 overflow-x-auto no-scrollbar">
@@ -358,7 +358,7 @@ export default function HomePage() {
 
 function CTASection() {
   return (
-    <section style={{ backgroundColor: "#26aae1" }}>
+    <section style={{ backgroundColor: "#02abe3" }}>
       <div className="max-w-[1196px] mx-auto py-10 lg:py-16 content-px">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
           <div className="mb-2 lg:mb-0">

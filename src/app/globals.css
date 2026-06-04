@@ -1,6 +1,14 @@
 /* Local fonts — Switzer */
 @font-face {
   font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
   src: url('/fonts/switzer/Switzer-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
@@ -39,21 +47,43 @@
   font-display: swap;
 }
 
+/* Local fonts — Zodiak (secondary serif) */
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/zodiak/Zodiak-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/zodiak/Zodiak-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
-  --color-burgundy: #4b223d;
-  --color-green: #224b30;
-  --color-teal: #618b8c;
-  --color-gold: #c7803b;
-  --color-pink: #e283b5;
-  --color-blue: #26aae1;
-  --color-dark: #1e1e1e;
+  /* Brand colors — from Borderless Identity Guidelines v1.1 */
+  --color-black: #191c1f;
+  --color-white: #ffffff;
+  --color-burgundy: #4b213c;
+  --color-green: #1f4a2e;
+  --color-teal: #608b8c;
+  --color-gold: #c87d33;
+  --color-yellow: #e6cc53;
+  --color-pink: #e582b4;
+  --color-blue: #02abe3;
+  --color-dark: #191c1f;
   --color-gray-light: #eeeeee;
-  --color-gray-mid: #d1d3d4;
+  --color-gray-mid: #d9d9d8;
   --color-gray-dark: #414141;
 
-  --font-switzer: "Switzer", "Inter", sans-serif;
+  --font-switzer: "Switzer", sans-serif;
+  --font-zodiak: "Zodiak", Georgia, serif;
   --font-inter: "Inter", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
 }
@@ -65,7 +95,7 @@
 
   body {
     font-family: var(--font-switzer), system-ui, sans-serif;
-    color: #000;
+    color: #191c1f;
     -webkit-font-smoothing: antialiased;
     background: #fff;
     min-width: 320px;
@@ -96,36 +126,39 @@
 }
 
 /* Typography classes */
+/* Guideline: Switzer Thin for large headings, Bold for emphasis */
 .f-page-title {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(36px, 8vw, 122px);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .f-page-title-light {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(36px, 8vw, 122px);
-  font-weight: 300;
-  line-height: 1.2;
+  font-weight: 100;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .f-section-title {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(28px, 5vw, 64px);
-  font-weight: 300;
-  line-height: 1.1;
+  font-weight: 100;
+  line-height: 1.05;
 }
 
 .f-heading-md {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(22px, 3.5vw, 40px);
-  font-weight: 300;
-  line-height: 1.15;
+  font-weight: 100;
+  line-height: 1.1;
 }
 
 .f-heading-md-regular {
@@ -133,61 +166,64 @@
   text-transform: uppercase;
   font-size: clamp(22px, 3.5vw, 40px);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .f-cta-big {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(40px, 8vw, 110px);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 100;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .f-cta-sub {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(20px, 3.5vw, 40px);
-  font-weight: 300;
-  line-height: 1.15;
+  font-weight: 100;
+  line-height: 1.1;
 }
 
 .f-quote-mark {
-  font-family: var(--font-switzer);
+  font-family: var(--font-zodiak);
   font-size: clamp(48px, 7vw, 96px);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 400;
+  line-height: 0.8;
 }
 
 .f-desc-bold {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(16px, 2vw, 24px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
 }
 
 .f-body-lg {
   font-family: var(--font-switzer);
   font-size: clamp(16px, 2vw, 24px);
-  font-weight: 400;
-  line-height: 1.4;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .f-hero-text {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300;
-  line-height: 1.15;
+  font-weight: 100;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .f-hero-adv {
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(14px, 1.5vw, 20px);
-  font-weight: 300;
+  font-weight: 100;
   line-height: 1.4;
+  letter-spacing: 0.05em;
 }
 
 .f-nav-active {
@@ -280,7 +316,7 @@
   font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(22px, 3vw, 36px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -321,9 +357,20 @@
 }
 
 .f-case-title {
-  font-family: var(--font-inter);
+  font-family: var(--font-switzer);
   text-transform: uppercase;
   font-size: clamp(22px, 3.5vw, 40px);
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.2;
+}
+
+/* Zodiak accent — for quotes and editorial highlights */
+.f-zodiak {
+  font-family: var(--font-zodiak);
+  font-weight: 400;
+}
+
+.f-zodiak-bold {
+  font-family: var(--font-zodiak);
+  font-weight: 700;
 }
