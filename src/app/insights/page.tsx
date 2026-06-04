@@ -74,10 +74,17 @@ export default function InsightsPage() {
               rel="noopener noreferrer"
               className="lg:col-span-3 group"
             >
-              <VideoThumb
-                videoId={featuredInsight.videoId!}
-                className="min-h-[220px] lg:min-h-[424px]"
-              />
+              {featuredInsight.type === "video" && featuredInsight.videoId ? (
+                <VideoThumb
+                  videoId={featuredInsight.videoId}
+                  className="min-h-[220px] lg:min-h-[424px]"
+                />
+              ) : featuredInsight.image ? (
+                <ArticleThumb
+                  image={featuredInsight.image}
+                  className="min-h-[220px] lg:min-h-[424px]"
+                />
+              ) : null}
             </a>
             <div className="lg:col-span-2 flex flex-col justify-end">
               <Badge category={featuredInsight.category} />

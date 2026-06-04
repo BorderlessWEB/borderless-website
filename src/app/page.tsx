@@ -189,15 +189,17 @@ export default function HomePage() {
               className="lg:col-span-3 rounded overflow-hidden min-h-[200px] lg:min-h-[424px] relative block group"
             >
               <img
-                src={`https://i.ytimg.com/vi/${featuredInsight.videoId}/maxresdefault.jpg`}
+                src={featuredInsight.type === 'video' && featuredInsight.videoId ? `https://i.ytimg.com/vi/${featuredInsight.videoId}/maxresdefault.jpg` : (featuredInsight.image || '')}
                 alt={featuredInsight.title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                  <span className="text-white text-lg ml-0.5">▶</span>
+              {featuredInsight.type === 'video' && (
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                    <span className="text-white text-lg ml-0.5">▶</span>
+                  </div>
                 </div>
-              </div>
+              )}
             </a>
             <div className="lg:col-span-2 flex flex-col justify-end">
               <p className="f-nav text-black/40" style={{ fontSize: 12 }}>{featuredInsight.category}</p>
