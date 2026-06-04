@@ -59,67 +59,82 @@ export default function InvestmentPage() {
     <>
       {/* ── Hero ── */}
       <section className="bg-white">
-        <div className="max-w-[1400px] mx-auto flex flex-col justify-end min-h-[140px] lg:min-h-[254px] content-px pb-4 lg:pb-8 pt-[72px]">
-          <p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p>
-          <h1 className="f-page-title text-black">Investment</h1>
-        </div>
-      </section>
+        <div className="max-w-[1400px] mx-auto content-px pt-[72px] pb-8 lg:pb-12">
+          {/* Title block */}
+          <div className="flex flex-col justify-end min-h-[100px] lg:min-h-[200px] pb-4 lg:pb-8">
+            <p className="f-nav text-black/50 mb-2 lg:mb-3">Borderless</p>
+            <h1 className="f-page-title text-black">Investment</h1>
+          </div>
 
-      {/* ── Hero Content: Circles + Description ── */}
-      <section className="bg-white py-8 lg:py-12">
-        <div className="max-w-[1400px] mx-auto content-px">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12 lg:mb-16">
+          {/* Circles + Text row */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center py-8 lg:py-16">
             {/* Venn Diagram Circles */}
-            <div className="lg:w-1/2 flex items-center justify-center">
-              <div className="relative w-[280px] h-[240px] lg:w-[420px] lg:h-[360px]">
-                {/* Circle 1 — pink/magenta */}
+            <div className="lg:w-[45%] flex items-center justify-center">
+              <div
+                className="relative w-[280px] h-[280px] lg:w-[440px] lg:h-[400px] group"
+              >
+                {/* Circle 1 — light blue (top) */}
                 <div
-                  className="absolute rounded-full"
+                  className="absolute rounded-full transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:-translate-x-1"
                   style={{
-                    width: "60%", height: "70%",
-                    top: "0", left: "5%",
-                    background: "rgba(229, 130, 180, 0.5)",
-                    mixBlendMode: "multiply",
+                    width: "65%", height: "65%",
+                    top: "0", left: "18%",
+                    background: "rgba(126, 200, 227, 0.55)",
                   }}
                 />
-                {/* Circle 2 — yellow */}
+                {/* Circle 2 — peach/salmon (bottom-left) */}
                 <div
-                  className="absolute rounded-full"
+                  className="absolute rounded-full transition-transform duration-700 ease-out group-hover:translate-y-3 group-hover:-translate-x-3"
                   style={{
-                    width: "60%", height: "70%",
-                    top: "0", right: "5%",
-                    background: "rgba(230, 204, 83, 0.5)",
-                    mixBlendMode: "multiply",
+                    width: "65%", height: "65%",
+                    bottom: "0", left: "0",
+                    background: "rgba(240, 180, 140, 0.55)",
                   }}
                 />
-                {/* Circle 3 — blue */}
+                {/* Circle 3 — pink/rose (bottom-right) */}
                 <div
-                  className="absolute rounded-full"
+                  className="absolute rounded-full transition-transform duration-700 ease-out group-hover:translate-y-2 group-hover:translate-x-3"
                   style={{
-                    width: "60%", height: "70%",
-                    bottom: "0", left: "20%",
-                    background: "rgba(2, 171, 227, 0.5)",
-                    mixBlendMode: "multiply",
+                    width: "65%", height: "65%",
+                    bottom: "0", right: "0",
+                    background: "rgba(229, 150, 180, 0.55)",
                   }}
                 />
+                {/* Center label */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <span className="f-nav-active text-black/40 text-center text-[11px] lg:text-[13px] tracking-wider">BORDERLESS<br/>INVEST</span>
+                </div>
               </div>
             </div>
 
             {/* Right side — text */}
-            <div className="lg:w-1/2 flex flex-col justify-center">
-              <h2 className="f-heading-md text-black mb-6">Love, Land and Legacy</h2>
-              <ul className="space-y-3">
+            <div className="lg:w-[55%] flex flex-col justify-center">
+              <h2 className="f-heading-md text-black mb-6">Love. Land. Legacy.</h2>
+              <p className="f-body text-black/60 mb-4">
+                Мы инвестируем в недвижимость будущего Ikigai:
+              </p>
+              <ul className="space-y-2">
                 <li className="f-body text-black/60 flex items-start gap-2">
                   <span className="text-black mt-0.5">•</span>
-                  <span>Each project follows ESG criteria and real-estate fundamentals</span>
+                  <span>Для инвесторов со всего мира</span>
                 </li>
                 <li className="f-body text-black/60 flex items-start gap-2">
                   <span className="text-black mt-0.5">•</span>
-                  <span>Investments designed for global citizens and expat investors</span>
+                  <span>Эко-архитектура</span>
+                </li>
+                <li className="f-body text-black/60 flex items-start gap-2">
+                  <span className="text-black mt-0.5">•</span>
+                  <span>В уникальных экспатских местах</span>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Steps Section ── */}
+      <section className="bg-white pb-8 lg:pb-12">
+        <div className="max-w-[1400px] mx-auto content-px">
 
           {/* ── Steps: Learn Investment Opportunities ── */}
           <div>
