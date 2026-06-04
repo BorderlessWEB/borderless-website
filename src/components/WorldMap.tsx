@@ -7,6 +7,7 @@ import {
   Geographies,
   Geography,
   Marker,
+  Annotation,
 } from "react-simple-maps";
 import type { MapCountry } from "@/data/map-layers";
 
@@ -16,8 +17,50 @@ const GEO_URL = "/data/world-110m.json";
 const LAND = "#2a2a3e";
 const LAND_STROKE = "rgba(255,255,255,0.08)";
 const OCEAN = "#1a1a2e";
+const HOVER_COLOR = "#c87d33"; // brand gold from guideline
+const LABEL_COLOR = "rgba(255,255,255,0.7)";
+const LABEL_ACTIVE = "#ffffff";
+const LINE_COLOR = "rgba(255,255,255,0.2)";
+const LINE_ACTIVE = "rgba(200,125,51,0.6)";
 
 const cyprusAliases = ["Cyprus", "N. Cyprus"];
+
+/* ── Label offset configs — pixel offsets in projected SVG coords ── */
+interface LabelConfig {
+  anchor: [number, number]; // [lng, lat] — where the line starts (near the real location)
+  label: [number, number];  // [lng, lat] — where the text label sits
+  textAnchor?: "start" | "middle" | "end";
+}
+
+/* Smart label positions — especially spreading Caribbean & small islands */
+const labelConfigs: Record<string, LabelConfig> = {
+  // Caribbean — spread labels to the right
+  "st-kitts-and-nevis":  { anchor: [-62.73, 17.36], label: [-42, 22],   textAnchor: "start" },
+  "dominica":            { anchor: [-61.37, 15.41], label: [-42, 18],   textAnchor: "start" },
+  "antigua-and-barbuda": { anchor: [-61.80, 17.06], label: [-42, 14],   textAnchor: "start" },
+  "grenada":             { anchor: [-61.68, 12.12], label: [-42, 10],   textAnchor: "start" },
+  "st-lucia":            { anchor: [-60.97, 13.91], label: [-42, 6],    textAnchor: "start" },
+
+  // Africa
+  "sao-tome-e-principe": { anchor: [6.61, 0.19],   label: [-8, -8],    textAnchor: "end" },
+
+  // Pacific
+  "vanuatu":             { anchor: [167, -16],      label: [175, -26],  textAnchor: "start" },
+
+  // Europe — offset labels to avoid overlap
+  "portugal-golden-visa":{ anchor: [-8, 39],        label: [-22, 33],   textAnchor: "end" },
+  "portugal-hqa-visa":   { anchor: [-10.5, 38.5],   label: [-22, 29],   textAnchor: "end" },
+  "spain":               { anchor: [-3, 40],        label: [-15, 46],   textAnchor: "end" },
+  "greece":              { anchor: [22, 39],         label: [15, 33],    textAnchor: "end" },
+  "cyprus":              { anchor: [33, 35],         label: [42, 30],    textAnchor: "start" },
+  "hungary":             { anchor: [19, 47],         label: [28, 52],    textAnchor: "start" },
+
+  // Americas
+  "us-eb5-visa":         { anchor: [-100, 42],      label: [-115, 50],  textAnchor: "end" },
+  "brazil":              { anchor: [-52, -12],       label: [-40, -20],  textAnchor: "start" },
+  "costa-rica":          { anchor: [-84, 10],        label: [-95, 3],    textAnchor: "end" },
+  "azores":              { anchor: [-27.2, 38.7],    label: [-32, 45],   textAnchor: "end" },
+};
 
 interface WorldMapProps {
   countries: MapCountry[];
@@ -27,7 +70,6 @@ interface WorldMapProps {
 function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
 
-  // Build geo lookup: geoName → country config
   const geoCountries = countries.filter((c) => c.type === "geo" && c.geoName);
   const markerCountries = countries.filter((c) => c.type === "marker");
 
@@ -38,19 +80,13 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
     return geoCountries.find((c) => c.geoName === geoName);
   }
 
-  // Approximate label positions for geo countries
-  const labelPositions: Record<string, [number, number]> = {
-    "United States of America": [-100, 42],
-    Brazil: [-52, -12],
-    Portugal: [-8, 39],
-    Spain: [-3, 40],
-    Greece: [22, 39],
-    Cyprus: [33, 35],
-    "N. Cyprus": [33, 35],
-    Hungary: [19, 47],
-    Vanuatu: [167, -16],
-    "Costa Rica": [-84, 10],
-  };
+  // Get coordinates for a country (marker coords or label config anchor)
+  function getCountryCoords(c: MapCountry): [number, number] | null {
+    if (c.coordinates) return c.coordinates;
+    const cfg = labelConfigs[c.slug];
+    if (cfg) return cfg.anchor;
+    return null;
+  }
 
   return (
     <div className="relative w-full">
@@ -73,7 +109,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
 
               const fill = isHighlighted
                 ? isHov
-                  ? config!.hoverColor
+                  ? HOVER_COLOR
                   : config!.color
                 : LAND;
 
@@ -90,7 +126,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
                     default: { outline: "none" },
                     hover: {
                       outline: "none",
-                      fill: isHighlighted ? config!.hoverColor : "#363650",
+                      fill: isHighlighted ? HOVER_COLOR : "#363650",
                       cursor: isHighlighted ? "pointer" : "default",
                     },
                     pressed: { outline: "none" },
@@ -101,10 +137,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
               );
 
               return isHighlighted ? (
-                <Link
-                  key={geo.rsmKey}
-                  href={`${linkPrefix}/${config!.slug}`}
-                >
+                <Link key={geo.rsmKey} href={`${linkPrefix}/${config!.slug}`}>
                   {geoEl}
                 </Link>
               ) : (
@@ -114,7 +147,51 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
           }
         </Geographies>
 
-        {/* Markers for small islands / point locations */}
+        {/* Leader lines + labels via Annotation */}
+        {countries.map((c) => {
+          const cfg = labelConfigs[c.slug];
+          if (!cfg) return null;
+          const isHov = hovered === c.slug;
+
+          // Calculate dx/dy as rough offset (label - anchor in degrees, scaled)
+          const dx = (cfg.label[0] - cfg.anchor[0]) * 3.5;
+          const dy = (cfg.anchor[1] - cfg.label[1]) * 3.5;
+
+          return (
+            <Annotation
+              key={`ann-${c.slug}`}
+              subject={cfg.anchor}
+              dx={dx}
+              dy={dy}
+              connectorProps={{
+                stroke: isHov ? LINE_ACTIVE : LINE_COLOR,
+                strokeWidth: isHov ? 1 : 0.5,
+              }}
+            >
+              <text
+                textAnchor={cfg.textAnchor || "start"}
+                alignmentBaseline="middle"
+                style={{
+                  fill: isHov ? LABEL_ACTIVE : LABEL_COLOR,
+                  fontSize: isHov ? "8.5px" : "7.5px",
+                  fontFamily: "Switzer, sans-serif",
+                  fontWeight: isHov ? 700 : 400,
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.5px",
+                  textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={() => setHovered(c.slug)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                {c.name}
+              </text>
+            </Annotation>
+          );
+        })}
+
+        {/* Marker dots for small islands */}
         {markerCountries.map((m) => {
           if (!m.coordinates) return null;
           const isHov = hovered === m.slug;
@@ -128,15 +205,15 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
               >
                 {/* Pulse ring */}
                 <circle
-                  r={isHov ? 10 : 7}
+                  r={isHov ? 8 : 5}
                   fill="none"
-                  stroke={m.color}
+                  stroke={isHov ? HOVER_COLOR : m.color}
                   strokeWidth={1}
                   opacity={0.4}
                 >
                   <animate
                     attributeName="r"
-                    values="5;9;5"
+                    values="4;7;4"
                     dur="2.5s"
                     repeatCount="indefinite"
                   />
@@ -150,63 +227,24 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
 
                 {/* Dot */}
                 <circle
-                  r={isHov ? 5 : 3.5}
-                  fill={isHov ? m.hoverColor : m.color}
+                  r={isHov ? 4 : 3}
+                  fill={isHov ? HOVER_COLOR : m.color}
                   stroke="rgba(255,255,255,0.8)"
-                  strokeWidth={0.8}
+                  strokeWidth={0.6}
                   style={{
                     cursor: "pointer",
                     transition: "all 0.2s",
                     filter: isHov
-                      ? `drop-shadow(0 0 6px ${m.hoverColor})`
+                      ? `drop-shadow(0 0 6px ${HOVER_COLOR})`
                       : "none",
                   }}
                 />
-
-                {/* Label on hover */}
-                {isHov && (
-                  <text
-                    textAnchor="middle"
-                    y={-12}
-                    style={{
-                      fill: "white",
-                      fontSize: "8px",
-                      fontWeight: 600,
-                      textShadow: "0 1px 4px rgba(0,0,0,0.9)",
-                      pointerEvents: "none",
-                    }}
-                  >
-                    {m.name}
-                  </text>
-                )}
               </Marker>
             </Link>
           );
         })}
 
-        {/* Hover labels for geo countries */}
-        {geoCountries.map((c) => {
-          if (hovered !== c.slug || !c.geoName) return null;
-          const pos = labelPositions[c.geoName];
-          if (!pos) return null;
-          return (
-            <Marker key={`label-${c.slug}`} coordinates={pos}>
-              <text
-                textAnchor="middle"
-                y={-2}
-                style={{
-                  fill: "white",
-                  fontSize: "9px",
-                  fontWeight: 600,
-                  textShadow: "0 1px 4px rgba(0,0,0,0.9)",
-                  pointerEvents: "none",
-                }}
-              >
-                {c.name}
-              </text>
-            </Marker>
-          );
-        })}
+
       </ComposableMap>
     </div>
   );
