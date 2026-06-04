@@ -214,35 +214,25 @@ export default function InvestmentPage() {
       </section>
 
       {/* ── Investment Workflow ── */}
-      <section className="py-12 lg:py-20">
+      <section className="bg-[#f5f5f7] py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto content-px">
-          <h2 className="f-section-title text-black mb-4">Investment Workflow</h2>
-          <p className="f-body-lg text-black/60 mb-10 lg:mb-14 max-w-[700px]">
+          <h2 className="f-section-title text-black text-center mb-3">Investment Workflow</h2>
+          <p className="f-body text-black/50 text-center mb-12 lg:mb-20 max-w-[500px] mx-auto">
             From understanding your values to seeing real returns — we guide sustainable investments step by step.
           </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {[
-              { title: "Consultation", desc: "Understand your goals and values." },
-              { title: "Selection", desc: "We suggest sustainable projects anywhere in the world, tailored to you." },
-              { title: "Investment", desc: "We help you invest safely and meaningfully." },
-              { title: "Return", desc: "Gain both profit and the satisfaction of making a positive impact." },
-            ].map((step, i) => (
-              <div key={i} className="lg:max-w-[280px]">
-                <div className="bg-[#eeeeee] flex items-center justify-center h-[120px] lg:h-[142px] mb-4">
-                  <svg width="34" height="23" viewBox="0 0 34 23" fill="black">
-                    <path d="M17 0L34 23H0L17 0Z" />
-                  </svg>
-                </div>
-                <h3 className="f-nav-active text-black whitespace-pre-line">{step.title}</h3>
-                <p className="f-body text-black/60 mt-2">{step.desc}</p>
+              { num: "01", title: "Consultation", desc: "Understand your goals and values." },
+              { num: "02", title: "Selection", desc: "We suggest sustainable projects anywhere in the world, tailored to you." },
+              { num: "03", title: "Investment", desc: "We help you invest safely and meaningfully." },
+              { num: "04", title: "Return", desc: "Gain both profit and the satisfaction of making a positive impact." },
+            ].map((step) => (
+              <div key={step.title} className="text-center">
+                <span className="text-[#c87d33] text-4xl lg:text-5xl font-bold">{step.num}</span>
+                <h3 className="f-desc-bold text-black mt-4 text-lg">{step.title}</h3>
+                <p className="f-body text-black/50 mt-3 text-sm leading-relaxed max-w-[240px] mx-auto">{step.desc}</p>
               </div>
             ))}
-
-            {/* Connector lines */}
-            <div className="hidden lg:block absolute top-[71px] left-[280px] w-[calc(25%-30px)] h-[1px] bg-black" style={{ left: "calc(25% + 10px)", width: "calc(25% - 55px)" }} />
-            <div className="hidden lg:block absolute top-[71px] h-[1px] bg-black" style={{ left: "calc(50% + 10px)", width: "calc(25% - 55px)" }} />
-            <div className="hidden lg:block absolute top-[71px] h-[1px] bg-black" style={{ left: "calc(75% + 10px)", width: "calc(25% - 55px)" }} />
           </div>
         </div>
       </section>
