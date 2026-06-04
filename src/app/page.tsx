@@ -54,15 +54,11 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div className="order-2 lg:order-1">
-              <div className="relative w-full rounded overflow-hidden min-h-[200px] lg:min-h-[400px]" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full rounded"
-                  src="https://www.youtube.com/embed/WIv59BX3Bxs?start=3447"
-                  title="Borderless Vision"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+              <img
+                src="/images/vision-anatoliy.jpg"
+                alt="Anatoliy Lyetayev"
+                className="w-full h-full object-cover rounded min-h-[200px] lg:min-h-[400px]"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <span className="f-quote-mark text-black block">"</span>
