@@ -109,7 +109,7 @@ export default function InvestmentPage() {
                 </div>
                 {/* Center intersection label */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span className="f-nav-active text-black/60 text-center text-[11px] lg:text-[13px] tracking-wider">BORDERLESS<br/>INVESTMENT</span>
+                  <span className="f-nav-active text-black/60 text-center text-[9px] lg:text-[12px] tracking-wide leading-tight">BORDERLESS<br/>INVESTMENT</span>
                 </div>
               </div>
             </div>
