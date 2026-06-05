@@ -86,8 +86,8 @@ export default function TravelPage() {
               "Scalable success stories",
               "Climate resilience & future outlook",
             ].map((criterion) => (
-              <div key={criterion} className="bg-white p-4 lg:p-5">
-                <p className="f-body text-black/60 text-sm">{criterion}</p>
+              <div key={criterion} className="bg-white p-4 lg:p-5 flex items-center">
+                <p className="f-body text-black/60 text-[13px] sm:text-sm leading-snug">{criterion}</p>
               </div>
             ))}
           </div>

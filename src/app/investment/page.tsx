@@ -83,7 +83,7 @@ export default function InvestmentPage() {
                     background: "rgba(126, 200, 227, 0.55)",
                   }}
                 >
-                  <span className="absolute top-[20%] left-1/2 -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider text-center">Sustainability</span>
+                  <span className="absolute top-[18%] left-1/2 -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider text-center whitespace-nowrap">Sustainability</span>
                 </div>
                 {/* Circle 2 — Return (peach/salmon, bottom-left) */}
                 <div
@@ -94,7 +94,7 @@ export default function InvestmentPage() {
                     background: "rgba(240, 180, 140, 0.55)",
                   }}
                 >
-                  <span className="absolute bottom-[20%] left-[30%] -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider">Return</span>
+                  <span className="absolute bottom-[18%] left-1/2 -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider whitespace-nowrap">Return</span>
                 </div>
                 {/* Circle 3 — For expats (pink/rose, bottom-right) */}
                 <div
@@ -105,7 +105,7 @@ export default function InvestmentPage() {
                     background: "rgba(229, 150, 180, 0.55)",
                   }}
                 >
-                  <span className="absolute bottom-[20%] right-[20%] f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider">For expats</span>
+                  <span className="absolute bottom-[18%] left-1/2 -translate-x-1/2 f-nav text-black/50 text-[10px] lg:text-[12px] tracking-wider whitespace-nowrap">For expats</span>
                 </div>
                 {/* Center intersection label */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -163,9 +163,9 @@ export default function InvestmentPage() {
                   <Link
                     key={item.name}
                     href={item.slug}
-                    className="flex-shrink-0 border border-[#d9d9d8] px-6 py-8 flex items-center justify-center min-w-[180px] lg:min-w-[200px] hover:bg-black/5 transition-colors"
+                    className="flex-shrink-0 border border-[#d9d9d8] px-5 py-8 flex items-center justify-center min-w-[180px] lg:min-w-[200px] hover:bg-black/5 transition-colors"
                   >
-                    <span className="f-nav text-black text-center uppercase">{item.name}</span>
+                    <span className="f-nav text-black text-center uppercase leading-snug whitespace-normal">{item.name}</span>
                   </Link>
                 ))}
               </div>
