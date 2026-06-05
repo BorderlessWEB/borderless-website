@@ -18,12 +18,12 @@ export default function TravelPage() {
         <div className="max-w-[1400px] mx-auto content-px">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             <div className="lg:w-1/2">
-              <h2 className="f-heading-md text-black mb-4">Discover the Map of the New World</h2>
+              <h2 className="f-heading-md text-black mb-4">Discover our experience</h2>
               <p className="f-desc-bold text-black mb-4">
-                We explore cities and how they develop to find special places on the planet for borderless living.
+                A map of the New World and the thinking of free people. We explore cities and how they develop to find special places on the planet for borderless living.
               </p>
               <p className="f-body text-black/60">
-                We discover and show opportunities for impact investment, fulfilling lifestyle, education for children, and enjoyable remote work. We are embracing the prospects of the new world, sustainable growth, and an economy aligned with the approaching third industrial revolution.
+                We discover and show opportunities for impact investment, fulfilling lifestyle, education for children, and enjoyable remote work. We are embracing the prospects of the new world, sustainable growth, and an economy aligned with the approaching third industrial revolution. Based on these findings and experience, we develop a methodology that lets you adapt smoothly to the future and take full advantage of the New World.
               </p>
             </div>
             <div className="lg:w-1/2">
@@ -120,12 +120,12 @@ export default function TravelPage() {
                 desc: "The cultural capital of South America. Rich history, European architecture, and a vibrant creative scene.",
               },
               {
-                name: "Costa Rica",
-                desc: "A pioneer of ecological thinking. Rainforest, eco-architecture, and one of the happiest countries on Earth.",
+                name: "Brazil",
+                desc: "A continent of opportunity — from Río to the new economy. A strategic location for borderless living and investment.",
               },
               {
-                name: "The Azores",
-                desc: "Europe's hidden paradise. Volcanic islands, untouched nature, and the feeling of discovering a place before the world does.",
+                name: "Argentina",
+                desc: "Untamed landscapes and a culture of resilience. A place to understand where the new world is heading.",
               },
             ].map((dest) => (
               <div key={dest.name} className="bg-white p-6">
@@ -148,7 +148,7 @@ export default function TravelPage() {
             <button className="f-nav whitespace-nowrap text-white/30">Education</button>
           </div>
           <div className="flex items-center justify-between mb-8">
-            <h2 className="f-section-title text-white">Where We've Been</h2>
+            <h2 className="f-section-title text-white">Our Formats</h2>
             <div className="flex gap-2">
               <button className="w-[36px] h-[36px] rounded-full border border-white/30 flex items-center justify-center">
                 <span className="text-white text-sm">←</span>
@@ -158,12 +158,10 @@ export default function TravelPage() {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             {[
-              { place: "Chile", desc: "Stargazing in the Atacama Desert and sleeping in a cave on Easter Island." },
-              { place: "The Azores", desc: "Hiking volcanoes across three islands and sailing with whales." },
-              { place: "Costa Rica", desc: "Exploring rainforests and learning from local eco-innovators." },
-              { place: "Patagonia", desc: "Joining paleontologists on dinosaur excavations and trekking across glaciers." },
+              { place: "Locations", desc: "In-depth 50–55 min explorations. We evaluate each place across the BORDERLESS criteria — from nature, safety, and taxes to what the city will become in 10–15 years." },
+              { place: "Dives", desc: "Shorter 15–25 min deep dives into a single idea, story, or contradiction. Closer, more personal — about meaning, philosophy, and the spirit of a place." },
             ].map((item) => (
               <div key={item.place} className="bg-white/5 rounded p-6" style={{ minHeight: "200px" }}>
                 <p className="f-case-title text-white" style={{ fontSize: "28px", lineHeight: "34px" }}>{item.place}</p>
@@ -188,8 +186,8 @@ export default function TravelPage() {
         <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
             <div>
-              <span className="f-cta-big block text-white">Explore</span>
-              <span className="f-cta-sub block mt-1 text-white">the world that's already changing</span>
+              <span className="f-cta-big block text-white">Discover</span>
+              <span className="f-cta-sub block mt-1 text-white">the map of the New World with us</span>
             </div>
             <div className="flex flex-col gap-3 w-full lg:w-[343px]">
               <input type="text" placeholder="First and Last Name" className="f-input bg-[#d9d9d9] text-black placeholder:text-black/40 outline-none w-full h-[50px] px-4" />

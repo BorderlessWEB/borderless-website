@@ -7,27 +7,27 @@ import VlogSection from "@/components/VlogSection";
 import InsightsSection from "@/components/InsightsSection";
 import InlineForm from "@/components/InlineForm";
 
-/* ── Investment Projects ── */
+/* ── Investment Directions (aligned with BORDERLESS strategy) ── */
 const investmentProjects = [
   {
-    tag: "Eco-Community · Costa Rica",
-    title: "Costa Rica Eco Village",
-    subtitle: "Sustainable Living Community",
-    desc: "Impact investment in eco-architecture surrounded by rainforest. A place for sustainable living designed for global citizens — where environmental friendliness, community integration, and real estate returns come together.",
+    tag: "Sustainable real estate",
+    title: "Real Estate of the Future",
+    subtitle: "Eco-communities in special places",
+    desc: "Impact investment in eco-architecture and real estate of the future — communities built in special places on the planet for borderless living. Where environmental friendliness, community integration, and long-term value come together.",
     bg: "#e6cc53",
   },
   {
-    tag: "Real Estate · Portugal",
-    title: "Portugal Vineyard Estate",
-    subtitle: "Agricultural Investment",
-    desc: "Premium wine production combined with EU residency pathway. Sustainable viticulture in the Alentejo region — where investment possibilities meet location switching opportunities without government constraints.",
+    tag: "Location switching",
+    title: "Investments Without Borders",
+    subtitle: "New locations, new conditions",
+    desc: "We open access to investment possibilities in new locations — with new taxation conditions and legal opportunities for changing location, free from the paradigm of belonging to one country.",
     bg: "#7ec8e3",
   },
   {
-    tag: "Wellness · Bali",
-    title: "Bali Wellness Resort",
-    subtitle: "Hospitality & Lifestyle",
-    desc: "Luxury wellness retreat combining traditional Balinese healing with modern sustainability. Part of the new world economy — where fulfilling lifestyle and impact investment create long-term value.",
+    tag: "Nomad economy",
+    title: "The New World Economy",
+    subtitle: "Aligned with the third industrial revolution",
+    desc: "We support the development of the nomad economy and build an ecosystem for a fulfilling lifestyle — sustainable growth and an economy aligned with the approaching third industrial revolution.",
     bg: "#e6cc53",
   },
 ];
@@ -116,9 +116,9 @@ export default function InvestmentPage() {
 
             {/* Right side — text */}
             <div className="lg:w-[55%] flex flex-col justify-center">
-              <h2 className="f-heading-md text-black mb-4">Invest responsibly. Grow consciously</h2>
+              <h2 className="f-heading-md text-black mb-4">Manage your possibilities</h2>
               <p className="f-body-lg text-black/60">
-                We believe in investments that create value for both people and the planet. Designed for global citizens and expat investors, Borderless Investment is where sustainability, profitability, and freedom meet.
+                Borderless Investment is where sustainability, growing opportunities, and freedom meet. We make investments possible without government constraints — in new places, with new taxation conditions and the power of the nomad economy.
               </p>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function InvestmentPage() {
           {/* ── Steps: Learn Investment Opportunities ── */}
           <div>
             <h3 className="f-heading-md text-black mb-6 lg:mb-8">
-              Manage your possibilities
+              Embrace · Discover · Manage
             </h3>
             {/* Step tabs */}
             <div className="flex gap-0 border-t border-black mb-8">
@@ -156,9 +156,9 @@ export default function InvestmentPage() {
               </div>
               <div className="flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar flex-1">
                 {[
-                  { name: "Costa Rica Investment", slug: "#" },
-                  { name: "Portugal Vineyard", slug: "#" },
-                  { name: "Bali Wellness", slug: "#" },
+                  { name: "Sustainable Real Estate", slug: "#" },
+                  { name: "New Taxation Conditions", slug: "#" },
+                  { name: "Nomad Economy", slug: "#" },
                 ].map((item) => (
                   <Link
                     key={item.name}
@@ -178,7 +178,7 @@ export default function InvestmentPage() {
       <section className="bg-[#eeeeee]">
         <div className="max-w-[1400px] mx-auto py-12 lg:py-20 content-px">
           <h2 className="f-section-title text-black mb-10 lg:mb-16">
-            Our projects for<br />investment
+            Directions for<br />investment
           </h2>
 
           <div className="flex flex-col gap-8 lg:gap-12">
@@ -219,14 +219,14 @@ export default function InvestmentPage() {
         <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black text-center mb-3">Investment Workflow</h2>
           <p className="f-body text-black/50 text-center mb-12 lg:mb-20 max-w-[500px] mx-auto">
-            From understanding your values to seeing real returns — we guide sustainable investments step by step.
+            From understanding your values to growing opportunities — we guide sustainable investments in new locations, step by step.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {[
               { num: "01", title: "Consultation", desc: "Understand your goals and values." },
-              { num: "02", title: "Selection", desc: "We suggest sustainable projects anywhere in the world, tailored to you." },
-              { num: "03", title: "Investment", desc: "We help you invest safely and meaningfully." },
-              { num: "04", title: "Return", desc: "Gain both profit and the satisfaction of making a positive impact." },
+              { num: "02", title: "Selection", desc: "We suggest sustainable projects in special places on the planet, tailored to your values." },
+              { num: "03", title: "Investment", desc: "We handle the bureaucratic aspects, leaving you to invest safely and meaningfully." },
+              { num: "04", title: "Growth", desc: "Gain growing opportunities and the satisfaction of making a positive impact." },
             ].map((step) => (
               <div key={step.title} className="text-center">
                 <span className="text-[#c87d33] text-4xl lg:text-5xl font-bold">{step.num}</span>
@@ -357,8 +357,8 @@ export default function InvestmentPage() {
         <div className="max-w-[1400px] mx-auto py-10 lg:py-16 content-px">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-10">
             <div>
-              <span className="f-cta-big block text-white">Ready</span>
-              <span className="f-cta-sub block mt-1 text-white">to invest while caring for the planet?</span>
+              <span className="f-cta-big block text-white">Embrace</span>
+              <span className="f-cta-sub block mt-1 text-white">your freedom to invest without borders</span>
             </div>
             <InlineForm
               formKey="InvestmentConsultation"
