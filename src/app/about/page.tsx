@@ -18,16 +18,15 @@ export default function AboutPage() {
         <div className="max-w-[1400px] mx-auto content-px">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             <div className="lg:w-1/2">
-              <p className="f-nav text-black/40 mb-2 uppercase tracking-wider">BORDERLESS Platform</p>
               <h2 className="f-heading-md text-black mb-6">Embrace Your Freedom</h2>
               <p className="f-desc-bold text-black mb-4">
-                A worldwide media platform for sustainable living, business, and investments — an environment for seamless location switching, global integration, and growing opportunities.
+                Borderless is a worldwide media platform for sustainable living, business, and investments.
               </p>
               <p className="f-body text-black/60 mb-4">
                 We combine location switching expertise with powerful tools to achieve a fulfilling lifestyle, unlock business potential, and make investments without government constraints.
               </p>
               <p className="f-body text-black/60">
-                We smoothly guide individuals towards the cosmopolis future — where people integrate the culture and aesthetics of new places. You embrace freedom — we create the ideal conditions for it.
+                We smoothly guide individuals towards the cosmopolis future — where people integrate culture and aesthetics of new places. You embrace freedom — we create the ideal conditions for it.
               </p>
             </div>
             <div className="lg:w-1/2">
@@ -40,9 +39,9 @@ export default function AboutPage() {
       {/* ── Philosophy: 3 Guides ── */}
       <section className="bg-[#f5f5f7] py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto content-px">
-          <h2 className="f-section-title text-black text-center mb-3">The Philosophy of Mindful Consumption</h2>
+          <h2 className="f-section-title text-black text-center mb-3">Our Philosophy</h2>
           <p className="f-body text-black/50 text-center mb-12 lg:mb-20 max-w-[600px] mx-auto">
-            With care for yourself and for the next generation. Three guides that shape how we see the world — our funnel from freedom to possibilities.
+            Mindful consumption — with care for yourself and for the next generation.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-6">
             {[
@@ -78,44 +77,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── What Borderless Takes Care Of ── */}
-      <section className="py-12 lg:py-16">
-        <div className="max-w-[1400px] mx-auto content-px">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-10 lg:mb-16">
-            <div className="lg:w-1/2">
-              <h2 className="f-section-title text-black mb-4">A backstage office for your freedom</h2>
-              <p className="f-body text-black/60">
-                Borderless is a backstage office that takes care of the bureaucratic aspects of preparing the infrastructure for life, leaving you to enjoy your freedom. Everything you wish to delegate while moving your family or business to more comfortable places — we take care of it.
-              </p>
-            </div>
-            <div className="lg:w-1/2">
-              <p className="f-desc-bold text-black mb-4">Created by people who already possess 10 passports</p>
-              <p className="f-body text-black/60">
-                All information is verified through personal experience — resulting in the best contacts, services, and case studies that we share with our audience. The BORDERLESS community provides feedback and helps our clients socialize in more than 50 locations around the world.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            {[
-              "Trial tours for the whole family",
-              "Assistance in finding accommodation",
-              "Education for family members",
-              "Healthcare",
-              "Legal support",
-              "Guide to taxation, financial models & investments",
-            ].map((item) => (
-              <div key={item} className="bg-[#f5f5f7] p-5 lg:p-6">
-                <p className="f-body text-black/70">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Founder Quote ── */}
-      <section className="py-12 lg:py-16 bg-[#eeeeee]">
+      <section className="py-12 lg:py-16">
         <div className="max-w-[1400px] mx-auto content-px flex flex-col lg:flex-row gap-8 lg:gap-12">
-          <div className="lg:w-1/2 bg-white rounded flex items-center justify-center min-h-[250px] lg:min-h-[375px]">
+          <div className="lg:w-1/2 bg-[#eeeeee] rounded flex items-center justify-center min-h-[250px] lg:min-h-[375px]">
             <span className="text-8xl text-black/5">▲</span>
           </div>
           <div className="lg:w-1/2">
@@ -136,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── My Story Timeline ── */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-[#eeeeee]">
         <div className="max-w-[1400px] mx-auto content-px">
           <h2 className="f-section-title text-black mb-8 lg:mb-12">My Story</h2>
           <p className="f-desc-bold text-black mb-8">A Timeline of a Borderless Life</p>
@@ -174,7 +139,7 @@ export default function AboutPage() {
               { name: "Investment", desc: "Impact investments in sustainable real estate and eco-projects" },
               { name: "Travel", desc: "Educational expeditions and discovery of special places on the planet" },
               { name: "Education", desc: "Learning programs for children and families in borderless living" },
-              { name: "Media", desc: "YouTube & Instagram content exploring the map of the New World and the thinking of free people" },
+              { name: "Media", desc: "YouTube, Instagram, content exploring the map of the New World" },
             ].map((item) => (
               <div key={item.name} className="bg-[#f5f5f7] p-6">
                 <h3 className="f-desc-bold text-black mb-2">{item.name}</h3>
