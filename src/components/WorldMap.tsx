@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, memo } from "react";
+import { useState, useRef, memo } from "react";
 import Link from "next/link";
 import {
   ComposableMap,
@@ -8,7 +8,6 @@ import {
   Geography,
   Marker,
   Annotation,
-  ZoomableGroup,
 } from "react-simple-maps";
 import type { MapCountry } from "@/data/map-layers";
 import { useIsMobile } from "@/hooks/useIsMobile";
@@ -69,61 +68,188 @@ interface WorldMapProps {
   linkPrefix: string;
 }
 
+const VIEW_W = 1200;
+const VIEW_H = 600;
 const MOBILE_MIN_ZOOM = 1;
 const MOBILE_MAX_ZOOM = 8;
 const MOBILE_INITIAL_ZOOM = 2.2;
-const MOBILE_INITIAL_CENTER: [number, number] = [10, 25];
+// Focus point in SVG coords for the initial mobile view (Europe/Atlantic-ish)
+const MOBILE_FOCUS: [number, number] = [560, 230];
+
+function dist(t1: React.Touch, t2: React.Touch) {
+  const dx = t1.clientX - t2.clientX;
+  const dy = t1.clientY - t2.clientY;
+  return Math.hypot(dx, dy);
+}
 
 function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const isMobile = useIsMobile();
-  const [position, setPosition] = useState<{
-    coordinates: [number, number];
-    zoom: number;
-  }>({ coordinates: MOBILE_INITIAL_CENTER, zoom: MOBILE_INITIAL_ZOOM });
   const [hintDismissed, setHintDismissed] = useState(false);
 
-  function clampZoom(z: number) {
-    return Math.max(MOBILE_MIN_ZOOM, Math.min(MOBILE_MAX_ZOOM, z));
+  // SVG transform state: scale + translate (in viewBox units)
+  const initialTx = -(MOBILE_FOCUS[0] * (MOBILE_INITIAL_ZOOM - 1));
+  const initialTy = -(MOBILE_FOCUS[1] * (MOBILE_INITIAL_ZOOM - 1));
+  const [transform, setTransform] = useState({
+    scale: MOBILE_INITIAL_ZOOM,
+    x: initialTx,
+    y: initialTy,
+  });
+
+  // gesture refs
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const gesture = useRef<{
+    mode: "none" | "pan" | "pinch";
+    startX: number;
+    startY: number;
+    startTx: number;
+    startTy: number;
+    startDist: number;
+    startScale: number;
+  }>({
+    mode: "none",
+    startX: 0,
+    startY: 0,
+    startTx: 0,
+    startTy: 0,
+    startDist: 0,
+    startScale: 1,
+  });
+
+  function clampScale(s: number) {
+    return Math.max(MOBILE_MIN_ZOOM, Math.min(MOBILE_MAX_ZOOM, s));
   }
+
+  // px (screen) -> viewBox unit ratio
+  function pxToView() {
+    const rect = wrapRef.current?.getBoundingClientRect();
+    if (!rect || rect.width === 0) return 1;
+    return VIEW_W / rect.width;
+  }
+
+  function clampTranslate(scale: number, x: number, y: number) {
+    // keep content covering the viewport
+    const minX = -(VIEW_W * (scale - 1));
+    const minY = -(VIEH(scale));
+    return {
+      x: Math.min(0, Math.max(minX, x)),
+      y: Math.min(0, Math.max(minY, y)),
+    };
+    function VIEH(s: number) {
+      return VIEW_H * (s - 1);
+    }
+  }
+
+  // Zoom around the center of the viewport
   function zoomBy(factor: number) {
     setHintDismissed(true);
-    setPosition((p) => ({ ...p, zoom: clampZoom(p.zoom * factor) }));
-  }
-  function resetZoom() {
-    setPosition({
-      coordinates: MOBILE_INITIAL_CENTER,
-      zoom: MOBILE_INITIAL_ZOOM,
+    setTransform((t) => {
+      const newScale = clampScale(t.scale * factor);
+      const cx = VIEW_W / 2;
+      const cy = VIEW_H / 2;
+      // keep viewport center fixed
+      const nx = cx - ((cx - t.x) / t.scale) * newScale;
+      const ny = cy - ((cy - t.y) / t.scale) * newScale;
+      const cl = clampTranslate(newScale, nx, ny);
+      return { scale: newScale, x: cl.x, y: cl.y };
     });
   }
 
+  function resetZoom() {
+    const cl = clampTranslate(MOBILE_INITIAL_ZOOM, initialTx, initialTy);
+    setTransform({ scale: MOBILE_INITIAL_ZOOM, x: cl.x, y: cl.y });
+  }
+
+  function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
+    setHintDismissed(true);
+    if (e.touches.length === 1) {
+      gesture.current = {
+        ...gesture.current,
+        mode: "pan",
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        startTx: transform.x,
+        startTy: transform.y,
+      };
+    } else if (e.touches.length === 2) {
+      gesture.current = {
+        ...gesture.current,
+        mode: "pinch",
+        startDist: dist(e.touches[0], e.touches[1]),
+        startScale: transform.scale,
+        startX: (e.touches[0].clientX + e.touches[1].clientX) / 2,
+        startY: (e.touches[0].clientY + e.touches[1].clientY) / 2,
+        startTx: transform.x,
+        startTy: transform.y,
+      };
+    }
+  }
+
+  function onTouchMove(e: React.TouchEvent<HTMLDivElement>) {
+    const g = gesture.current;
+    const ratio = pxToView();
+    if (g.mode === "pan" && e.touches.length === 1) {
+      const dx = (e.touches[0].clientX - g.startX) * ratio;
+      const dy = (e.touches[0].clientY - g.startY) * ratio;
+      setTransform((t) => {
+        const cl = clampTranslate(t.scale, g.startTx + dx, g.startTy + dy);
+        return { ...t, x: cl.x, y: cl.y };
+      });
+    } else if (g.mode === "pinch" && e.touches.length === 2) {
+      const d = dist(e.touches[0], e.touches[1]);
+      const factor = d / (g.startDist || d);
+      const newScale = clampScale(g.startScale * factor);
+      setTransform(() => {
+        // zoom around viewport center for simplicity & stability
+        const cx = VIEW_W / 2;
+        const cy = VIEW_H / 2;
+        const nx = cx - ((cx - g.startTx) / g.startScale) * newScale;
+        const ny = cy - ((cy - g.startTy) / g.startScale) * newScale;
+        const cl = clampTranslate(newScale, nx, ny);
+        return { scale: newScale, x: cl.x, y: cl.y };
+      });
+    }
+  }
+
+  function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if (e.touches.length === 0) {
+      gesture.current.mode = "none";
+    } else if (e.touches.length === 1) {
+      gesture.current = {
+        ...gesture.current,
+        mode: "pan",
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        startTx: transform.x,
+        startTy: transform.y,
+      };
+    }
+  }
+
   return (
-    <div className="relative w-full">
+    <div
+      className="relative w-full"
+      ref={wrapRef}
+      style={{ touchAction: isMobile ? "none" : undefined }}
+      onTouchStart={isMobile ? onTouchStart : undefined}
+      onTouchMove={isMobile ? onTouchMove : undefined}
+      onTouchEnd={isMobile ? onTouchEnd : undefined}
+    >
       <ComposableMap
         projection="geoNaturalEarth1"
         projectionConfig={{ scale: 200, center: [10, 10] }}
-        width={1200}
-        height={600}
+        width={VIEW_W}
+        height={VIEW_H}
         style={{
           width: "100%",
           height: "auto",
-          touchAction: isMobile ? "none" : undefined,
         }}
       >
-        <rect x={0} y={0} width={1200} height={600} fill={OCEAN} />
+        <rect x={0} y={0} width={VIEW_W} height={VIEW_H} fill={OCEAN} />
 
         {isMobile ? (
-          <ZoomableGroup
-            zoom={position.zoom}
-            center={position.coordinates}
-            minZoom={MOBILE_MIN_ZOOM}
-            maxZoom={MOBILE_MAX_ZOOM}
-            onMoveStart={() => setHintDismissed(true)}
-            onMoveEnd={(pos) =>
-              setPosition(
-                pos as { coordinates: [number, number]; zoom: number }
-              )
-            }
+          <g
+            transform={`translate(${transform.x} ${transform.y}) scale(${transform.scale})`}
           >
             <MapBody
               countries={countries}
@@ -131,7 +257,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
               hovered={hovered}
               setHovered={setHovered}
             />
-          </ZoomableGroup>
+          </g>
         ) : (
           <MapBody
             countries={countries}
