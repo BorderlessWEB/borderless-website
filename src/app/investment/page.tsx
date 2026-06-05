@@ -10,24 +10,24 @@ import InlineForm from "@/components/InlineForm";
 /* ── Investment Projects ── */
 const investmentProjects = [
   {
-    tag: "Residential · Costa Rica",
-    title: "Project 1",
-    subtitle: "Build Strong Teams",
-    desc: "Learn to transform chaos into new opportunities. Build strong teams and achieve results through investment in sustainable living communities surrounded by rainforest.",
+    tag: "Eco-Community · Costa Rica",
+    title: "Costa Rica Eco Village",
+    subtitle: "Sustainable Living Community",
+    desc: "Impact investment in eco-architecture surrounded by rainforest. A place for sustainable living designed for global citizens — where environmental friendliness, community integration, and real estate returns come together.",
     bg: "#e6cc53",
   },
   {
-    tag: "Agricultural · Portugal",
-    title: "Project 2",
-    subtitle: "Build Strong Teams",
-    desc: "Learn to transform chaos into new opportunities. Build strong teams investing in premium wine production with EU residency pathway in the Alentejo region.",
+    tag: "Real Estate · Portugal",
+    title: "Portugal Vineyard Estate",
+    subtitle: "Agricultural Investment",
+    desc: "Premium wine production combined with EU residency pathway. Sustainable viticulture in the Alentejo region — where investment possibilities meet location switching opportunities without government constraints.",
     bg: "#7ec8e3",
   },
   {
-    tag: "Hospitality · Bali",
-    title: "Project 3",
-    subtitle: "Build Strong Teams",
-    desc: "Learn to transform chaos into new opportunities. Build strong teams through luxury wellness retreat combining traditional Balinese healing with modern sustainability.",
+    tag: "Wellness · Bali",
+    title: "Bali Wellness Resort",
+    subtitle: "Hospitality & Lifestyle",
+    desc: "Luxury wellness retreat combining traditional Balinese healing with modern sustainability. Part of the new world economy — where fulfilling lifestyle and impact investment create long-term value.",
     bg: "#e6cc53",
   },
 ];
@@ -132,7 +132,7 @@ export default function InvestmentPage() {
           {/* ── Steps: Learn Investment Opportunities ── */}
           <div>
             <h3 className="f-heading-md text-black mb-6 lg:mb-8">
-              Learn investment opportunities?
+              Manage your possibilities
             </h3>
             {/* Step tabs */}
             <div className="flex gap-0 border-t border-black mb-8">
@@ -151,7 +151,7 @@ export default function InvestmentPage() {
             <div className="flex flex-col lg:flex-row gap-6">
               <div className="lg:w-[380px] flex-shrink-0">
                 <h4 className="f-desc-bold text-black text-lg lg:text-xl">
-                  Learn to transform chaos into new opportunities.
+                  Investments in real estate of the future — eco-communities in special places on the planet.
                 </h4>
               </div>
               <div className="flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar flex-1">
