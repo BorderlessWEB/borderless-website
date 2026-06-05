@@ -8,8 +8,10 @@ import {
   Geography,
   Marker,
   Annotation,
+  ZoomableGroup,
 } from "react-simple-maps";
 import type { MapCountry } from "@/data/map-layers";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const GEO_URL = "/data/world-110m.json";
 
@@ -67,9 +69,129 @@ interface WorldMapProps {
   linkPrefix: string;
 }
 
+const MOBILE_MIN_ZOOM = 1;
+const MOBILE_MAX_ZOOM = 8;
+const MOBILE_INITIAL_ZOOM = 2.2;
+const MOBILE_INITIAL_CENTER: [number, number] = [10, 25];
+
 function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const isMobile = useIsMobile();
+  const [position, setPosition] = useState<{
+    coordinates: [number, number];
+    zoom: number;
+  }>({ coordinates: MOBILE_INITIAL_CENTER, zoom: MOBILE_INITIAL_ZOOM });
+  const [hintDismissed, setHintDismissed] = useState(false);
 
+  function clampZoom(z: number) {
+    return Math.max(MOBILE_MIN_ZOOM, Math.min(MOBILE_MAX_ZOOM, z));
+  }
+  function zoomBy(factor: number) {
+    setHintDismissed(true);
+    setPosition((p) => ({ ...p, zoom: clampZoom(p.zoom * factor) }));
+  }
+  function resetZoom() {
+    setPosition({
+      coordinates: MOBILE_INITIAL_CENTER,
+      zoom: MOBILE_INITIAL_ZOOM,
+    });
+  }
+
+  return (
+    <div className="relative w-full">
+      <ComposableMap
+        projection="geoNaturalEarth1"
+        projectionConfig={{ scale: 200, center: [10, 10] }}
+        width={1200}
+        height={600}
+        style={{
+          width: "100%",
+          height: "auto",
+          touchAction: isMobile ? "none" : undefined,
+        }}
+      >
+        <rect x={0} y={0} width={1200} height={600} fill={OCEAN} />
+
+        {isMobile ? (
+          <ZoomableGroup
+            zoom={position.zoom}
+            center={position.coordinates}
+            minZoom={MOBILE_MIN_ZOOM}
+            maxZoom={MOBILE_MAX_ZOOM}
+            onMoveStart={() => setHintDismissed(true)}
+            onMoveEnd={(pos) =>
+              setPosition(
+                pos as { coordinates: [number, number]; zoom: number }
+              )
+            }
+          >
+            <MapBody
+              countries={countries}
+              linkPrefix={linkPrefix}
+              hovered={hovered}
+              setHovered={setHovered}
+            />
+          </ZoomableGroup>
+        ) : (
+          <MapBody
+            countries={countries}
+            linkPrefix={linkPrefix}
+            hovered={hovered}
+            setHovered={setHovered}
+          />
+        )}
+      </ComposableMap>
+
+      {/* Mobile zoom controls + hint */}
+      {isMobile && (
+        <>
+          <div className="absolute bottom-4 right-4 flex flex-col gap-2 z-10">
+            <button
+              type="button"
+              aria-label="Zoom in"
+              onClick={() => zoomBy(1.6)}
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-black/60 backdrop-blur text-white text-2xl leading-none border border-white/20 active:scale-95 transition"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              aria-label="Zoom out"
+              onClick={() => zoomBy(1 / 1.6)}
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-black/60 backdrop-blur text-white text-2xl leading-none border border-white/20 active:scale-95 transition"
+            >
+              −
+            </button>
+            <button
+              type="button"
+              aria-label="Reset map"
+              onClick={resetZoom}
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-black/60 backdrop-blur text-white text-base leading-none border border-white/20 active:scale-95 transition"
+            >
+              ↺
+            </button>
+          </div>
+
+          {!hintDismissed && (
+            <div className="pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur text-white/90 text-xs whitespace-nowrap border border-white/15">
+              ☝️ Сведите пальцы или тапните +/−, чтобы приблизить карту
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ── Shared map body (geographies + labels + markers) ── */
+interface MapBodyProps {
+  countries: MapCountry[];
+  linkPrefix: string;
+  hovered: string | null;
+  setHovered: (slug: string | null) => void;
+}
+
+function MapBody({ countries, linkPrefix, hovered, setHovered }: MapBodyProps) {
   const geoCountries = countries.filter((c) => c.type === "geo" && c.geoName);
   const markerCountries = countries.filter((c) => c.type === "marker");
 
@@ -80,25 +202,8 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
     return geoCountries.find((c) => c.geoName === geoName);
   }
 
-  // Get coordinates for a country (marker coords or label config anchor)
-  function getCountryCoords(c: MapCountry): [number, number] | null {
-    if (c.coordinates) return c.coordinates;
-    const cfg = labelConfigs[c.slug];
-    if (cfg) return cfg.anchor;
-    return null;
-  }
-
   return (
-    <div className="relative w-full">
-      <ComposableMap
-        projection="geoNaturalEarth1"
-        projectionConfig={{ scale: 200, center: [10, 10] }}
-        width={1200}
-        height={600}
-        style={{ width: "100%", height: "auto" }}
-      >
-        <rect x={0} y={0} width={1200} height={600} fill={OCEAN} />
-
+    <>
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
             geographies.map((geo) => {
@@ -197,6 +302,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
         {markerCountries.map((m) => {
           if (!m.coordinates) return null;
           const isHov = hovered === m.slug;
+          void isHov;
 
           return (
             <Link key={m.slug} href={`${linkPrefix}/${m.slug}`}>
@@ -245,10 +351,7 @@ function WorldMapInner({ countries, linkPrefix }: WorldMapProps) {
             </Link>
           );
         })}
-
-
-      </ComposableMap>
-    </div>
+    </>
   );
 }
 
