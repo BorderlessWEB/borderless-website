@@ -23,7 +23,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 lg:bg-black/80 lg:backdrop-blur-md">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between py-4 lg:py-5 content-px">
         {/* Logo */}
         <Link href="/">
@@ -94,16 +94,16 @@ function MobileMenu({ pathname }: { pathname: string }) {
       {/* Hamburger */}
       <button
         onClick={() => setOpen(!open)}
-        className="text-white/70 hover:text-white p-1"
+        className="relative z-50 text-white hover:text-white p-1"
         aria-label="Menu"
       >
         {open ? (
-          <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         )}
       </button>
